@@ -135,6 +135,7 @@ export const projects = [
       "Engineered CSV export to log exact arm placement coordinates, enabling data-driven motion pattern analysis",
     ],
     image: "/surgicontrol.png",
+    demoUrl: "/surgicontrol-demo.mp4",
   },
   {
     name: "Lincoln Financial AI Assistant",
@@ -145,7 +146,7 @@ export const projects = [
       "Led product strategy and pitch for an AI-powered financial assistant on Amazon Bedrock",
       "Shaped a questionnaire-driven recommendation engine for personalized retirement/insurance plans and presented to Lincoln Financial stakeholders",
     ],
-    demoUrl: "https://youtu.be/lincoln-financial-demo",
+    demoUrl: "https://youtube.com/shorts/jMv8xxquJP0?si=ljupji8MhAChGCKN",
   },
 ];
 
