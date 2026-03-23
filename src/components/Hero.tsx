@@ -9,7 +9,7 @@ export default function Hero() {
       {/* Background gradient orbs */}
       <div
         className="absolute top-1/4 -left-32 w-96 h-96 rounded-full filter blur-[120px] opacity-15 pointer-events-none"
-        style={{ background: "linear-gradient(135deg, #6366f1, #8b5cf6)" }}
+        style={{ background: "linear-gradient(135deg, #ffffff, #d4d4d4)" }}
       />
       <div
         className="absolute bottom-1/4 -right-32 w-80 h-80 rounded-full filter blur-[120px] opacity-10 pointer-events-none"
