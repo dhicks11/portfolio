@@ -175,6 +175,9 @@ export const education = [
 
 export const activities = [
   "UNCF STEM Innovation Summit Scholar (2026) — 1 of 50 HBCU Students Nationwide",
+  "SECU Scholar",
+  "College of Engineering Scholar",
+  "Aggie Merit Scholar",
   "Hack NCAT 1st Place",
   "NSBE",
   "ACM",
