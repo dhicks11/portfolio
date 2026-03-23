@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import SectionWrapper from "./SectionWrapper";
-import { education, activities } from "@/data/resume";
+import { education, activities, certificate } from "@/data/resume";
 
 export default function Education() {
   return (
@@ -14,6 +14,55 @@ export default function Education() {
         <span className="text-accent">background</span>
       </h2>
 
+      {/* Certificate highlight */}
+      <motion.div
+        className="cert-highlight p-8 md:p-10 mb-10"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+          <div className="flex items-start gap-5">
+            <div className="w-14 h-14 rounded-xl bg-accent/15 border border-accent/30 flex items-center justify-center shrink-0">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                className="text-accent"
+              >
+                <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                <path d="M2 17l10 5 10-5" />
+                <path d="M2 12l10 5 10-5" />
+              </svg>
+            </div>
+            <div>
+              <div className="flex items-center gap-3 mb-1">
+                <span className="px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider rounded-full bg-accent/20 text-accent border border-accent/30">
+                  Certified
+                </span>
+                <span className="text-xs text-muted font-mono">
+                  {certificate.date}
+                </span>
+              </div>
+              <h3 className="text-xl md:text-2xl font-bold text-foreground mt-2">
+                {certificate.name}
+              </h3>
+              <p className="text-sm text-accent/80 font-medium mt-1">
+                {certificate.issuer}
+              </p>
+              <p className="text-muted text-sm mt-3 max-w-xl leading-relaxed">
+                {certificate.description}
+              </p>
+            </div>
+          </div>
+        </div>
+      </motion.div>
+
+      {/* Education cards */}
       <div className="grid md:grid-cols-2 gap-6 mb-16">
         {education.map((school, i) => (
           <motion.div

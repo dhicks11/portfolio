@@ -134,6 +134,7 @@ export const projects = [
       "Built a real-time 3D surgical robot arm dashboard for Johnson & Johnson enabling users to save and replay precise arm positions",
       "Engineered CSV export to log exact arm placement coordinates, enabling data-driven motion pattern analysis",
     ],
+    image: "/surgicontrol.png",
   },
   {
     name: "Lincoln Financial AI Assistant",
@@ -144,8 +145,17 @@ export const projects = [
       "Led product strategy and pitch for an AI-powered financial assistant on Amazon Bedrock",
       "Shaped a questionnaire-driven recommendation engine for personalized retirement/insurance plans and presented to Lincoln Financial stakeholders",
     ],
+    demoUrl: "https://youtu.be/lincoln-financial-demo",
   },
 ];
+
+export const certificate = {
+  name: "SJECCD AI Session Certificate",
+  date: "Mar. 2026",
+  issuer: "San Jose Evergreen Community College District",
+  description:
+    "Completed intensive AI training covering machine learning fundamentals, neural networks, and responsible AI practices.",
+};
 
 export const education = [
   {
@@ -165,7 +175,6 @@ export const education = [
 
 export const activities = [
   "UNCF STEM Innovation Summit Scholar (2026) — 1 of 50 HBCU Students Nationwide",
-  "SJECCD AI Session Certificate (Mar. 2026)",
   "Hack NCAT 1st Place",
   "NSBE",
   "ACM",

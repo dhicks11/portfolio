@@ -23,7 +23,7 @@ export default function Marquee({ text, className = "" }: MarqueeProps) {
           <span
             key={i}
             className="text-6xl md:text-8xl lg:text-9xl font-bold uppercase tracking-tight mx-8 text-foreground/[0.04]"
-            style={{ WebkitTextStroke: "1px rgba(232, 255, 71, 0.15)" }}
+            style={{ WebkitTextStroke: "1px rgba(201, 169, 110, 0.2)" }}
           >
             {item}
             <span className="text-accent mx-8">*</span>
@@ -33,7 +33,7 @@ export default function Marquee({ text, className = "" }: MarqueeProps) {
           <span
             key={`dup-${i}`}
             className="text-6xl md:text-8xl lg:text-9xl font-bold uppercase tracking-tight mx-8 text-foreground/[0.04]"
-            style={{ WebkitTextStroke: "1px rgba(232, 255, 71, 0.15)" }}
+            style={{ WebkitTextStroke: "1px rgba(201, 169, 110, 0.2)" }}
           >
             {item}
             <span className="text-accent mx-8">*</span>

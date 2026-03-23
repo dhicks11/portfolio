@@ -8,11 +8,13 @@ import Projects from "@/components/Projects";
 import Education from "@/components/Education";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import SideNav from "@/components/SideNav";
 
 export default function Home() {
   return (
     <>
       <Navbar />
+      <SideNav />
       <main>
         <Hero />
         <Marquee text="Software Engineer" />

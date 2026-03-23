@@ -35,72 +35,113 @@ export default function Projects() {
             viewport={{ once: true }}
             transition={{ delay: i * 0.1, duration: 0.6, ease: "easeOut" }}
           >
-            {project.liveUrl ? (
-              <a
-                href={project.liveUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block p-8 md:p-10"
-              >
-                <BentoCardContent project={project} />
-              </a>
-            ) : (
-              <div className="p-8 md:p-10">
-                <BentoCardContent project={project} />
+            <div className="p-8 md:p-10">
+              {/* Top row: badge + date + arrow */}
+              <div className="flex items-center justify-between mb-1">
+                <div className="flex items-center gap-3">
+                  {project.event && (
+                    <span className="px-3 py-1 text-[10px] font-semibold uppercase tracking-wider rounded-full bg-accent/10 text-accent border border-accent/20">
+                      {project.event}
+                    </span>
+                  )}
+                  <span className="text-xs text-muted font-mono">
+                    {project.date}
+                  </span>
+                </div>
+                <div className="w-10 h-10 rounded-full border border-card-border flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:border-accent group-hover:bg-accent/10">
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    className="text-accent"
+                  >
+                    <path d="M7 17l9.2-9.2M17 17V7H7" />
+                  </svg>
+                </div>
               </div>
-            )}
+
+              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold mt-4 mb-4 group-hover:text-accent transition-colors duration-300">
+                {project.name}
+              </h3>
+
+              {/* Project image if available */}
+              {"image" in project && project.image && (
+                <div className="mb-6 rounded-lg overflow-hidden border border-card-border">
+                  <img
+                    src={project.image}
+                    alt={project.name}
+                    className="w-full h-48 md:h-64 object-cover object-top"
+                  />
+                </div>
+              )}
+
+              <p className="text-muted leading-relaxed mb-6 max-w-2xl">
+                {project.bullets[0]}
+              </p>
+
+              {/* Tech tags */}
+              <div className="flex flex-wrap gap-2 mb-6">
+                {project.tech.map((t) => (
+                  <span
+                    key={t}
+                    className="px-3 py-1.5 text-xs rounded-full bg-surface border border-card-border text-muted"
+                  >
+                    {t}
+                  </span>
+                ))}
+              </div>
+
+              {/* Action links row */}
+              <div className="flex flex-wrap gap-3">
+                {"liveUrl" in project && project.liveUrl && (
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="live-link"
+                  >
+                    <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+                    Live Site
+                    <svg
+                      width="12"
+                      height="12"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    >
+                      <path d="M7 17l9.2-9.2M17 17V7H7" />
+                    </svg>
+                  </a>
+                )}
+                {"demoUrl" in project && project.demoUrl && (
+                  <a
+                    href={project.demoUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="live-link"
+                  >
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    >
+                      <polygon points="5 3 19 12 5 21 5 3" />
+                    </svg>
+                    Watch Demo
+                  </a>
+                )}
+              </div>
+            </div>
           </motion.div>
         ))}
       </div>
     </SectionWrapper>
-  );
-}
-
-function BentoCardContent({ project }: { project: (typeof projects)[number] }) {
-  return (
-    <>
-      {/* Hover arrow */}
-      <div className="absolute top-6 right-6 w-10 h-10 rounded-full border border-card-border flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:border-accent group-hover:bg-accent/10">
-        <svg
-          width="14"
-          height="14"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          className="text-accent"
-        >
-          <path d="M7 17l9.2-9.2M17 17V7H7" />
-        </svg>
-      </div>
-
-      <div className="flex items-center gap-3 mb-1">
-        {project.event && (
-          <span className="px-3 py-1 text-[10px] font-semibold uppercase tracking-wider rounded-full bg-accent/10 text-accent border border-accent/20">
-            {project.event}
-          </span>
-        )}
-        <span className="text-xs text-muted font-mono">{project.date}</span>
-      </div>
-
-      <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold mt-4 mb-4 group-hover:text-accent transition-colors duration-300">
-        {project.name}
-      </h3>
-
-      <p className="text-muted leading-relaxed mb-6 max-w-2xl">
-        {project.bullets[0]}
-      </p>
-
-      <div className="flex flex-wrap gap-2">
-        {project.tech.map((t) => (
-          <span
-            key={t}
-            className="px-3 py-1.5 text-xs rounded-full bg-surface border border-card-border text-muted"
-          >
-            {t}
-          </span>
-        ))}
-      </div>
-    </>
   );
 }
