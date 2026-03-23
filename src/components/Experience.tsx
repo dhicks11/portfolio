@@ -7,66 +7,74 @@ import { experience } from "@/data/resume";
 export default function Experience() {
   return (
     <SectionWrapper id="experience">
-      <h2 className="text-3xl md:text-4xl font-bold mb-12">
-        Work <span className="gradient-text">Experience</span>
+      <span className="section-label">Experience</span>
+      <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-16 leading-tight">
+        Where I&apos;ve
+        <br />
+        <span className="text-accent">worked</span>
       </h2>
 
-      <div className="relative">
-        {/* Timeline line */}
-        <div className="absolute left-0 md:left-8 top-0 bottom-0 w-px bg-card-border" />
+      <div className="space-y-0">
+        {experience.map((job, i) => (
+          <motion.div
+            key={job.company}
+            className="group border-t border-card-border py-8 md:py-10"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: i * 0.1, duration: 0.5 }}
+          >
+            <div className="grid md:grid-cols-[1fr_2fr] gap-6 md:gap-12">
+              <div>
+                <p className="text-sm text-muted mb-1">{job.dates}</p>
+                <p className="text-sm text-muted">{job.location}</p>
+              </div>
 
-        <div className="space-y-12">
-          {experience.map((job, i) => (
-            <motion.div
-              key={job.company}
-              className="relative pl-8 md:pl-20"
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.15, duration: 0.5 }}
-            >
-              {/* Timeline dot */}
-              <div className="absolute left-0 md:left-8 top-2 w-3 h-3 -translate-x-[6.5px] rounded-full bg-accent border-2 border-background" />
+              <div>
+                <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-4 mb-4">
+                  <h3 className="text-xl font-bold group-hover:text-accent transition-colors duration-300">
+                    {job.role}
+                  </h3>
+                  <span className="text-muted">—</span>
+                  <span className="text-muted">{job.company}</span>
+                </div>
 
-              <div className="card-glow p-6">
-                <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
-                  <h3 className="text-lg font-semibold">{job.company}</h3>
-                  <span className="text-sm text-muted">{job.dates}</span>
-                </div>
-                <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                  <p className="text-accent font-medium">{job.role}</p>
-                  <span className="text-sm text-muted">{job.location}</span>
-                </div>
                 {job.tech && (
-                  <p className="text-xs text-muted mb-3 font-mono">
+                  <p className="text-xs text-accent/70 font-mono mb-4 tracking-wide">
                     {job.tech}
                   </p>
                 )}
+
                 <ul className="space-y-2">
                   {job.bullets.map((bullet, bi) => (
                     <li
                       key={bi}
-                      className="text-sm text-muted leading-relaxed flex gap-2"
+                      className="text-muted leading-relaxed flex gap-3"
                     >
-                      <span className="text-accent mt-1 shrink-0">&#8250;</span>
+                      <span className="w-1.5 h-1.5 rounded-full bg-accent/50 mt-2 shrink-0" />
                       <span>{bullet}</span>
                     </li>
                   ))}
                 </ul>
+
                 {job.liveUrl && (
                   <a
                     href={job.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-block mt-3 text-sm text-accent hover:text-accent-light transition-colors"
+                    className="inline-flex items-center gap-2 mt-4 text-sm text-accent hover:underline"
                   >
-                    {job.liveUrl.replace("https://", "")} &rarr;
+                    {job.liveUrl.replace("https://", "")}
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M7 17l9.2-9.2M17 17V7H7" />
+                    </svg>
                   </a>
                 )}
               </div>
-            </motion.div>
-          ))}
-        </div>
+            </div>
+          </motion.div>
+        ))}
+        <div className="border-t border-card-border" />
       </div>
     </SectionWrapper>
   );

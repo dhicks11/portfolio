@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import Marquee from "@/components/Marquee";
 import About from "@/components/About";
 import Skills from "@/components/Skills";
 import Experience from "@/components/Experience";
@@ -14,10 +15,12 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
+        <Marquee text="Software Engineer" />
         <About />
         <Skills />
-        <Experience />
+        <Marquee text="Featured Work" />
         <Projects />
+        <Experience />
         <Education />
         <Contact />
       </main>

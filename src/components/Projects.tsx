@@ -7,61 +7,84 @@ import { projects } from "@/data/resume";
 export default function Projects() {
   return (
     <SectionWrapper id="projects">
-      <h2 className="text-3xl md:text-4xl font-bold mb-4">
-        Featured <span className="gradient-text">Projects</span>
-      </h2>
-      <p className="text-muted mb-12 max-w-2xl">
-        A selection of projects I&apos;ve built at hackathons and on my own time
-        — from AI-powered pitch platforms to surgical robot dashboards.
-      </p>
+      <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
+        <div>
+          <span className="section-label">Work</span>
+          <h2 className="text-4xl md:text-5xl font-bold mt-4 leading-tight">
+            Featured
+            <br />
+            <span className="text-accent">Projects</span>
+          </h2>
+        </div>
+        <p className="text-muted max-w-md text-lg">
+          A selection of projects built at hackathons and beyond — from
+          AI-powered platforms to surgical robot dashboards.
+        </p>
+      </div>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="space-y-6">
         {projects.map((project, i) => (
           <motion.div
             key={project.name}
-            className="card-glow p-6 flex flex-col"
-            initial={{ opacity: 0, y: 30 }}
+            className="noura-card p-8 md:p-10 group"
+            initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: i * 0.15, duration: 0.5 }}
+            transition={{ delay: i * 0.1, duration: 0.6, ease: "easeOut" }}
           >
-            {/* Header gradient bar */}
-            <div className="h-1 w-full rounded-full bg-gradient-to-r from-accent to-accent-light mb-5" />
+            <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
+              <div className="flex-1">
+                <div className="flex items-center gap-4 mb-4">
+                  <h3 className="text-2xl md:text-3xl font-bold group-hover:text-accent transition-colors duration-300">
+                    {project.name}
+                  </h3>
+                  {project.event && (
+                    <span className="px-3 py-1 text-xs font-medium rounded-full bg-accent/10 text-accent border border-accent/20">
+                      {project.event}
+                    </span>
+                  )}
+                </div>
 
-            <div className="flex items-start justify-between mb-3">
-              <h3 className="text-lg font-semibold">{project.name}</h3>
-              <span className="text-xs text-muted whitespace-nowrap ml-2">
-                {project.date}
-              </span>
-            </div>
+                <ul className="space-y-3 mb-6">
+                  {project.bullets.map((bullet, bi) => (
+                    <li
+                      key={bi}
+                      className="text-muted leading-relaxed flex gap-3"
+                    >
+                      <span className="text-accent mt-1.5 shrink-0 w-1.5 h-1.5 rounded-full bg-accent inline-block" />
+                      <span>{bullet}</span>
+                    </li>
+                  ))}
+                </ul>
 
-            {project.event && (
-              <span className="inline-block self-start px-3 py-1 text-xs rounded-full bg-accent/10 text-accent border border-accent/20 mb-4">
-                {project.event}
-              </span>
-            )}
+                <div className="flex flex-wrap gap-2">
+                  {project.tech.map((t) => (
+                    <span
+                      key={t}
+                      className="px-3 py-1.5 text-xs rounded-full bg-surface border border-card-border text-muted"
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
+              </div>
 
-            <ul className="space-y-2 mb-6 flex-1">
-              {project.bullets.map((bullet, bi) => (
-                <li
-                  key={bi}
-                  className="text-sm text-muted leading-relaxed flex gap-2"
-                >
-                  <span className="text-accent mt-1 shrink-0">&#8250;</span>
-                  <span>{bullet}</span>
-                </li>
-              ))}
-            </ul>
-
-            <div className="flex flex-wrap gap-2 mt-auto">
-              {project.tech.map((t) => (
-                <span
-                  key={t}
-                  className="px-2 py-1 text-xs rounded bg-background border border-card-border text-muted"
-                >
-                  {t}
-                </span>
-              ))}
+              <div className="shrink-0 flex items-center gap-3">
+                <span className="text-sm text-muted">{project.date}</span>
+                <div className="w-10 h-10 rounded-full border border-card-border flex items-center justify-center group-hover:border-accent group-hover:bg-accent/10 transition-all duration-300">
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    className="text-muted group-hover:text-accent transition-colors duration-300"
+                  >
+                    <path d="M7 17l9.2-9.2M17 17V7H7" />
+                  </svg>
+                </div>
+              </div>
             </div>
           </motion.div>
         ))}
