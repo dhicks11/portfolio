@@ -10,10 +10,9 @@ export const personalInfo = {
 };
 
 export const highlights = [
-  { label: "500+ Players", description: "on I Got Next platform" },
-  { label: "1st Place", description: "Hack NCAT Hackathon" },
-  { label: "UNCF Scholar", description: "1 of 50 nationwide" },
-  { label: "SAS Intern", description: "Incoming Summer 2026" },
+  { value: "1st", label: "Place Hackathon", glow: true },
+  { value: "3.6", label: "GPA at NC A&T" },
+  { value: "50", label: "UNCF Scholars" },
 ];
 
 export const skills = [
@@ -114,6 +113,17 @@ export const projects = [
       "Integrated OpenAI Whisper for live transcription and GPT-4o to auto-generate investor-ready pitch decks in under 60 seconds",
       "Wired Supabase (PostgreSQL + pgvector + Auth) supporting 2 user roles and shareable pitch deck export",
     ],
+    liveUrl: "https://pitchpadapp.vercel.app/",
+  },
+  {
+    name: "Aggie Aid",
+    event: "NC A&T",
+    date: "2026",
+    tech: ["Next.js", "React", "Tailwind CSS", "Vercel"],
+    bullets: [
+      "Developed a student resource platform for North Carolina A&T students to access campus tools and information",
+    ],
+    liveUrl: "https://aggie-aid.vercel.app/",
   },
   {
     name: "SurgiControl Robot Arm Dashboard",

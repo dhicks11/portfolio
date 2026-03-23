@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { personalInfo } from "@/data/resume";
+import { personalInfo, highlights } from "@/data/resume";
 
 const swapWords = ["Engineer", "Builder", "Creator", "Innovator"];
 
@@ -99,35 +99,39 @@ export default function Hero() {
           </button>
         </motion.div>
 
-        {/* Stats row */}
+        {/* Stats — Bold outlined typography */}
         <motion.div
-          className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-20 pt-10 border-t border-card-border"
+          className="grid grid-cols-3 gap-8 md:gap-12 mt-20 pt-10 border-t border-card-border"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.7, delay: 0.7 }}
         >
-          <div>
-            <p className="text-3xl md:text-4xl font-bold text-accent">500+</p>
-            <p className="text-sm text-muted mt-1">Active Users</p>
-          </div>
-          <div>
-            <p className="text-3xl md:text-4xl font-bold text-foreground">1st</p>
-            <p className="text-sm text-muted mt-1">Place Hackathon</p>
-          </div>
-          <div>
-            <p className="text-3xl md:text-4xl font-bold text-foreground">3.6</p>
-            <p className="text-sm text-muted mt-1">GPA at NC A&T</p>
-          </div>
-          <div>
-            <p className="text-3xl md:text-4xl font-bold text-foreground">50</p>
-            <p className="text-sm text-muted mt-1">UNCF Scholars</p>
-          </div>
+          {highlights.map((stat, i) => (
+            <motion.div
+              key={stat.label}
+              className="relative text-center"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.8 + i * 0.1, duration: 0.5 }}
+            >
+              {stat.glow && (
+                <div
+                  className="absolute inset-0 opacity-20 blur-[60px] rounded-full pointer-events-none"
+                  style={{ background: "radial-gradient(circle, var(--color-accent), transparent)" }}
+                />
+              )}
+              <p className="stat-number relative z-10">{stat.value}</p>
+              <p className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-muted mt-2 font-medium">
+                {stat.label}
+              </p>
+            </motion.div>
+          ))}
         </motion.div>
       </div>
 
-      {/* Scroll indicator */}
+      {/* Scroll indicator — moved to right side */}
       <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        className="absolute bottom-8 right-8 md:right-12 lg:right-24"
         animate={{ y: [0, 8, 0] }}
         transition={{ repeat: Infinity, duration: 2 }}
       >
