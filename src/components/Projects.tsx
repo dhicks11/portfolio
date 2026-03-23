@@ -68,7 +68,7 @@ export default function Projects() {
               </h3>
 
               {/* Project image if available */}
-              {"image" in project && project.image && (
+              {project.image && (
                 <div className="mb-6 rounded-lg overflow-hidden border border-card-border">
                   <img
                     src={project.image}
@@ -96,7 +96,7 @@ export default function Projects() {
 
               {/* Action links row */}
               <div className="flex flex-wrap gap-3">
-                {"liveUrl" in project && project.liveUrl && (
+                {project.liveUrl && (
                   <a
                     href={project.liveUrl}
                     target="_blank"
@@ -117,7 +117,7 @@ export default function Projects() {
                     </svg>
                   </a>
                 )}
-                {"demoUrl" in project && project.demoUrl && (
+                {project.demoUrl && (
                   <a
                     href={project.demoUrl}
                     target="_blank"

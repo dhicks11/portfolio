@@ -93,7 +93,18 @@ export const experience = [
   },
 ];
 
-export const projects = [
+interface Project {
+  name: string;
+  event: string;
+  date: string;
+  tech: string[];
+  bullets: string[];
+  liveUrl?: string;
+  demoUrl?: string;
+  image?: string;
+}
+
+export const projects: Project[] = [
   {
     name: "PitchPad",
     event: "1st Place, Hack NCAT",
@@ -134,8 +145,7 @@ export const projects = [
       "Built a real-time 3D surgical robot arm dashboard for Johnson & Johnson enabling users to save and replay precise arm positions",
       "Engineered CSV export to log exact arm placement coordinates, enabling data-driven motion pattern analysis",
     ],
-    image: "/surgicontrol.png",
-    demoUrl: "/surgicontrol-demo.mp4",
+    demoUrl: "https://youtu.be/YxTLcg7js5w",
   },
   {
     name: "Lincoln Financial AI Assistant",
