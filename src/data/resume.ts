@@ -145,6 +145,7 @@ export const projects: Project[] = [
     date: "2026",
     tech: ["Python", "Streamlit", "Plotly", "Pandas", "Three.js"],
     bullets: [
+      "Sole developer on a 4-person team — designed, architected, and built the entire technical solution end-to-end while teammates focused on research and presentation",
       "Built a real-time 3D surgical robot arm dashboard for Johnson & Johnson enabling users to save and replay precise arm positions",
       "Engineered CSV export to log exact arm placement coordinates, enabling data-driven motion pattern analysis",
     ],
