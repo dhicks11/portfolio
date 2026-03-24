@@ -152,6 +152,18 @@ export const projects: Project[] = [
     demoUrl: "https://youtu.be/YxTLcg7js5w",
   },
   {
+    name: "I Got Next",
+    event: "Personal Project",
+    date: "Jan. 2026 – Present",
+    tech: ["Next.js", "TypeScript", "React", "Firebase", "Stripe", "Google Maps API"],
+    bullets: [
+      "Launched a full-stack pickup basketball platform growing from 0 to 500+ active players and 120 courts mapped across 3 cities within 8 weeks",
+      "Engineered Stripe Checkout + webhook pipeline for a $5.99/mo Pro tier with 4 gated features; extracted payment sync into a shared React hook",
+      "Refactored 31-file codebase to feature-based architecture — centralized constants, unified service modules, and enforced Next.js App Router boundaries",
+    ],
+    liveUrl: "https://igotnextapp.vercel.app",
+  },
+  {
     name: "Lincoln Financial AI Assistant",
     event: "codeLinc10 Hackathon",
     date: "Oct. 2025",
