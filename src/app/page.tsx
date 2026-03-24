@@ -1,4 +1,3 @@
-import LaunchBanner from "@/components/LaunchBanner";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Marquee from "@/components/Marquee";
@@ -15,7 +14,6 @@ import SideNav from "@/components/SideNav";
 export default function Home() {
   return (
     <>
-      <LaunchBanner />
       <Navbar />
       <SideNav />
       <main id="main-content">
