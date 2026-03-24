@@ -20,7 +20,7 @@ export async function sendContactEmail(form: ContactForm) {
 
   try {
     const { error } = await resend.emails.send({
-      from: "Portfolio Contact <onboarding@resend.dev>",
+      from: "Portfolio Contact <contact@daylenhicks.com>",
       to: "daylenhicks10@gmail.com",
       replyTo: email,
       subject: `[Portfolio] ${subject} — from ${name}`,
