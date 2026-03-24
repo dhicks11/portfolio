@@ -67,6 +67,12 @@ body {
   animation: marquee 20s linear infinite;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation: none;
+  }
+}
+
 /* Headline swap animation */
 @keyframes swap-in {
   0% {

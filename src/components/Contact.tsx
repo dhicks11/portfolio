@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import SectionWrapper from "./SectionWrapper";
 import { personalInfo } from "@/data/resume";
+import { sendContactEmail } from "@/app/actions/contact";
 
 const subjects = [
   { value: "", label: "Select a subject" },
@@ -21,7 +22,10 @@ export default function Contact() {
     subject: "",
     message: "",
   });
-  const [status, setStatus] = useState<"idle" | "sending" | "sent">("idle");
+  const [status, setStatus] = useState<
+    "idle" | "sending" | "sent" | "error"
+  >("idle");
+  const [errorMsg, setErrorMsg] = useState("");
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -31,23 +35,22 @@ export default function Contact() {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("sending");
+    setErrorMsg("");
 
-    const subject = encodeURIComponent(
-      `[Portfolio] ${form.subject || "Inquiry"} — from ${form.name}`
-    );
-    const body = encodeURIComponent(
-      `Name: ${form.name}\nEmail: ${form.email}\nSubject: ${form.subject}\n\n${form.message}`
-    );
+    const result = await sendContactEmail(form);
 
-    window.location.href = `mailto:${personalInfo.email}?subject=${subject}&body=${body}`;
-
-    setTimeout(() => {
+    if (result.success) {
       setStatus("sent");
-      setTimeout(() => setStatus("idle"), 3000);
-    }, 500);
+      setForm({ name: "", email: "", subject: "", message: "" });
+      setTimeout(() => setStatus("idle"), 4000);
+    } else {
+      setStatus("error");
+      setErrorMsg(result.error || "Something went wrong.");
+      setTimeout(() => setStatus("idle"), 4000);
+    }
   };
 
   return (
@@ -158,41 +161,56 @@ export default function Contact() {
             />
           </div>
 
-          <button
-            type="submit"
-            disabled={status === "sending"}
-            className="btn-pill btn-primary w-full sm:w-auto justify-center"
-          >
-            {status === "sent" ? (
-              <>
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                >
-                  <path d="M20 6L9 17l-5-5" />
-                </svg>
-                Message Ready
-              </>
-            ) : (
-              <>
-                Send Message
-                <svg
-                  width="14"
-                  height="14"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                >
-                  <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
-                </svg>
-              </>
-            )}
-          </button>
+          <div className="flex items-center gap-4">
+            <button
+              type="submit"
+              disabled={status === "sending"}
+              className="btn-pill btn-primary justify-center disabled:opacity-50"
+            >
+              {status === "sending" ? (
+                "Sending..."
+              ) : status === "sent" ? (
+                <>
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  >
+                    <path d="M20 6L9 17l-5-5" />
+                  </svg>
+                  Sent!
+                </>
+              ) : (
+                <>
+                  Send Message
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  >
+                    <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
+                  </svg>
+                </>
+              )}
+            </button>
+
+            <div aria-live="polite" className="text-sm">
+              {status === "sent" && (
+                <span className="text-green-400">
+                  Message sent successfully!
+                </span>
+              )}
+              {status === "error" && (
+                <span className="text-red-400">{errorMsg}</span>
+              )}
+            </div>
+          </div>
         </motion.form>
 
         {/* Sidebar info */}
@@ -254,8 +272,19 @@ export default function Contact() {
           </div>
 
           <div className="bento-card p-8">
-            <h3 className="text-lg font-semibold mb-2">Based in</h3>
-            <p className="text-muted">Greensboro, NC</p>
+            <h3 className="text-lg font-semibold mb-3">Based in</h3>
+            <div className="space-y-2 text-sm">
+              <div className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-accent" />
+                <span className="text-foreground">Greensboro, NC</span>
+                <span className="text-muted">— school year</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-accent/50" />
+                <span className="text-foreground">Cary & Henrico, NC</span>
+                <span className="text-muted">— summer</span>
+              </div>
+            </div>
           </div>
         </motion.div>
       </div>

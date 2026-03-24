@@ -81,9 +81,11 @@ export default function Projects() {
                 </div>
               )}
 
-              <p className="text-muted leading-relaxed mb-6 max-w-2xl">
-                {project.bullets[0]}
-              </p>
+              <div className="text-muted leading-relaxed mb-6 max-w-2xl space-y-2">
+                {project.bullets.map((bullet, j) => (
+                  <p key={j}>{bullet}</p>
+                ))}
+              </div>
 
               {/* Tech tags */}
               <div className="flex flex-wrap gap-2 mb-6">

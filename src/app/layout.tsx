@@ -14,6 +14,14 @@ export const metadata: Metadata = {
     siteName: "Daylen Hicks",
     type: "website",
     locale: "en_US",
+    images: [
+      {
+        url: "/og-image.svg",
+        width: 1200,
+        height: 630,
+        alt: "Daylen Hicks — Software Engineer & AI Developer",
+      },
+    ],
   },
   robots: {
     index: true,
