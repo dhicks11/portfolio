@@ -129,16 +129,6 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* Scroll indicator — moved to right side */}
-      <motion.div
-        className="absolute bottom-8 right-8 md:right-12 lg:right-24"
-        animate={{ y: [0, 8, 0] }}
-        transition={{ repeat: Infinity, duration: 2 }}
-      >
-        <div className="w-5 h-8 rounded-full border border-muted/30 flex justify-center pt-1.5">
-          <div className="w-0.5 h-1.5 rounded-full bg-accent" />
-        </div>
-      </motion.div>
     </section>
   );
 }
