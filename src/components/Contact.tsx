@@ -40,15 +40,21 @@ export default function Contact() {
     setStatus("sending");
     setErrorMsg("");
 
-    const result = await sendContactEmail(form);
+    try {
+      const result = await sendContactEmail(form);
 
-    if (result.success) {
-      setStatus("sent");
-      setForm({ name: "", email: "", subject: "", message: "" });
-      setTimeout(() => setStatus("idle"), 4000);
-    } else {
+      if (result.success) {
+        setStatus("sent");
+        setForm({ name: "", email: "", subject: "", message: "" });
+        setTimeout(() => setStatus("idle"), 4000);
+      } else {
+        setStatus("error");
+        setErrorMsg(result.error || "Something went wrong.");
+        setTimeout(() => setStatus("idle"), 4000);
+      }
+    } catch {
       setStatus("error");
-      setErrorMsg(result.error || "Something went wrong.");
+      setErrorMsg("Something went wrong. Please try again.");
       setTimeout(() => setStatus("idle"), 4000);
     }
   };

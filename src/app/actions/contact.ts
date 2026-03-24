@@ -19,7 +19,7 @@ export async function sendContactEmail(form: ContactForm) {
   }
 
   try {
-    await resend.emails.send({
+    const { error } = await resend.emails.send({
       from: "Portfolio Contact <onboarding@resend.dev>",
       to: "daylenhicks10@gmail.com",
       replyTo: email,
@@ -27,8 +27,14 @@ export async function sendContactEmail(form: ContactForm) {
       text: `Name: ${name}\nEmail: ${email}\nSubject: ${subject}\n\n${message}`,
     });
 
+    if (error) {
+      console.error("Resend error:", error);
+      return { success: false, error: "Failed to send message. Please try again." };
+    }
+
     return { success: true };
-  } catch {
+  } catch (err) {
+    console.error("Contact form error:", err);
     return { success: false, error: "Failed to send message. Please try again." };
   }
 }
