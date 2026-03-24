@@ -12,7 +12,7 @@ export const personalInfo = {
 export const highlights = [
   { value: "1st", label: "Place Hackathon", glow: true },
   { value: "3.6", label: "GPA at NC A&T" },
-  { value: "500+", label: "Active Users" },
+  { value: "2x", label: "Hackathon Winner" },
 ];
 
 export const skills = [
