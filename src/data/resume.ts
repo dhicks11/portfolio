@@ -125,6 +125,7 @@ export const projects: Project[] = [
       "Wired Supabase (PostgreSQL + pgvector + Auth) supporting 2 user roles and shareable pitch deck export",
     ],
     liveUrl: "https://pitchpadapp.vercel.app/",
+    image: "/projects/pitchpad.svg",
   },
   {
     name: "Aggie Aid",
@@ -135,6 +136,7 @@ export const projects: Project[] = [
       "Developed a student resource platform for North Carolina A&T students to access campus tools and information",
     ],
     liveUrl: "https://aggie-aid.vercel.app/",
+    image: "/projects/aggie-aid.svg",
   },
   {
     name: "SurgiControl Robot Arm Dashboard",
@@ -146,6 +148,7 @@ export const projects: Project[] = [
       "Engineered CSV export to log exact arm placement coordinates, enabling data-driven motion pattern analysis",
     ],
     demoUrl: "https://youtu.be/YxTLcg7js5w",
+    image: "/projects/surgicontrol.svg",
   },
   {
     name: "Lincoln Financial AI Assistant",
@@ -157,6 +160,7 @@ export const projects: Project[] = [
       "Shaped a questionnaire-driven recommendation engine for personalized retirement/insurance plans and presented to Lincoln Financial stakeholders",
     ],
     demoUrl: "https://youtube.com/shorts/jMv8xxquJP0?si=ljupji8MhAChGCKN",
+    image: "/projects/lincoln-financial.svg",
   },
 ];
 
