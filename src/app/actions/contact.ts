@@ -20,7 +20,7 @@ export async function sendContactEmail(form: ContactForm) {
 
   try {
     const { error } = await resend.emails.send({
-      from: "Portfolio Contact <contact@daylenhicks.com>",
+      from: "Portfolio Contact <onboarding@resend.dev>",
       to: "daylenhicks10@gmail.com",
       replyTo: email,
       subject: `[Portfolio] ${subject} — from ${name}`,
@@ -28,7 +28,7 @@ export async function sendContactEmail(form: ContactForm) {
     });
 
     if (error) {
-      console.error("Resend error:", error);
+      console.error("Resend error:", error.name, error.message);
       return { success: false, error: "Failed to send message. Please try again." };
     }
 
