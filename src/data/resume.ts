@@ -83,13 +83,16 @@ export const experience = [
   },
   {
     company: "Northampton County Schools",
-    role: "Tech Leader & FRC Team Captain",
+    role: "Founder & FRC Team Captain — RoboJags",
     location: "Gaston, NC",
     dates: "Aug. 2024 – May 2025",
     bullets: [
-      "Led a 10+ member robotics team engineering autonomous robots in Python, earning two Rookie All-Star awards and qualifying for the World Championship",
+      "Chartered the school's inaugural FIRST Robotics Competition team (RoboJags), recruiting and captaining 10+ members through a full competition season",
+      "Won two Rookie All-Star awards, advanced to the state championship, and qualified for the FRC World Championship in Houston, TX",
+      "Secured a NASA robotics grant and an NC A&T sponsorship to fund team operations, equipment, and travel",
       "Developed a peer-mentoring program adopted by 25+ students that increased coursework proficiency by 40%",
     ],
+    articleUrl: "https://www.roanoke-chowannewsherald.com/news/northamptons-robojags-team-competes-in-world-championship-203047",
   },
 ];
 
@@ -178,9 +181,10 @@ export const education = [
   },
   {
     school: "Halifax Community College",
-    degree: "A.A. & A.S. (Concurrent with High School Diploma)",
+    degree: "Associate in Arts & Associate in Science",
     dates: "Aug. 2021 – May 2025",
     location: "Weldon, NC",
+    highlight: "Earned both A.A. and A.S. degrees concurrently while completing high school — dual enrollment across the full four years.",
   },
 ];
 
@@ -190,6 +194,7 @@ export const activities = [
   "College of Engineering Scholar",
   "Aggie Merit Scholar",
   "Hack NCAT 1st Place",
+  "FRC World Championship Qualifier (Houston 2025)",
   "NSBE",
   "ACM",
   "codeLinc10",

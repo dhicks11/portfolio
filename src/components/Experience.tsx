@@ -95,6 +95,20 @@ export default function Experience() {
                   </svg>
                 </a>
               )}
+
+              {job.articleUrl && (
+                <a
+                  href={job.articleUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 mt-5 text-sm text-accent hover:underline"
+                >
+                  Read the news article
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M7 17l9.2-9.2M17 17V7H7" />
+                  </svg>
+                </a>
+              )}
             </motion.div>
           ))}
         </div>

@@ -81,6 +81,11 @@ export default function Education() {
               <span>{school.dates}</span>
               <span>{school.location}</span>
             </div>
+            {school.highlight && (
+              <p className="text-muted text-sm mt-4 leading-relaxed">
+                {school.highlight}
+              </p>
+            )}
             {school.gpa && (
               <div className="mt-4 pt-4 border-t border-card-border">
                 <span className="text-sm text-muted">GPA: </span>
