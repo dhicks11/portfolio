@@ -15,7 +15,7 @@ export default function Home() {
     <>
       <Navbar />
       <SideNav />
-      <main>
+      <main id="main-content">
         <Hero />
         <Marquee text="Software Engineer" />
         <About />

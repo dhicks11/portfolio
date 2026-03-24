@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import SectionWrapper from "./SectionWrapper";
 import { projects } from "@/data/resume";
@@ -69,11 +70,13 @@ export default function Projects() {
 
               {/* Project image if available */}
               {project.image && (
-                <div className="mb-6 rounded-lg overflow-hidden border border-card-border">
-                  <img
+                <div className="relative mb-6 rounded-lg overflow-hidden border border-card-border h-48 md:h-64">
+                  <Image
                     src={project.image}
                     alt={project.name}
-                    className="w-full h-48 md:h-64 object-cover object-top"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover object-top"
                   />
                 </div>
               )}
