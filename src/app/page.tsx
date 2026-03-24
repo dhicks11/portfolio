@@ -6,6 +6,7 @@ import Skills from "@/components/Skills";
 import Experience from "@/components/Experience";
 import Projects from "@/components/Projects";
 import Education from "@/components/Education";
+import Community from "@/components/Community";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import SideNav from "@/components/SideNav";
@@ -24,6 +25,7 @@ export default function Home() {
         <Projects />
         <Experience />
         <Education />
+        <Community />
         <Contact />
       </main>
       <Footer />
