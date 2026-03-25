@@ -55,6 +55,8 @@ export default function Scheduler() {
   const [form, setForm] = useState({ name: "", email: "", note: "" });
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
+  const [calendarUrl, setCalendarUrl] = useState<string | null>(null);
+  const [calendarEventCreated, setCalendarEventCreated] = useState(false);
 
   const calendarDays = useMemo(() => {
     const daysInMonth = getDaysInMonth(currentYear, currentMonth);
@@ -181,6 +183,8 @@ export default function Scheduler() {
 
       if (result.success) {
         setStatus("sent");
+        if ("calendarUrl" in result) setCalendarUrl(result.calendarUrl as string);
+        if ("calendarEventCreated" in result) setCalendarEventCreated(result.calendarEventCreated as boolean);
       } else {
         setStatus("error");
         setErrorMsg(result.error || "Something went wrong.");
@@ -198,6 +202,8 @@ export default function Scheduler() {
     setSelectedTime(null);
     setForm({ name: "", email: "", note: "" });
     setStatus("idle");
+    setCalendarUrl(null);
+    setCalendarEventCreated(false);
   };
 
   // Step tracking
@@ -269,9 +275,17 @@ export default function Scheduler() {
                 <span className="text-foreground">{selectedTime}</span> via email.
               </p>
             </div>
+            {calendarEventCreated && (
+              <p className="text-green-400 text-sm flex items-center justify-center gap-2">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M20 6L9 17l-5-5" />
+                </svg>
+                Google Calendar event created automatically
+              </p>
+            )}
             <div className="flex flex-col sm:flex-row items-center gap-3">
               <a
-                href={getGoogleCalendarUrl()}
+                href={calendarUrl || getGoogleCalendarUrl()}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-pill btn-primary text-sm"
