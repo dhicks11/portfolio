@@ -14,6 +14,7 @@ import {
   createCalendarEvent,
   buildGoogleCalendarUrl,
 } from "@/lib/google-calendar";
+import { captureError } from "@/lib/sentry";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 const RECIPIENT = process.env.CONTACT_EMAIL || "daylenhicks10@gmail.com";
@@ -47,7 +48,7 @@ function parseTime(timeStr: string): { hour: number; min: number } {
 
 export async function sendBookingEmail(form: BookingForm) {
   // Rate limit by sender email (3 bookings per minute)
-  const rateCheck = checkRateLimit(`booking:${form.email}`, 3, 60_000);
+  const rateCheck = await checkRateLimit("booking", form.email);
   if (!rateCheck.allowed) {
     return { success: false, error: "Too many requests. Please wait a moment." };
   }
@@ -138,7 +139,7 @@ export async function sendBookingEmail(form: BookingForm) {
     });
 
     if (error) {
-      console.error("Resend error:", error.name, error.message);
+      captureError(new Error(error.message), { source: "booking", type: error.name });
       return { success: false, error: "Failed to send booking request." };
     }
 
@@ -148,7 +149,7 @@ export async function sendBookingEmail(form: BookingForm) {
       calendarEventCreated: calendarResult.success,
     };
   } catch (err) {
-    console.error("Booking error:", err);
+    captureError(err, { source: "booking" });
     return { success: false, error: "Failed to send booking request." };
   }
 }

@@ -128,6 +128,7 @@ export default function Contact() {
                 value={form.name}
                 onChange={handleChange}
                 placeholder="Your name"
+                aria-describedby="contact-status"
                 className="w-full bg-background border border-card-border rounded-lg px-4 py-3 text-foreground placeholder:text-muted/50 focus:outline-none focus:border-accent transition-colors"
               />
             </div>
@@ -146,6 +147,7 @@ export default function Contact() {
                 value={form.email}
                 onChange={handleChange}
                 placeholder="you@example.com"
+                aria-describedby="contact-status"
                 className="w-full bg-background border border-card-border rounded-lg px-4 py-3 text-foreground placeholder:text-muted/50 focus:outline-none focus:border-accent transition-colors"
               />
             </div>
@@ -164,6 +166,7 @@ export default function Contact() {
               required
               value={form.subject}
               onChange={handleChange}
+              aria-describedby="contact-status"
               className="w-full bg-background border border-card-border rounded-lg px-4 py-3 text-foreground focus:outline-none focus:border-accent transition-colors appearance-none"
             >
               {subjects.map((s) => (
@@ -189,6 +192,7 @@ export default function Contact() {
               value={form.message}
               onChange={handleChange}
               placeholder="Tell me about your project, opportunity, or question..."
+              aria-describedby="contact-status"
               className="w-full bg-background border border-card-border rounded-lg px-4 py-3 text-foreground placeholder:text-muted/50 focus:outline-none focus:border-accent transition-colors resize-none"
             />
           </div>
@@ -232,7 +236,7 @@ export default function Contact() {
               )}
             </button>
 
-            <div aria-live="polite" className="text-sm">
+            <div id="contact-status" aria-live="polite" className="text-sm">
               {status === "sent" && (
                 <span className="text-green-400">
                   Message sent successfully!

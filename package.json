@@ -6,9 +6,14 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "audit": "npm audit --omit=dev",
+    "audit:fix": "npm audit fix --omit=dev"
   },
   "dependencies": {
+    "@sentry/nextjs": "^10.46.0",
+    "@upstash/ratelimit": "^2.0.8",
+    "@upstash/redis": "^1.37.0",
     "framer-motion": "^12.38.0",
     "googleapis": "^171.4.0",
     "next": "16.2.1",

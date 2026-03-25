@@ -58,6 +58,8 @@ export default function Scheduler() {
   const [calendarUrl, setCalendarUrl] = useState<string | null>(null);
   const [calendarEventCreated, setCalendarEventCreated] = useState(false);
 
+  const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
   const calendarDays = useMemo(() => {
     const daysInMonth = getDaysInMonth(currentYear, currentMonth);
     const firstDay = getFirstDayOfMonth(currentYear, currentMonth);
@@ -272,7 +274,8 @@ export default function Scheduler() {
                 I&apos;ll confirm your{" "}
                 <span className="text-foreground">{selectedMeetingType?.label}</span> on{" "}
                 <span className="text-foreground">{formatSelectedDate()}</span> at{" "}
-                <span className="text-foreground">{selectedTime}</span> via email.
+                <span className="text-foreground">{selectedTime}</span>{" "}
+                <span className="text-muted text-sm">({timezone})</span> via email.
               </p>
             </div>
             {calendarEventCreated && (
@@ -464,6 +467,8 @@ export default function Scheduler() {
                         placeholder="Your name"
                         value={form.name}
                         onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
+                        aria-label="Your name"
+                        aria-describedby="booking-status"
                         className="w-full bg-background border border-card-border rounded-lg px-4 py-3 text-sm text-foreground placeholder:text-muted/50 focus:outline-none focus:border-accent transition-colors"
                       />
                       <input
@@ -471,6 +476,8 @@ export default function Scheduler() {
                         placeholder="you@example.com"
                         value={form.email}
                         onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
+                        aria-label="Your email"
+                        aria-describedby="booking-status"
                         className="w-full bg-background border border-card-border rounded-lg px-4 py-3 text-sm text-foreground placeholder:text-muted/50 focus:outline-none focus:border-accent transition-colors"
                       />
                     </div>
@@ -506,6 +513,10 @@ export default function Scheduler() {
                         <span className="text-muted">Time</span>
                         <span className="font-medium font-mono text-xs">{selectedTime}</span>
                       </div>
+                      <div className="flex justify-between">
+                        <span className="text-muted">Timezone</span>
+                        <span className="font-medium font-mono text-xs">{timezone}</span>
+                      </div>
                     </div>
 
                     <div className="flex items-center gap-4">
@@ -528,9 +539,11 @@ export default function Scheduler() {
                           </>
                         )}
                       </button>
-                      {status === "error" && (
-                        <span className="text-red-400 text-sm">{errorMsg}</span>
-                      )}
+                      <div id="booking-status" aria-live="polite">
+                        {status === "error" && (
+                          <span className="text-red-400 text-sm">{errorMsg}</span>
+                        )}
+                      </div>
                     </div>
                   </motion.div>
                 )}

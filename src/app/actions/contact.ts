@@ -8,6 +8,7 @@ import {
   validateMessage,
   checkRateLimit,
 } from "@/lib/validation";
+import { captureError } from "@/lib/sentry";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 const RECIPIENT = process.env.CONTACT_EMAIL || "daylenhicks10@gmail.com";
@@ -21,7 +22,7 @@ interface ContactForm {
 
 export async function sendContactEmail(form: ContactForm) {
   // Rate limit by sender email (5 requests per minute)
-  const rateCheck = checkRateLimit(`contact:${form.email}`, 5, 60_000);
+  const rateCheck = await checkRateLimit("contact", form.email);
   if (!rateCheck.allowed) {
     return { success: false, error: "Too many requests. Please wait a moment." };
   }
@@ -49,13 +50,13 @@ export async function sendContactEmail(form: ContactForm) {
     });
 
     if (error) {
-      console.error("Resend error:", error.name, error.message);
+      captureError(new Error(error.message), { source: "contact", type: error.name });
       return { success: false, error: "Failed to send message. Please try again." };
     }
 
     return { success: true };
   } catch (err) {
-    console.error("Contact form error:", err);
+    captureError(err, { source: "contact" });
     return { success: false, error: "Failed to send message. Please try again." };
   }
 }

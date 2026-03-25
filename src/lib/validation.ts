@@ -1,6 +1,12 @@
 /**
  * Shared input validation & sanitization for server actions.
+ *
+ * Rate limiting: Uses Upstash Redis when UPSTASH_REDIS_REST_URL is set,
+ * otherwise falls back to in-memory (single-instance only).
  */
+
+import { Ratelimit } from "@upstash/ratelimit";
+import { Redis } from "@upstash/redis";
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const MAX_NAME_LENGTH = 100;
@@ -89,29 +95,60 @@ export function validateBookingDate(raw: string): { valid: boolean; value: strin
   return { valid: true, value, date: parsed };
 }
 
-/**
- * Simple in-memory rate limiter.
- * In production, replace with Redis-based rate limiting.
- */
-const rateLimitMap = new Map<string, { count: number; resetAt: number }>();
+// ---------------------------------------------------------------------------
+// Rate limiting — Upstash Redis (production) or in-memory (dev/fallback)
+// ---------------------------------------------------------------------------
 
-export function checkRateLimit(
-  key: string,
-  maxRequests = 5,
-  windowMs = 60_000
-): { allowed: boolean; retryAfterMs?: number } {
+let ratelimitContact: Ratelimit | null = null;
+let ratelimitBooking: Ratelimit | null = null;
+
+if (process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN) {
+  const redis = new Redis({
+    url: process.env.UPSTASH_REDIS_REST_URL,
+    token: process.env.UPSTASH_REDIS_REST_TOKEN,
+  });
+
+  ratelimitContact = new Ratelimit({
+    redis,
+    limiter: Ratelimit.slidingWindow(5, "60 s"),
+    prefix: "rl:contact",
+  });
+
+  ratelimitBooking = new Ratelimit({
+    redis,
+    limiter: Ratelimit.slidingWindow(3, "60 s"),
+    prefix: "rl:booking",
+  });
+}
+
+// In-memory fallback for dev / single-instance
+const memoryMap = new Map<string, { count: number; resetAt: number }>();
+
+function memoryRateLimit(key: string, max: number, windowMs: number): boolean {
   const now = Date.now();
-  const entry = rateLimitMap.get(key);
+  const entry = memoryMap.get(key);
 
   if (!entry || now > entry.resetAt) {
-    rateLimitMap.set(key, { count: 1, resetAt: now + windowMs });
-    return { allowed: true };
+    memoryMap.set(key, { count: 1, resetAt: now + windowMs });
+    return true;
   }
-
-  if (entry.count >= maxRequests) {
-    return { allowed: false, retryAfterMs: entry.resetAt - now };
-  }
-
+  if (entry.count >= max) return false;
   entry.count++;
-  return { allowed: true };
+  return true;
+}
+
+export async function checkRateLimit(
+  type: "contact" | "booking",
+  identifier: string
+): Promise<{ allowed: boolean }> {
+  // Use Upstash if configured
+  const limiter = type === "contact" ? ratelimitContact : ratelimitBooking;
+  if (limiter) {
+    const result = await limiter.limit(identifier);
+    return { allowed: result.success };
+  }
+
+  // In-memory fallback
+  const max = type === "contact" ? 5 : 3;
+  return { allowed: memoryRateLimit(`${type}:${identifier}`, max, 60_000) };
 }
