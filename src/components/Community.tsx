@@ -3,6 +3,15 @@
 import { motion } from "framer-motion";
 import SectionWrapper from "./SectionWrapper";
 
+const volunteerWork = [
+  {
+    organization: "First Presbyterian Church",
+    activity: "Packing plates for the homeless and less fortunate",
+    hours: 2,
+    date: "Mar. 2026",
+  },
+];
+
 const services = [
   {
     icon: (
@@ -99,6 +108,52 @@ export default function Community() {
           </motion.div>
         ))}
       </div>
+
+      {/* Volunteer Service Log */}
+      <motion.div
+        className="mt-16"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.3, duration: 0.6, ease: "easeOut" }}
+      >
+        <h3 className="text-2xl font-bold mb-6">
+          Community Service
+        </h3>
+        <div className="space-y-4">
+          {volunteerWork.map((item) => (
+            <div
+              key={`${item.organization}-${item.date}`}
+              className="bento-card p-6 md:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4"
+            >
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center text-accent shrink-0">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                  >
+                    <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" />
+                  </svg>
+                </div>
+                <div>
+                  <p className="font-semibold text-lg">{item.organization}</p>
+                  <p className="text-muted">{item.activity}</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-4 text-sm text-muted md:text-right">
+                <span className="bg-accent/10 text-accent px-3 py-1 rounded-full font-medium">
+                  {item.hours} hrs
+                </span>
+                <span>{item.date}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </motion.div>
 
       <motion.div
         className="mt-10 text-center"
