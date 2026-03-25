@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import SectionWrapper from "./SectionWrapper";
 import { personalInfo } from "@/data/resume";
 import { sendContactEmail } from "@/app/actions/contact";
+import Scheduler from "./Scheduler";
 
 const subjects = [
   { value: "", label: "Select a subject" },
@@ -26,6 +27,7 @@ export default function Contact() {
     "idle" | "sending" | "sent" | "error"
   >("idle");
   const [errorMsg, setErrorMsg] = useState("");
+  const [activeTab, setActiveTab] = useState<"message" | "schedule">("message");
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -72,10 +74,34 @@ export default function Contact() {
         </div>
         <p className="text-muted max-w-md text-lg">
           I&apos;m always open to new opportunities, collaborations, and
-          conversations. Fill out the form and I&apos;ll get back to you.
+          conversations. Send a message or book a time to chat.
         </p>
       </div>
 
+      {/* Tab switcher */}
+      <div className="flex gap-2 mb-8">
+        {[
+          { key: "message" as const, label: "Send Message", icon: "M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" },
+          { key: "schedule" as const, label: "Schedule Meeting", icon: "M3 4h18a2 2 0 012 2v14a2 2 0 01-2 2H3a2 2 0 01-2-2V6a2 2 0 012-2zM16 2v4M8 2v4M1 10h22" },
+        ].map((tab) => (
+          <button
+            key={tab.key}
+            onClick={() => setActiveTab(tab.key)}
+            className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium transition-all ${
+              activeTab === tab.key
+                ? "bg-accent text-background"
+                : "border border-card-border text-muted hover:text-foreground hover:border-muted"
+            }`}
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d={tab.icon} />
+            </svg>
+            {tab.label}
+          </button>
+        ))}
+      </div>
+
+      {activeTab === "message" ? (
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
         {/* Form */}
         <motion.form
@@ -294,6 +320,15 @@ export default function Contact() {
           </div>
         </motion.div>
       </div>
+      ) : (
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <Scheduler />
+        </motion.div>
+      )}
     </SectionWrapper>
   );
 }
