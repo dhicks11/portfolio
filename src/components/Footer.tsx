@@ -74,6 +74,14 @@ export default function Footer() {
               >
                 LinkedIn
               </a>
+              <a
+                href="https://calendly.com/daylenhicks10"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-muted hover:text-accent transition-colors duration-300"
+              >
+                Schedule a Meeting
+              </a>
             </div>
           </div>
         </div>

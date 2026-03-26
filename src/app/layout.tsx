@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "Daylen Hicks | Software Engineer & AI Developer",
   description:
     "Portfolio of Daylen Hicks — Software Engineer, AI Developer, and CS student at NC A&T. Building full-stack apps and AI-powered solutions.",
+  alternates: {
+    canonical: "https://daylenhicks.com",
+  },
   openGraph: {
     title: "Daylen Hicks | Software Engineer & AI Developer",
     description:
@@ -14,18 +17,23 @@ export const metadata: Metadata = {
     siteName: "Daylen Hicks",
     type: "website",
     locale: "en_US",
-    images: [
-      {
-        url: "/og-image.svg",
-        width: 1200,
-        height: 630,
-        alt: "Daylen Hicks — Software Engineer & AI Developer",
-      },
-    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Daylen Hicks | Software Engineer & AI Developer",
+    description:
+      "Software Engineer, AI Developer, and CS student at NC A&T. Building full-stack apps and AI-powered solutions.",
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
   icons: {
     icon: "/favicon.ico",
@@ -49,13 +57,21 @@ export default function RootLayout({
     name: "Daylen Hicks",
     url: "https://daylenhicks.com",
     jobTitle: "Software Engineer & AI Developer",
+    email: "daylenhicks10@gmail.com",
     alumniOf: {
       "@type": "CollegeOrUniversity",
       name: "North Carolina A&T State University",
     },
+    knowsAbout: [
+      "Python", "Java", "JavaScript", "TypeScript",
+      "React", "Next.js", "Node.js", "FastAPI",
+      "AI", "Machine Learning", "LLM Evaluation", "RLHF",
+      "Firebase", "Supabase", "AWS", "Docker",
+    ],
     sameAs: [
       "https://github.com/dhicks11",
       "https://linkedin.com/in/daylenhicks",
+      "https://calendly.com/daylenhicks10",
     ],
   };
 
