@@ -42,7 +42,7 @@ const securityHeaders = [
       "font-src 'self' https://fonts.gstatic.com",
       "img-src 'self' data: blob:",
       "media-src 'self' https://youtu.be https://www.youtube.com https://youtube.com",
-      "frame-src 'self' https://www.youtube.com https://youtube.com",
+      "frame-src 'self' https://calendly.com https://www.youtube.com https://youtube.com",
       "connect-src 'self'",
     ].join("; "),
   },

@@ -5,7 +5,8 @@ import { motion } from "framer-motion";
 import SectionWrapper from "./SectionWrapper";
 import { personalInfo } from "@/data/resume";
 import { sendContactEmail } from "@/app/actions/contact";
-import Scheduler from "./Scheduler";
+
+const CALENDLY_URL = "https://calendly.com/daylenhicks10";
 
 const subjects = [
   { value: "", label: "Select a subject" },
@@ -330,7 +331,16 @@ export default function Contact() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <Scheduler />
+          <div className="bento-card overflow-hidden rounded-2xl" style={{ minHeight: 700 }}>
+            <iframe
+              src={`${CALENDLY_URL}?hide_gdpr_banner=1&background_color=1a1a1a&text_color=f0f0f0&primary_color=3B82F6`}
+              width="100%"
+              height="700"
+              frameBorder="0"
+              title="Schedule a meeting with Daylen Hicks"
+              className="w-full"
+            />
+          </div>
         </motion.div>
       )}
     </SectionWrapper>
