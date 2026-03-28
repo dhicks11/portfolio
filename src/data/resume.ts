@@ -161,6 +161,7 @@ export const projects: Project[] = [
       "Refactored 31-file codebase to feature-based architecture — centralized constants, unified service modules, and enforced Next.js App Router boundaries",
     ],
     liveUrl: "https://igotnextapp.vercel.app",
+    image: "/projects/igotnext.png",
   },
   {
     name: "Lincoln Financial AI Assistant",
