@@ -384,7 +384,7 @@ export default function ServicesPage() {
             </div>
             <div className="flex flex-col sm:flex-row gap-3 relative z-10 shrink-0">
               <a
-                href="https://calendly.com/daylenhicks10"
+                href="https://docs.google.com/forms/d/e/1FAIpQLSdZbdNsUgJ_oM60jHLssIhaLX-0yU4QXkAeXkwrxy0qPPr0gQ/viewform"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-pill btn-primary text-center"
@@ -395,6 +395,9 @@ export default function ServicesPage() {
                 View Portfolio
               </a>
             </div>
+            <p className="text-xs text-muted mt-2 relative z-10">
+              Free audit delivered within 24 hours.
+            </p>
           </div>
         </section>
 

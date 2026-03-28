@@ -138,6 +138,7 @@ export const projects: Project[] = [
       "Developed a student resource platform for North Carolina A&T students to access campus tools and information",
     ],
     liveUrl: "https://aggie-aid.vercel.app/",
+    image: "/projects/aggieaid.png",
   },
   {
     name: "SurgiControl Robot Arm Dashboard",
