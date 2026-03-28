@@ -2,7 +2,6 @@ export const personalInfo = {
   name: "Daylen Hicks",
   title: "Software Engineer & AI Developer",
   email: "daylenhicks10@gmail.com",
-  phone: "252-532-4745",
   github: "https://github.com/dhicks11",
   linkedin: "https://linkedin.com/in/daylenhicks",
   bio: "I'm a Computer Science student at North Carolina A&T State University with a passion for building full-stack applications and working with AI systems. From launching a pickup basketball platform with 500+ users to winning hackathons with AI-powered solutions, I love turning ideas into products that people actually use.",
@@ -10,10 +9,9 @@ export const personalInfo = {
 };
 
 export const highlights = [
-  { label: "500+ Players", description: "on I Got Next platform" },
-  { label: "1st Place", description: "Hack NCAT Hackathon" },
-  { label: "UNCF Scholar", description: "1 of 50 nationwide" },
-  { label: "SAS Intern", description: "Incoming Summer 2026" },
+  { value: "1st", label: "Place Hackathon", glow: true },
+  { value: "3.6", label: "GPA at NC A&T" },
+  { value: "5+", label: "Projects Shipped" },
 ];
 
 export const skills = [
@@ -84,17 +82,31 @@ export const experience = [
   },
   {
     company: "Northampton County Schools",
-    role: "Tech Leader & FRC Team Captain",
+    role: "Founder & FRC Team Captain — RoboJags",
     location: "Gaston, NC",
     dates: "Aug. 2024 – May 2025",
     bullets: [
-      "Led a 10+ member robotics team engineering autonomous robots in Python, earning two Rookie All-Star awards and qualifying for the World Championship",
+      "Chartered the school's inaugural FIRST Robotics Competition team (RoboJags), recruiting and captaining 10+ members through a full competition season",
+      "Won two Rookie All-Star awards, advanced to the state championship, and qualified for the FRC World Championship in Houston, TX",
+      "Secured a NASA robotics grant and an NC A&T sponsorship to fund team operations, equipment, and travel",
       "Developed a peer-mentoring program adopted by 25+ students that increased coursework proficiency by 40%",
     ],
+    articleUrl: "https://www.roanoke-chowannewsherald.com/news/northamptons-robojags-team-competes-in-world-championship-203047",
   },
 ];
 
-export const projects = [
+interface Project {
+  name: string;
+  event: string;
+  date: string;
+  tech: string[];
+  bullets: string[];
+  liveUrl?: string;
+  demoUrl?: string;
+  image?: string;
+}
+
+export const projects: Project[] = [
   {
     name: "PitchPad",
     event: "1st Place, Hack NCAT",
@@ -114,6 +126,17 @@ export const projects = [
       "Integrated OpenAI Whisper for live transcription and GPT-4o to auto-generate investor-ready pitch decks in under 60 seconds",
       "Wired Supabase (PostgreSQL + pgvector + Auth) supporting 2 user roles and shareable pitch deck export",
     ],
+    liveUrl: "https://pitchpadapp.vercel.app/",
+  },
+  {
+    name: "Aggie Aid",
+    event: "NC A&T",
+    date: "2026",
+    tech: ["Next.js", "React", "Tailwind CSS", "Vercel"],
+    bullets: [
+      "Developed a student resource platform for North Carolina A&T students to access campus tools and information",
+    ],
+    liveUrl: "https://aggie-aid.vercel.app/",
   },
   {
     name: "SurgiControl Robot Arm Dashboard",
@@ -121,9 +144,24 @@ export const projects = [
     date: "2026",
     tech: ["Python", "Streamlit", "Plotly", "Pandas", "Three.js"],
     bullets: [
+      "Sole developer on a 4-person team — designed, architected, and built the entire technical solution end-to-end while teammates focused on research and presentation",
       "Built a real-time 3D surgical robot arm dashboard for Johnson & Johnson enabling users to save and replay precise arm positions",
       "Engineered CSV export to log exact arm placement coordinates, enabling data-driven motion pattern analysis",
     ],
+    demoUrl: "https://youtu.be/YxTLcg7js5w",
+  },
+  {
+    name: "I Got Next",
+    event: "Personal Project",
+    date: "Jan. 2026 – Present",
+    tech: ["Next.js", "TypeScript", "React", "Firebase", "Stripe", "Google Maps API"],
+    bullets: [
+      "Launched a full-stack pickup basketball platform growing from 0 to 500+ active players and 120 courts mapped across 3 cities within 8 weeks",
+      "Engineered Stripe Checkout + webhook pipeline for a $5.99/mo Pro tier with 4 gated features; extracted payment sync into a shared React hook",
+      "Refactored 31-file codebase to feature-based architecture — centralized constants, unified service modules, and enforced Next.js App Router boundaries",
+    ],
+    liveUrl: "https://igotnextapp.vercel.app",
+    image: "/projects/igotnext.png",
   },
   {
     name: "Lincoln Financial AI Assistant",
@@ -134,8 +172,17 @@ export const projects = [
       "Led product strategy and pitch for an AI-powered financial assistant on Amazon Bedrock",
       "Shaped a questionnaire-driven recommendation engine for personalized retirement/insurance plans and presented to Lincoln Financial stakeholders",
     ],
+    demoUrl: "https://youtube.com/shorts/jMv8xxquJP0?si=ljupji8MhAChGCKN",
   },
 ];
+
+export const certificate = {
+  name: "SJECCD AI Session Certificate",
+  date: "Mar. 2026",
+  issuer: "San Jose Evergreen Community College District",
+  description:
+    "Completed intensive AI training covering machine learning fundamentals, neural networks, and responsible AI practices.",
+};
 
 export const education = [
   {
@@ -147,16 +194,20 @@ export const education = [
   },
   {
     school: "Halifax Community College",
-    degree: "A.A. & A.S. (Concurrent with High School Diploma)",
+    degree: "Associate in Arts & Associate in Science",
     dates: "Aug. 2021 – May 2025",
     location: "Weldon, NC",
+    highlight: "Earned both A.A. and A.S. degrees concurrently while completing high school — dual enrollment across the full four years.",
   },
 ];
 
 export const activities = [
   "UNCF STEM Innovation Summit Scholar (2026) — 1 of 50 HBCU Students Nationwide",
-  "SJECCD AI Session Certificate (Mar. 2026)",
+  "SECU Scholar",
+  "College of Engineering Scholar",
+  "Aggie Merit Scholar",
   "Hack NCAT 1st Place",
+  "FRC World Championship Qualifier (Houston 2025)",
   "NSBE",
   "ACM",
   "codeLinc10",
@@ -169,5 +220,6 @@ export const navLinks = [
   { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#projects" },
   { label: "Education", href: "#education" },
+  { label: "Community", href: "#community" },
   { label: "Contact", href: "#contact" },
 ];

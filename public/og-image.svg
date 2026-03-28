@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" fill="none">
+  <rect width="1200" height="630" fill="#0c0c0c"/>
+  <text x="100" y="240" fill="#f0f0f0" font-family="system-ui,sans-serif" font-size="72" font-weight="700">Daylen Hicks</text>
+  <text x="100" y="320" fill="#3B82F6" font-family="system-ui,sans-serif" font-size="36" font-weight="500">Software Engineer &amp; AI Developer</text>
+  <text x="100" y="400" fill="#888888" font-family="system-ui,sans-serif" font-size="24">Building full-stack apps and AI-powered solutions</text>
+  <rect x="100" y="460" width="60" height="3" rx="1.5" fill="#3B82F6"/>
+</svg>
