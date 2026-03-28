@@ -94,6 +94,12 @@ export default function Navbar() {
           >
             Resume
           </a>
+          <a
+            href="/services"
+            className="btn-pill btn-outline text-xs"
+          >
+            Services
+          </a>
         </div>
 
         {/* Mobile hamburger */}
@@ -154,6 +160,12 @@ export default function Navbar() {
                 className="btn-pill btn-primary text-center mt-2"
               >
                 Resume
+              </a>
+              <a
+                href="/services"
+                className="btn-pill btn-outline text-center"
+              >
+                Services
               </a>
             </div>
           </motion.div>

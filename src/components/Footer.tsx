@@ -44,6 +44,12 @@ export default function Footer() {
                   {link.label}
                 </button>
               ))}
+              <a
+                href="/services"
+                className="text-sm text-muted hover:text-accent transition-colors duration-300"
+              >
+                Services
+              </a>
             </div>
           </div>
 
@@ -91,9 +97,11 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} {personalInfo.name}. All rights
             reserved.
           </p>
-          <p>
-            Built with Next.js & Tailwind CSS
-          </p>
+          <div className="flex gap-4">
+            <a href="/terms" className="hover:text-accent transition-colors">Terms</a>
+            <a href="/privacy" className="hover:text-accent transition-colors">Privacy</a>
+            <a href="/refund-policy" className="hover:text-accent transition-colors">Refunds</a>
+          </div>
         </div>
       </div>
     </footer>
