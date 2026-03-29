@@ -38,7 +38,7 @@ const services = [
     price: "$5",
     priceLabel: "one-time",
     badge: "Best starter",
-    stripeUrl: "STRIPE_RESUME_REVIEW_LINK",
+    stripeUrl: "https://buy.stripe.com/eVq7sMdkD5I6ebj42r3F600",
   },
   {
     number: "02",
