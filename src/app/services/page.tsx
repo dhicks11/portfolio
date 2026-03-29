@@ -64,7 +64,7 @@ const services = [
     price: "$10",
     priceLabel: "one-time",
     badge: "Quick win",
-    stripeUrl: "STRIPE_LINKEDIN_LINK",
+    stripeUrl: "https://buy.stripe.com/7sY9AU4O7c6u5ENfL93F605",
   },
   {
     number: "03",
@@ -88,7 +88,7 @@ const services = [
     price: "$15",
     priceLabel: "one-time",
     badge: "Popular",
-    stripeUrl: "STRIPE_SITE_ROAST_LINK",
+    stripeUrl: "https://buy.stripe.com/3cIbJ21BVfiG8QZcyX3F601",
   },
   {
     number: "04",
@@ -112,7 +112,7 @@ const services = [
     price: "$100",
     priceLabel: "one-time",
     badge: "Fast turnaround",
-    stripeUrl: "STRIPE_GBP_SETUP_LINK",
+    stripeUrl: "https://buy.stripe.com/aFadRabcvgmKaZ7gPd3F602",
   },
   {
     number: "05",
@@ -135,7 +135,7 @@ const services = [
     price: "$150",
     priceLabel: "/ month",
     badge: "Recurring",
-    stripeUrl: "STRIPE_SEO_RETAINER_LINK",
+    stripeUrl: "https://buy.stripe.com/bJe5kE2FZ2vUgjr1Uj3F603",
   },
   {
     number: "06",
@@ -158,7 +158,7 @@ const services = [
     price: "$300",
     priceLabel: "/ session",
     badge: "Schools & orgs",
-    stripeUrl: "STRIPE_WORKSHOP_LINK",
+    stripeUrl: "https://buy.stripe.com/00wfZi80jdayebjaqP3F604",
   },
   {
     number: "07",
@@ -183,7 +183,8 @@ const services = [
     price: "$750",
     priceLabel: "starting at",
     badge: "Custom quote",
-    stripeUrl: "STRIPE_WEBSITE_LINK",
+    stripeUrl: "https://calendly.com/daylenhicks10",
+    buttonLabel: "Book a Call",
   },
 ];
 
@@ -205,7 +206,8 @@ const featuredService = {
   price: "$300",
   priceLabel: "one-time setup",
   badge: "Best value",
-  stripeUrl: "STRIPE_AUTOMATION_LINK",
+  stripeUrl: "https://calendly.com/daylenhicks10",
+  buttonLabel: "Book a Call",
 };
 
 const processSteps = [
@@ -336,7 +338,7 @@ export default function ServicesPage() {
                   rel="noopener noreferrer"
                   className="block w-full text-center text-xs font-semibold tracking-wider uppercase py-3 border border-accent text-accent hover:bg-accent hover:text-background transition-colors duration-300"
                 >
-                  Get Started &rarr;
+                  {service.buttonLabel || "Get Started"} &rarr;
                 </a>
               </div>
             ))}
@@ -376,7 +378,7 @@ export default function ServicesPage() {
                   rel="noopener noreferrer"
                   className="block w-full text-center text-xs font-semibold tracking-wider uppercase py-3 mt-6 border border-accent text-accent hover:bg-accent hover:text-background transition-colors duration-300"
                 >
-                  Get Started &rarr;
+                  {featuredService.buttonLabel || "Get Started"} &rarr;
                 </a>
               </div>
               <div className="p-8 md:p-10 md:border-l border-t md:border-t-0 border-card-border">
@@ -438,7 +440,7 @@ export default function ServicesPage() {
                   rel="noopener noreferrer"
                   className="block w-full text-center text-xs font-semibold tracking-wider uppercase py-3 border border-accent text-accent hover:bg-accent hover:text-background transition-colors duration-300"
                 >
-                  Get Started &rarr;
+                  {service.buttonLabel || "Get Started"} &rarr;
                 </a>
               </div>
             ))}
