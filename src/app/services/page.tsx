@@ -42,6 +42,56 @@ const services = [
   },
   {
     number: "02",
+    tag: "Starter",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <path d="M16 8a6 6 0 01-12 0" />
+        <path d="M12 2v6" />
+        <path d="M20 12l-8 8-8-8" />
+        <circle cx="12" cy="20" r="2" />
+      </svg>
+    ),
+    title: "LinkedIn Profile Optimization",
+    description:
+      "Your LinkedIn is your digital handshake. I'll rewrite your headline, about section, and experience to actually attract recruiters and clients.",
+    includes: [
+      "Headline & about section rewrite",
+      "Experience bullet point optimization",
+      "Keyword strategy for your target roles",
+      "Banner image recommendations",
+      "Delivered within 48 hours",
+    ],
+    price: "$10",
+    priceLabel: "one-time",
+    badge: "Quick win",
+    stripeUrl: "STRIPE_LINKEDIN_LINK",
+  },
+  {
+    number: "03",
+    tag: "Starter",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <path d="M12 20h9" />
+        <path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z" />
+      </svg>
+    ),
+    title: "Portfolio / Landing Page Roast",
+    description:
+      "Send me your site and I'll record a 5–10 min video teardown covering design, copy, SEO, and conversion — with exact fixes you can make today.",
+    includes: [
+      "Recorded video walkthrough",
+      "Design & UX feedback",
+      "SEO quick wins identified",
+      "Copy & conversion suggestions",
+      "Delivered within 72 hours",
+    ],
+    price: "$15",
+    priceLabel: "one-time",
+    badge: "Popular",
+    stripeUrl: "STRIPE_SITE_ROAST_LINK",
+  },
+  {
+    number: "04",
     tag: "Quick Win",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -65,7 +115,7 @@ const services = [
     stripeUrl: "STRIPE_GBP_SETUP_LINK",
   },
   {
-    number: "03",
+    number: "05",
     tag: "Ongoing",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -88,7 +138,7 @@ const services = [
     stripeUrl: "STRIPE_SEO_RETAINER_LINK",
   },
   {
-    number: "04",
+    number: "06",
     tag: "Community",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -111,7 +161,7 @@ const services = [
     stripeUrl: "STRIPE_WORKSHOP_LINK",
   },
   {
-    number: "05",
+    number: "07",
     tag: "Foundation",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -138,7 +188,7 @@ const services = [
 ];
 
 const featuredService = {
-  number: "06",
+  number: "08",
   tag: "High Impact",
   title: "AI Appointment & Follow-Up Automation",
   description:
@@ -243,7 +293,7 @@ export default function ServicesPage() {
         <section id="services" className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 py-20">
           <div className="grid grid-cols-1 md:grid-cols-2 border border-card-border">
             {/* Regular services */}
-            {services.slice(0, 2).map((service) => (
+            {services.slice(0, 4).map((service) => (
               <div
                 key={service.number}
                 className="p-8 md:p-10 border-b border-r border-card-border hover:bg-surface transition-colors group"
@@ -345,7 +395,7 @@ export default function ServicesPage() {
             </div>
 
             {/* Remaining services */}
-            {services.slice(2).map((service) => (
+            {services.slice(4).map((service) => (
               <div
                 key={service.number}
                 className="p-8 md:p-10 border-b md:border-b-0 border-r border-card-border hover:bg-surface transition-colors group"
