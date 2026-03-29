@@ -100,6 +100,12 @@ export default function Navbar() {
           >
             Services
           </a>
+          <a
+            href="/links"
+            className="text-sm text-muted hover:text-accent transition-colors duration-300"
+          >
+            Links
+          </a>
         </div>
 
         {/* Mobile hamburger */}
@@ -166,6 +172,12 @@ export default function Navbar() {
                 className="btn-pill btn-outline text-center"
               >
                 Services
+              </a>
+              <a
+                href="/links"
+                className="text-lg text-muted hover:text-accent transition-colors"
+              >
+                Links
               </a>
             </div>
           </motion.div>
