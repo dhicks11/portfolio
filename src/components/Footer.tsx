@@ -100,7 +100,7 @@ export default function Footer() {
                 href="/links"
                 className="text-sm text-muted hover:text-accent transition-colors duration-300"
               >
-                All Links
+                Quick Links
               </a>
             </div>
           </div>

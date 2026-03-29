@@ -104,7 +104,7 @@ export default function Navbar() {
             href="/links"
             className="text-sm text-muted hover:text-accent transition-colors duration-300"
           >
-            Links
+            Quick Links
           </a>
         </div>
 
@@ -177,7 +177,7 @@ export default function Navbar() {
                 href="/links"
                 className="text-lg text-muted hover:text-accent transition-colors"
               >
-                Links
+                Quick Links
               </a>
             </div>
           </motion.div>
