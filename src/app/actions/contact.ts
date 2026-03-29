@@ -11,7 +11,11 @@ import {
 import { captureError } from "@/lib/sentry";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
-const RECIPIENT = process.env.CONTACT_EMAIL || "daylenhicks10@gmail.com";
+const RECIPIENT = process.env.CONTACT_EMAIL;
+
+if (!RECIPIENT) {
+  console.warn("CONTACT_EMAIL env var is not set");
+}
 
 interface ContactForm {
   name: string;
@@ -21,6 +25,10 @@ interface ContactForm {
 }
 
 export async function sendContactEmail(form: ContactForm) {
+  if (!RECIPIENT) {
+    return { success: false, error: "Contact form is not configured. Please try again later." };
+  }
+
   // Rate limit by sender email (5 requests per minute)
   const rateCheck = await checkRateLimit("contact", form.email);
   if (!rateCheck.allowed) {

@@ -40,10 +40,10 @@ const securityHeaders = [
       "script-src 'self' 'unsafe-inline'",
       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
       "font-src 'self' https://fonts.gstatic.com",
-      "img-src 'self' data: blob:",
+      "img-src 'self' data: blob: https://buy.stripe.com",
       "media-src 'self' https://youtu.be https://www.youtube.com https://youtube.com",
-      "frame-src 'self' https://calendly.com https://www.youtube.com https://youtube.com",
-      "connect-src 'self'",
+      "frame-src 'self' https://calendly.com https://www.youtube.com https://youtube.com https://js.stripe.com",
+      "connect-src 'self' https://api.stripe.com",
     ].join("; "),
   },
 ];
