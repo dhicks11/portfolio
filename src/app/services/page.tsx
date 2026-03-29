@@ -16,6 +16,32 @@ export const metadata: Metadata = {
 const services = [
   {
     number: "01",
+    tag: "Starter",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+        <polyline points="14 2 14 8 20 8" />
+        <line x1="16" y1="13" x2="8" y2="13" />
+        <line x1="16" y1="17" x2="8" y2="17" />
+      </svg>
+    ),
+    title: "Resume Review",
+    description:
+      "Get honest, actionable feedback on your resume from someone who's reviewed hundreds. I'll tell you exactly what to fix to land more interviews.",
+    includes: [
+      "Line-by-line written feedback",
+      "Formatting & layout recommendations",
+      "ATS compatibility check",
+      "Keyword optimization for your target role",
+      "Delivered within 48 hours",
+    ],
+    price: "$5",
+    priceLabel: "one-time",
+    badge: "Best starter",
+    stripeUrl: "STRIPE_RESUME_REVIEW_LINK",
+  },
+  {
+    number: "02",
     tag: "Quick Win",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -36,9 +62,10 @@ const services = [
     price: "$100",
     priceLabel: "one-time",
     badge: "Fast turnaround",
+    stripeUrl: "STRIPE_GBP_SETUP_LINK",
   },
   {
-    number: "02",
+    number: "03",
     tag: "Ongoing",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -58,6 +85,7 @@ const services = [
     price: "$150",
     priceLabel: "/ month",
     badge: "Recurring",
+    stripeUrl: "STRIPE_SEO_RETAINER_LINK",
   },
   {
     number: "04",
@@ -80,6 +108,7 @@ const services = [
     price: "$300",
     priceLabel: "/ session",
     badge: "Schools & orgs",
+    stripeUrl: "STRIPE_WORKSHOP_LINK",
   },
   {
     number: "05",
@@ -104,11 +133,12 @@ const services = [
     price: "$750",
     priceLabel: "starting at",
     badge: "Custom quote",
+    stripeUrl: "STRIPE_WEBSITE_LINK",
   },
 ];
 
 const featuredService = {
-  number: "03",
+  number: "06",
   tag: "High Impact",
   title: "AI Appointment & Follow-Up Automation",
   description:
@@ -125,6 +155,7 @@ const featuredService = {
   price: "$300",
   priceLabel: "one-time setup",
   badge: "Best value",
+  stripeUrl: "STRIPE_AUTOMATION_LINK",
 };
 
 const processSteps = [
@@ -238,7 +269,7 @@ export default function ServicesPage() {
                     </li>
                   ))}
                 </ul>
-                <div className="flex items-baseline gap-3">
+                <div className="flex items-baseline gap-3 mb-6">
                   <span className="text-3xl font-bold text-accent">
                     {service.price}
                   </span>
@@ -249,6 +280,14 @@ export default function ServicesPage() {
                     {service.badge}
                   </span>
                 </div>
+                <a
+                  href={service.stripeUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full text-center text-xs font-semibold tracking-wider uppercase py-3 border border-accent text-accent hover:bg-accent hover:text-background transition-colors duration-300"
+                >
+                  Get Started &rarr;
+                </a>
               </div>
             ))}
 
@@ -281,6 +320,14 @@ export default function ServicesPage() {
                     {featuredService.badge}
                   </span>
                 </div>
+                <a
+                  href={featuredService.stripeUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full text-center text-xs font-semibold tracking-wider uppercase py-3 mt-6 border border-accent text-accent hover:bg-accent hover:text-background transition-colors duration-300"
+                >
+                  Get Started &rarr;
+                </a>
               </div>
               <div className="p-8 md:p-10 md:border-l border-t md:border-t-0 border-card-border">
                 <ul className="space-y-2">
@@ -324,7 +371,7 @@ export default function ServicesPage() {
                     </li>
                   ))}
                 </ul>
-                <div className="flex items-baseline gap-3">
+                <div className="flex items-baseline gap-3 mb-6">
                   <span className="text-3xl font-bold text-accent">
                     {service.price}
                   </span>
@@ -335,6 +382,14 @@ export default function ServicesPage() {
                     {service.badge}
                   </span>
                 </div>
+                <a
+                  href={service.stripeUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full text-center text-xs font-semibold tracking-wider uppercase py-3 border border-accent text-accent hover:bg-accent hover:text-background transition-colors duration-300"
+                >
+                  Get Started &rarr;
+                </a>
               </div>
             ))}
           </div>
