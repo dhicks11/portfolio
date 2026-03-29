@@ -71,6 +71,7 @@ export default function RootLayout({
     sameAs: [
       "https://github.com/dhicks11",
       "https://linkedin.com/in/daylenhicks",
+      "https://tiktok.com/@trustyahwehh",
       "https://calendly.com/daylenhicks10",
     ],
   };

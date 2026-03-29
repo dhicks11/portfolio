@@ -88,6 +88,20 @@ export default function Footer() {
               >
                 Schedule a Meeting
               </a>
+              <a
+                href="https://tiktok.com/@trustyahwehh"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-muted hover:text-accent transition-colors duration-300"
+              >
+                TikTok
+              </a>
+              <a
+                href="/links"
+                className="text-sm text-muted hover:text-accent transition-colors duration-300"
+              >
+                All Links
+              </a>
             </div>
           </div>
         </div>
