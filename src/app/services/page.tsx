@@ -1,98 +1,69 @@
 import type { Metadata } from "next";
-import { personalInfo } from "@/data/resume";
 
 export const metadata: Metadata = {
-  title: "Services — Daylen Hicks | Web Development, SEO & AI Automation",
+  title: "Hicks Digital — Web Development, SEO & AI Automation for Small Businesses",
   description:
-    "Web development, local SEO, Google Business setup, and AI automation for small businesses in the NC Triad and Halifax/Northampton County. Built by Daylen Hicks.",
+    "Hicks Digital helps small businesses grow with web development, local SEO, AI automation, and career services. Based in North Carolina. Free audit included.",
   openGraph: {
-    title: "Services — Daylen Hicks",
+    title: "Hicks Digital — Grow Your Business Online",
     description:
-      "Web development, local SEO, and AI automation for small businesses across North Carolina.",
+      "Web development, local SEO, AI automation, and career services for small businesses across North Carolina.",
     url: "https://daylenhicks.com/services",
   },
 };
 
-const services = [
+const quickWins = [
   {
-    number: "01",
-    tag: "Starter",
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
-        <polyline points="14 2 14 8 20 8" />
-        <line x1="16" y1="13" x2="8" y2="13" />
-        <line x1="16" y1="17" x2="8" y2="17" />
-      </svg>
-    ),
-    title: "Resume Review",
+    title: "Resume Revamp",
     description:
-      "Get honest, actionable feedback on your resume from someone who's reviewed hundreds. I'll tell you exactly what to fix to land more interviews.",
+      "Your resume gets 6 seconds. We make every one count. Full rewrite with ATS optimization, modern formatting, and targeted keywords for your dream role.",
     includes: [
-      "Line-by-line written feedback",
-      "Formatting & layout recommendations",
-      "ATS compatibility check",
-      "Keyword optimization for your target role",
-      "Delivered within 48 hours",
-    ],
-    price: "$5",
-    priceLabel: "one-time",
-    badge: "Best starter",
-    stripeUrl: "https://buy.stripe.com/eVq7sMdkD5I6ebj42r3F600",
-  },
-  {
-    number: "02",
-    tag: "Starter",
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <path d="M16 8a6 6 0 01-12 0" />
-        <path d="M12 2v6" />
-        <path d="M20 12l-8 8-8-8" />
-        <circle cx="12" cy="20" r="2" />
-      </svg>
-    ),
-    title: "LinkedIn Profile Optimization",
-    description:
-      "Your LinkedIn is your digital handshake. I'll rewrite your headline, about section, and experience to actually attract recruiters and clients.",
-    includes: [
-      "Headline & about section rewrite",
-      "Experience bullet point optimization",
-      "Keyword strategy for your target roles",
-      "Banner image recommendations",
+      "Complete resume rewrite & redesign",
+      "ATS-friendly formatting",
+      "Keyword optimization for target roles",
+      "Two rounds of revisions",
       "Delivered within 48 hours",
     ],
     price: "$10",
-    priceLabel: "one-time",
-    badge: "Quick win",
+    badge: "Most Popular",
+    stripeUrl: "https://buy.stripe.com/eVq7sMdkD5I6ebj42r3F600",
+  },
+  {
+    title: "LinkedIn Profile Optimization",
+    description:
+      "Recruiters search LinkedIn 30M+ times daily. We make sure they find you. Full profile rewrite that turns views into interviews and connections into clients.",
+    includes: [
+      "Headline & about section rewrite",
+      "Experience bullet point optimization",
+      "Keyword strategy for recruiter search",
+      "Banner image & profile photo guidance",
+      "Delivered within 48 hours",
+    ],
+    price: "$20",
+    badge: "High ROI",
     stripeUrl: "https://buy.stripe.com/7sY9AU4O7c6u5ENfL93F605",
   },
   {
-    number: "03",
-    tag: "Starter",
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <path d="M12 20h9" />
-        <path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z" />
-      </svg>
-    ),
     title: "Portfolio / Landing Page Roast",
     description:
-      "Send me your site and I'll record a 5–10 min video teardown covering design, copy, SEO, and conversion — with exact fixes you can make today.",
+      "Honest, expert feedback you can act on today. Recorded video teardown covering design, copy, SEO, and conversion — with exact fixes to increase results.",
     includes: [
-      "Recorded video walkthrough",
+      "5–10 min recorded video walkthrough",
       "Design & UX feedback",
       "SEO quick wins identified",
       "Copy & conversion suggestions",
       "Delivered within 72 hours",
     ],
     price: "$15",
-    priceLabel: "one-time",
-    badge: "Popular",
+    badge: "Quick Win",
     stripeUrl: "https://buy.stripe.com/3cIbJ21BVfiG8QZcyX3F601",
   },
+];
+
+const services = [
   {
-    number: "04",
-    tag: "Quick Win",
+    number: "01",
+    tag: "Local SEO",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
         <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
@@ -101,7 +72,7 @@ const services = [
     ),
     title: "Google Business Profile Setup",
     description:
-      "Most local businesses are invisible on Google Maps. I fix that in under an hour — and customers start finding you the same week.",
+      "Most local businesses are invisible on Google Maps. We fix that in under an hour — and customers start finding you the same week.",
     includes: [
       "Claim & verify your Google Business listing",
       "Optimized business description & categories",
@@ -115,7 +86,7 @@ const services = [
     stripeUrl: "https://buy.stripe.com/aFadRabcvgmKaZ7gPd3F602",
   },
   {
-    number: "05",
+    number: "02",
     tag: "Ongoing",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -124,7 +95,7 @@ const services = [
     ),
     title: "Monthly SEO Retainer",
     description:
-      "Rankings don't maintain themselves. I keep your Google presence growing every month so new customers keep finding you — without you lifting a finger.",
+      "Rankings don't maintain themselves. We keep your Google presence growing every month so new customers keep finding you — without you lifting a finger.",
     includes: [
       "Monthly Google Business profile updates & posts",
       "Keyword ranking monitoring",
@@ -138,7 +109,7 @@ const services = [
     stripeUrl: "https://buy.stripe.com/bJe5kE2FZ2vUgjr1Uj3F603",
   },
   {
-    number: "06",
+    number: "03",
     tag: "Community",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -148,7 +119,7 @@ const services = [
     ),
     title: "AI Literacy Workshop",
     description:
-      "Hands-on AI training for students, community organizations, and small business teams. Practical, not theoretical — participants leave knowing how to actually use these tools.",
+      "Hands-on AI training for students, community organizations, and small business teams. Practical, not theoretical — participants leave knowing how to use these tools.",
     includes: [
       "1–2 hour hands-on session",
       "AI for resumes, career planning & productivity",
@@ -161,7 +132,7 @@ const services = [
     stripeUrl: "https://buy.stripe.com/00wfZi80jdayebjaqP3F604",
   },
   {
-    number: "07",
+    number: "04",
     tag: "Foundation",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -170,9 +141,9 @@ const services = [
         <line x1="12" y1="17" x2="12" y2="21" />
       </svg>
     ),
-    title: "Website Redesign",
+    title: "Website Design & Development",
     description:
-      "Your website is your first impression. I build fast, mobile-first sites that are built to rank on Google and convert visitors into paying customers.",
+      "Your website is your first impression. We build fast, mobile-first sites designed to rank on Google and convert visitors into paying customers.",
     includes: [
       "Custom Next.js design — no GoDaddy or Wix",
       "Mobile-first, lightning fast",
@@ -189,11 +160,11 @@ const services = [
 ];
 
 const featuredService = {
-  number: "08",
+  number: "05",
   tag: "High Impact",
   title: "AI Appointment & Follow-Up Automation",
   description:
-    "Stop losing clients to no-shows and forgetting to ask for reviews. I build an automated system that handles your reminders, follow-ups, and review requests — so you can focus on the work, not the admin.",
+    "Stop losing clients to no-shows and forgotten follow-ups. We build an automated system that handles reminders, review requests, and re-engagement — so you focus on the work, not the admin.",
   includes: [
     "Automated booking confirmation via SMS or email",
     "24-hour appointment reminder messages",
@@ -214,23 +185,30 @@ const processSteps = [
   {
     title: "Free Audit",
     description:
-      "I review your current online presence and send you a one-page breakdown of exactly what's hurting you — no strings attached.",
+      "We review your current online presence and send a one-page breakdown of exactly what's holding you back — no strings attached.",
   },
   {
     title: "Proposal",
     description:
-      "Based on the audit, I recommend the service that gives you the best ROI. You only pay for what actually moves the needle.",
+      "Based on the audit, we recommend the service that gives you the best ROI. You only pay for what actually moves the needle.",
   },
   {
     title: "Build",
     description:
-      "I get to work. Most projects are delivered within 5–7 days. You're updated throughout — no disappearing acts.",
+      "We get to work. Most projects are delivered within 5–7 days. You're updated throughout — no disappearing acts.",
   },
   {
     title: "Results",
     description:
-      "You start ranking, booking, and growing. Ongoing retainer clients get monthly reports showing exactly what's improving.",
+      "You start ranking, booking, and growing. Retainer clients get monthly reports showing exactly what's improving.",
   },
+];
+
+const stats = [
+  { value: "48hr", label: "Avg. Delivery" },
+  { value: "8+", label: "Services" },
+  { value: "$5", label: "Starting At" },
+  { value: "100%", label: "Satisfaction" },
 ];
 
 export default function ServicesPage() {
@@ -240,29 +218,31 @@ export default function ServicesPage() {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-xl border-b border-card-border">
         <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 flex items-center justify-between h-20">
           <a
-            href="/"
+            href="/services"
             className="text-xl font-bold text-foreground tracking-tight"
           >
-            {personalInfo.name.split(" ")[0]}
-            <span className="text-accent">.</span>
+            Hicks<span className="text-accent">Digital</span>
           </a>
           <div className="hidden md:flex items-center gap-8">
             <a href="/" className="text-sm text-muted hover:text-accent transition-colors">
-              Home
+              Portfolio
             </a>
-            <a href="#services" className="text-sm text-accent transition-colors">
-              Services
+            <a href="#career" className="text-sm text-muted hover:text-accent transition-colors">
+              Career Services
+            </a>
+            <a href="#services" className="text-sm text-muted hover:text-accent transition-colors">
+              Business Solutions
             </a>
             <a href="#process" className="text-sm text-muted hover:text-accent transition-colors">
               Process
             </a>
             <a
-              href="https://calendly.com/daylenhicks10"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSdZbdNsUgJ_oM60jHLssIhaLX-0yU4QXkAeXkwrxy0qPPr0gQ/viewform"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-pill btn-primary text-xs"
             >
-              Book a Call
+              Free Audit
             </a>
           </div>
         </div>
@@ -270,32 +250,143 @@ export default function ServicesPage() {
 
       <main>
         {/* Hero */}
-        <section className="pt-40 pb-20 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto">
-          <div className="flex items-center gap-4 mb-8">
+        <section className="relative pt-40 pb-24 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto overflow-hidden">
+          <div className="absolute inset-0 pointer-events-none">
+            <div
+              className="absolute top-0 right-0 w-[60%] h-[60%] opacity-[0.07] rounded-full blur-[120px]"
+              style={{ background: "radial-gradient(circle, var(--color-accent), transparent)" }}
+            />
+          </div>
+
+          <div className="relative z-10">
+            <div className="flex items-center gap-4 mb-8">
+              <span className="w-8 h-px bg-accent" />
+              <span className="text-xs font-semibold tracking-[0.2em] uppercase text-accent">
+                Hicks Digital
+              </span>
+            </div>
+            <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] font-bold leading-[1.05] tracking-tight max-w-[16ch]">
+              We build what{" "}
+              <span className="text-accent">grows</span> your business.
+            </h1>
+            <p className="mt-8 text-muted text-lg max-w-[55ch] leading-relaxed">
+              Web development, local SEO, AI automation, and career services for
+              small businesses and professionals across North Carolina. Built by
+              someone from the community, for the community.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 mt-10">
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSdZbdNsUgJ_oM60jHLssIhaLX-0yU4QXkAeXkwrxy0qPPr0gQ/viewform"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-pill btn-primary text-center"
+              >
+                Get Your Free Audit
+              </a>
+              <a
+                href="https://calendly.com/daylenhicks10"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-pill btn-outline text-center"
+              >
+                Book a Call
+              </a>
+            </div>
+          </div>
+        </section>
+
+        {/* Stats bar */}
+        <section className="border-y border-card-border">
+          <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 grid grid-cols-2 md:grid-cols-4">
+            {stats.map((stat, i) => (
+              <div
+                key={stat.label}
+                className={`py-8 text-center ${i < stats.length - 1 ? "border-r border-card-border" : ""}`}
+              >
+                <p className="text-3xl md:text-4xl font-bold text-accent">{stat.value}</p>
+                <p className="text-xs text-muted tracking-wider uppercase mt-1">{stat.label}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Career Services — Quick Wins */}
+        <section id="career" className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 py-20">
+          <div className="flex items-center gap-4 mb-4">
             <span className="w-8 h-px bg-accent" />
             <span className="text-xs font-semibold tracking-[0.2em] uppercase text-accent">
-              Services
+              Career Services
             </span>
           </div>
-          <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] font-bold leading-[1.05] tracking-tight max-w-[14ch]">
-            I build what{" "}
-            <span className="text-accent">grows</span> your business.
-          </h1>
-          <p className="mt-8 text-muted text-lg max-w-[50ch] leading-relaxed">
-            Web development, local SEO, and AI automation for small businesses
-            across the Triad and Halifax/Northampton County, NC. Built by someone
-            from the community, for the community.
+          <h2 className="text-3xl md:text-4xl font-bold mb-3 max-w-[20ch]">
+            Land more interviews. <span className="text-accent">Starting at $10.</span>
+          </h2>
+          <p className="text-muted text-sm mb-12 max-w-[50ch] leading-relaxed">
+            Job hunting is competitive. Your resume and LinkedIn shouldn&apos;t be the reason you&apos;re getting overlooked. Quick turnaround, real results.
           </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border border-card-border">
+            {quickWins.map((item, i) => (
+              <div
+                key={item.title}
+                className={`p-8 md:p-10 hover:bg-surface transition-colors group ${
+                  i < quickWins.length - 1 ? "border-b md:border-b-0 md:border-r border-card-border" : ""
+                }`}
+              >
+                <div className="flex items-center justify-between mb-6">
+                  <span className="text-[10px] tracking-[0.15em] uppercase text-accent bg-accent/10 border border-accent/20 px-3 py-1">
+                    {item.badge}
+                  </span>
+                  <span className="text-3xl font-bold text-accent">{item.price}</span>
+                </div>
+                <h3 className="text-lg font-bold mb-3">{item.title}</h3>
+                <p className="text-sm text-muted leading-relaxed mb-6">
+                  {item.description}
+                </p>
+                <ul className="space-y-2 mb-8">
+                  {item.includes.map((inc) => (
+                    <li
+                      key={inc}
+                      className="text-xs text-muted flex items-center gap-3 py-1.5 border-b border-card-border/50"
+                    >
+                      <span className="text-accent text-[10px] shrink-0">&rarr;</span>
+                      {inc}
+                    </li>
+                  ))}
+                </ul>
+                <a
+                  href={item.stripeUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full text-center text-xs font-semibold tracking-wider uppercase py-3 bg-accent text-background hover:bg-accent-dark transition-colors duration-300"
+                >
+                  Get Started &rarr;
+                </a>
+              </div>
+            ))}
+          </div>
         </section>
 
         {/* Divider */}
         <div className="h-px bg-gradient-to-r from-transparent via-card-border to-transparent mx-6 md:mx-12 lg:mx-24" />
 
-        {/* Services Grid */}
+        {/* Business Solutions */}
         <section id="services" className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 py-20">
+          <div className="flex items-center gap-4 mb-4">
+            <span className="w-8 h-px bg-accent" />
+            <span className="text-xs font-semibold tracking-[0.2em] uppercase text-accent">
+              Business Solutions
+            </span>
+          </div>
+          <h2 className="text-3xl md:text-4xl font-bold mb-3 max-w-[20ch]">
+            Grow your business <span className="text-accent">online.</span>
+          </h2>
+          <p className="text-muted text-sm mb-12 max-w-[50ch] leading-relaxed">
+            From getting found on Google to automating your entire client follow-up — we handle the tech so you can focus on what you do best.
+          </p>
+
           <div className="grid grid-cols-1 md:grid-cols-2 border border-card-border">
-            {/* Regular services */}
-            {services.slice(0, 4).map((service) => (
+            {services.map((service) => (
               <div
                 key={service.number}
                 className="p-8 md:p-10 border-b border-r border-card-border hover:bg-surface transition-colors group"
@@ -306,7 +397,7 @@ export default function ServicesPage() {
                 <div className="w-10 h-10 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center text-accent mb-5">
                   {service.icon}
                 </div>
-                <h2 className="text-xl font-bold mb-3">{service.title}</h2>
+                <h3 className="text-xl font-bold mb-3">{service.title}</h3>
                 <p className="text-sm text-muted leading-relaxed mb-6">
                   {service.description}
                 </p>
@@ -355,9 +446,9 @@ export default function ServicesPage() {
                     <path d="M7 11V7a5 5 0 0110 0v4" />
                   </svg>
                 </div>
-                <h2 className="text-xl font-bold mb-3">
+                <h3 className="text-xl font-bold mb-3">
                   {featuredService.title}
-                </h2>
+                </h3>
                 <p className="text-sm text-muted leading-relaxed mb-6">
                   {featuredService.description}
                 </p>
@@ -395,55 +486,6 @@ export default function ServicesPage() {
                 </ul>
               </div>
             </div>
-
-            {/* Remaining services */}
-            {services.slice(4).map((service) => (
-              <div
-                key={service.number}
-                className="p-8 md:p-10 border-b md:border-b-0 border-r border-card-border hover:bg-surface transition-colors group"
-              >
-                <p className="text-[10px] tracking-[0.2em] uppercase text-accent mb-6 font-mono opacity-70">
-                  {service.number} / {service.tag}
-                </p>
-                <div className="w-10 h-10 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center text-accent mb-5">
-                  {service.icon}
-                </div>
-                <h2 className="text-xl font-bold mb-3">{service.title}</h2>
-                <p className="text-sm text-muted leading-relaxed mb-6">
-                  {service.description}
-                </p>
-                <ul className="space-y-2 mb-8">
-                  {service.includes.map((item) => (
-                    <li
-                      key={item}
-                      className="text-xs text-muted flex items-center gap-3 py-1.5 border-b border-card-border/50"
-                    >
-                      <span className="text-accent text-[10px] shrink-0">&rarr;</span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-                <div className="flex items-baseline gap-3 mb-6">
-                  <span className="text-3xl font-bold text-accent">
-                    {service.price}
-                  </span>
-                  <span className="text-xs text-muted tracking-wider">
-                    {service.priceLabel}
-                  </span>
-                  <span className="ml-auto text-[10px] tracking-[0.15em] uppercase text-accent bg-accent/10 border border-accent/20 px-3 py-1">
-                    {service.badge}
-                  </span>
-                </div>
-                <a
-                  href={service.stripeUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block w-full text-center text-xs font-semibold tracking-wider uppercase py-3 border border-accent text-accent hover:bg-accent hover:text-background transition-colors duration-300"
-                >
-                  {service.buttonLabel || "Get Started"} &rarr;
-                </a>
-              </div>
-            ))}
           </div>
         </section>
 
@@ -482,14 +524,13 @@ export default function ServicesPage() {
             <div className="absolute top-0 right-0 w-80 h-80 bg-accent/5 rounded-full blur-[100px] pointer-events-none" />
             <div className="relative z-10">
               <h2 className="text-2xl md:text-3xl font-bold mb-3">
-                Ready to get started?
+                Ready to grow?
               </h2>
               <p className="text-sm text-muted leading-relaxed max-w-[45ch]">
-                Book a free call or send me an email. I&apos;ll send you a free
-                one-page audit of your current online presence within 24 hours.
+                Get a free one-page audit of your current online presence. No commitment, no sales pitch — just honest feedback delivered within 24 hours.
               </p>
             </div>
-            <div className="flex flex-col sm:flex-row gap-3 relative z-10 shrink-0">
+            <div className="flex flex-col gap-3 relative z-10 shrink-0">
               <a
                 href="https://docs.google.com/forms/d/e/1FAIpQLSdZbdNsUgJ_oM60jHLssIhaLX-0yU4QXkAeXkwrxy0qPPr0gQ/viewform"
                 target="_blank"
@@ -502,16 +543,15 @@ export default function ServicesPage() {
                 View Portfolio
               </a>
             </div>
-            <p className="text-xs text-muted mt-2 relative z-10">
-              Free audit delivered within 24 hours.
-            </p>
           </div>
         </section>
 
-        {/* Legal links */}
+        {/* Footer */}
         <footer className="border-t border-card-border">
           <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 py-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-muted">
-            <p>&copy; {new Date().getFullYear()} {personalInfo.name}. All rights reserved.</p>
+            <p>
+              &copy; {new Date().getFullYear()} Hicks Digital. All rights reserved.
+            </p>
             <div className="flex gap-6">
               <a href="/terms" className="hover:text-accent transition-colors">
                 Terms of Service
