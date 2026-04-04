@@ -26,7 +26,7 @@ const quickWins = [
     ],
     price: "$10",
     badge: "Most Popular",
-    stripeUrl: "https://buy.stripe.com/eVq7sMdkD5I6ebj42r3F600",
+    stripeUrl: "https://buy.stripe.com/4gM5kE4O78Ui8QZ2Yn3F606",
   },
   {
     title: "LinkedIn Profile Optimization",
@@ -41,7 +41,7 @@ const quickWins = [
     ],
     price: "$20",
     badge: "High ROI",
-    stripeUrl: "https://buy.stripe.com/7sY9AU4O7c6u5ENfL93F605",
+    stripeUrl: "https://buy.stripe.com/14AdRa94n2vUc3b6az3F607",
   },
   {
     title: "Portfolio / Landing Page Roast",
@@ -56,7 +56,7 @@ const quickWins = [
     ],
     price: "$15",
     badge: "Quick Win",
-    stripeUrl: "https://buy.stripe.com/3cIbJ21BVfiG8QZcyX3F601",
+    stripeUrl: "https://buy.stripe.com/aFadRabcvgmKaZ7gPd3F602",
   },
 ];
 
@@ -83,7 +83,7 @@ const services = [
     price: "$100",
     priceLabel: "one-time",
     badge: "Fast turnaround",
-    stripeUrl: "https://buy.stripe.com/aFadRabcvgmKaZ7gPd3F602",
+    stripeUrl: "https://buy.stripe.com/bJe5kE2FZ2vUgjr1Uj3F603",
   },
   {
     number: "02",
@@ -106,7 +106,7 @@ const services = [
     price: "$150",
     priceLabel: "/ month",
     badge: "Recurring",
-    stripeUrl: "https://buy.stripe.com/bJe5kE2FZ2vUgjr1Uj3F603",
+    stripeUrl: "https://buy.stripe.com/00wfZi80jdayebjaqP3F604",
   },
   {
     number: "03",
@@ -129,7 +129,7 @@ const services = [
     price: "$300",
     priceLabel: "/ session",
     badge: "Schools & orgs",
-    stripeUrl: "https://buy.stripe.com/00wfZi80jdayebjaqP3F604",
+    stripeUrl: "https://buy.stripe.com/4gM5kE4O78Ui8QZ2Yn3F606",
   },
   {
     number: "04",
