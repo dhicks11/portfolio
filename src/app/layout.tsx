@@ -57,7 +57,7 @@ export default function RootLayout({
     name: "Daylen Hicks",
     url: "https://daylenhicks.com",
     jobTitle: "Software Engineer & AI Developer",
-    email: "daylenhicks10@gmail.com",
+    email: "hicksdigital.dev@gmail.com",
     alumniOf: {
       "@type": "CollegeOrUniversity",
       name: "North Carolina A&T State University",

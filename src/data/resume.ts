@@ -1,7 +1,7 @@
 export const personalInfo = {
   name: "Daylen Hicks",
   title: "Software Engineer & AI Developer",
-  email: "daylenhicks10@gmail.com",
+  email: "hicksdigital.dev@gmail.com",
   github: "https://github.com/dhicks11",
   linkedin: "https://linkedin.com/in/daylenhicks",
   bio: "I'm a Computer Science student at North Carolina A&T State University with a passion for building full-stack applications and working with AI systems. From launching a pickup basketball platform with 500+ users to winning hackathons with AI-powered solutions, I love turning ideas into products that people actually use.",
