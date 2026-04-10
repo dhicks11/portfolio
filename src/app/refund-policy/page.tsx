@@ -90,8 +90,8 @@ export default function RefundPolicyPage() {
           <h2 className="text-lg font-semibold text-foreground mb-3">5. How to Request a Refund</h2>
           <p>
             Email{" "}
-            <a href="mailto:daylenhicks10@gmail.com" className="text-accent hover:underline">
-              daylenhicks10@gmail.com
+            <a href="mailto:hicksdigital.dev@gmail.com" className="text-accent hover:underline">
+              hicksdigital.dev@gmail.com
             </a>{" "}
             with your name, the service purchased, and the reason for your request. I will respond
             within 48 hours. Approved refunds are processed within 5–10 business days.

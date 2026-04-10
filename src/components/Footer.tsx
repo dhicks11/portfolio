@@ -97,6 +97,14 @@ export default function Footer() {
                 TikTok
               </a>
               <a
+                href="https://www.instagram.com/hicksdigital_/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-muted hover:text-accent transition-colors duration-300"
+              >
+                Instagram
+              </a>
+              <a
                 href="/links"
                 className="text-sm text-muted hover:text-accent transition-colors duration-300"
               >

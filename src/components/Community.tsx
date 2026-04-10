@@ -3,7 +3,32 @@
 import { motion } from "framer-motion";
 import SectionWrapper from "./SectionWrapper";
 
-const volunteerWork = [
+interface VolunteerEntry {
+  organization: string;
+  activity: string;
+  date: string;
+  location?: string;
+  hours?: number;
+  upcoming?: boolean;
+}
+
+const volunteerWork: VolunteerEntry[] = [
+  {
+    organization: "Boys 2 Men AI Workshop",
+    activity:
+      "Leading an AI literacy workshop for young men in Halifax County — covering practical AI tools, career paths in tech, and hands-on demos.",
+    location: "Roanoke Rapids, NC",
+    date: "May 16, 2026",
+    upcoming: true,
+  },
+  {
+    organization: "Northampton County Schools — AI Workshop",
+    activity:
+      "Partnered with Northampton County Schools to deliver an AI education session for students, focused on real-world applications and pathways into tech careers.",
+    location: "Northampton County, NC",
+    date: "Jul. 2026",
+    upcoming: true,
+  },
   {
     organization: "First Presbyterian Church",
     activity: "Packing plates for the homeless and less fortunate",
@@ -140,14 +165,28 @@ export default function Community() {
                   </svg>
                 </div>
                 <div>
-                  <p className="font-semibold text-lg">{item.organization}</p>
+                  <div className="flex flex-wrap items-center gap-2">
+                    <p className="font-semibold text-lg">{item.organization}</p>
+                    {item.upcoming && (
+                      <span className="text-[10px] uppercase tracking-[0.15em] font-bold bg-accent/15 text-accent border border-accent/30 px-2 py-0.5 rounded-full">
+                        Upcoming!
+                      </span>
+                    )}
+                  </div>
                   <p className="text-muted">{item.activity}</p>
+                  {item.location && (
+                    <p className="text-xs text-muted/70 mt-1 font-mono">
+                      {item.location}
+                    </p>
+                  )}
                 </div>
               </div>
-              <div className="flex items-center gap-4 text-sm text-muted md:text-right">
-                <span className="bg-accent/10 text-accent px-3 py-1 rounded-full font-medium">
-                  {item.hours} hrs
-                </span>
+              <div className="flex items-center gap-4 text-sm text-muted md:text-right shrink-0">
+                {item.hours && (
+                  <span className="bg-accent/10 text-accent px-3 py-1 rounded-full font-medium">
+                    {item.hours} hrs
+                  </span>
+                )}
                 <span>{item.date}</span>
               </div>
             </div>

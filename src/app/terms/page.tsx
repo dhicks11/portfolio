@@ -115,8 +115,8 @@ export default function TermsPage() {
           <h2 className="text-lg font-semibold text-foreground mb-3">11. Contact</h2>
           <p>
             Questions about these Terms? Email me at{" "}
-            <a href="mailto:daylenhicks10@gmail.com" className="text-accent hover:underline">
-              daylenhicks10@gmail.com
+            <a href="mailto:hicksdigital.dev@gmail.com" className="text-accent hover:underline">
+              hicksdigital.dev@gmail.com
             </a>
             .
           </p>
