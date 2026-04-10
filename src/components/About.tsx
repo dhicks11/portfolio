@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import SectionWrapper from "./SectionWrapper";
 import { personalInfo } from "@/data/resume";
@@ -17,6 +18,26 @@ export default function About() {
             <br />
             <span className="text-accent">purpose</span>
           </h2>
+          <motion.div
+            className="relative w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-2 border-card-border hover:border-accent transition-colors duration-500 group"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <div
+              className="absolute inset-0 opacity-0 group-hover:opacity-30 transition-opacity duration-500 pointer-events-none z-10"
+              style={{ background: "radial-gradient(circle at center, var(--color-accent), transparent 70%)" }}
+            />
+            <Image
+              src="/profile.jpg"
+              alt={`${personalInfo.name} — ${personalInfo.title}`}
+              fill
+              sizes="(max-width: 768px) 192px, 224px"
+              className="object-cover"
+              priority
+            />
+          </motion.div>
         </div>
 
         <div>

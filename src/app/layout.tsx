@@ -56,6 +56,7 @@ export default function RootLayout({
     "@type": "Person",
     name: "Daylen Hicks",
     url: "https://daylenhicks.com",
+    image: "https://daylenhicks.com/profile.jpg",
     jobTitle: "Software Engineer & AI Developer",
     email: "hicksdigital.dev@gmail.com",
     alumniOf: {
