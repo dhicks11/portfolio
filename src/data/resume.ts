@@ -4,14 +4,14 @@ export const personalInfo = {
   email: "hicksdigital.dev@gmail.com",
   github: "https://github.com/dhicks11",
   linkedin: "https://linkedin.com/in/daylenhicks",
-  bio: "I'm a Computer Science student at North Carolina A&T State University with a passion for building full-stack applications and working with AI systems. From launching a pickup basketball platform with 500+ users to winning hackathons with AI-powered solutions, I love turning ideas into products that people actually use.",
+  bio: "I'm a Computer Science student at North Carolina A&T State University with a passion for building full-stack applications and working with AI systems. From winning hackathons to founding two companies — a B2B sports platform and an AI consulting firm — I build products at the intersection of technology and community.",
   resumeUrl: "/Resume_Daylen_Hicks_Updated.pdf",
 };
 
 export const highlights = [
   { value: "1st", label: "Place Hackathon", glow: true },
   { value: "3.6", label: "GPA at NC A&T" },
-  { value: "5+", label: "Projects Shipped" },
+  { value: "3", label: "Companies Founded" },
 ];
 
 export const skills = [
@@ -65,6 +65,18 @@ export const experience = [
     bullets: [
       "Benchmarked output quality across 3 LLMs (Claude, Gemini, ChatGPT) using structured evaluation criteria, identifying performance gaps and selecting optimal models for production use cases",
       "Performed RLHF-style feedback by rating and ranking hundreds of model responses; cleaned and curated training datasets to reduce noise and improve pipeline accuracy",
+    ],
+  },
+  {
+    company: "Hicks Digital",
+    role: "Founder & AI Consultant",
+    location: "Remote / Roanoke Rapids, NC",
+    dates: "Mar. 2026 – Present",
+    tech: "Python, Claude API, Next.js, n8n, Web Development",
+    bullets: [
+      "Launched an AI consulting and web development firm serving local businesses and nonprofits",
+      "Secured paid brand partnerships and delivered AI workshops for Boys 2 Men (May 2026) and Northampton County Schools (July 2026)",
+      "Executed 25+ cold outreach campaigns and built client pipelines across Halifax County",
     ],
   },
   {
@@ -126,6 +138,7 @@ export const projects: Project[] = [
       "Built an AI-powered pitch practice platform as deployment & infrastructure lead; architected a Next.js/Vercel frontend and FastAPI/Railway backend serving real-time AI feedback",
       "Integrated OpenAI Whisper for live transcription and GPT-4o to auto-generate investor-ready pitch decks in under 60 seconds",
       "Wired Supabase (PostgreSQL + pgvector + Auth) supporting 2 user roles and shareable pitch deck export",
+      "Secured a follow-up meeting with senior executives post-hackathon to explore commercialization and partnership opportunities",
     ],
     liveUrl: "https://pitchpadapp.vercel.app/",
   },

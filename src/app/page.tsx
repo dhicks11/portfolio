@@ -18,7 +18,7 @@ export default function Home() {
       <SideNav />
       <main id="main-content">
         <Hero />
-        <Marquee text="Software Engineer" />
+        <Marquee text="Software Engineer · Consultant" />
         <About />
         <Skills />
         <Marquee text="Featured Work" />
