@@ -65,11 +65,14 @@ export default function Hero() {
               <span className="text-[var(--color-hint)] mx-3 font-light">
                 /
               </span>
-              <span className="relative inline-block h-[1em] overflow-hidden align-bottom">
+              <span
+                className="relative inline-block h-[1.25em] overflow-hidden"
+                style={{ verticalAlign: "-0.22em" }}
+              >
                 <AnimatePresence mode="wait">
                   <motion.span
                     key={swapWords[currentWord]}
-                    className="inline-block text-accent font-serif italic"
+                    className="inline-block text-accent font-serif italic leading-[1.25] pr-[0.08em]"
                     initial={{ y: "100%", opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     exit={{ y: "-100%", opacity: 0 }}
