@@ -99,14 +99,17 @@ export default function Community() {
     <SectionWrapper id="community">
       <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
         <div>
-          <span className="section-label">Give Back</span>
-          <h2 className="text-4xl md:text-5xl font-bold mt-4 leading-tight">
+          <div className="section-header">
+            <span className="section-number">07</span>
+            <span className="section-word">Give Back</span>
+          </div>
+          <h2 className="editorial-heading text-4xl md:text-5xl lg:text-6xl mt-4 leading-[1.1]">
             Building a
             <br />
-            <span className="text-accent">Bridge Home</span>
+            <span className="text-accent font-serif italic">Bridge Home</span>
           </h2>
         </div>
-        <p className="text-muted max-w-md text-lg">
+        <p className="text-[var(--color-muted)] max-w-md text-base leading-[1.75]">
           I&apos;m building a gateway program to give back to my community —
           making the path from where I started to where I am now a little
           clearer for those coming next.
@@ -123,11 +126,11 @@ export default function Community() {
             viewport={{ once: true }}
             transition={{ delay: i * 0.1, duration: 0.6, ease: "easeOut" }}
           >
-            <div className="w-14 h-14 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center text-accent mb-6">
+            <div className="w-14 h-14 rounded-xl bg-[var(--color-accent-soft)] border border-[rgba(59,130,246,0.3)] flex items-center justify-center text-accent mb-6">
               {service.icon}
             </div>
-            <h3 className="text-xl font-bold mb-3">{service.title}</h3>
-            <p className="text-muted leading-relaxed flex-1">
+            <h3 className="editorial-heading text-xl mb-3">{service.title}</h3>
+            <p className="text-foreground leading-[1.75] flex-1">
               {service.description}
             </p>
           </motion.div>
@@ -142,9 +145,7 @@ export default function Community() {
         viewport={{ once: true }}
         transition={{ delay: 0.3, duration: 0.6, ease: "easeOut" }}
       >
-        <h3 className="text-2xl font-bold mb-6">
-          Community Service
-        </h3>
+        <h3 className="editorial-heading text-2xl mb-6">Community Service</h3>
         <div className="space-y-4">
           {volunteerWork.map((item) => (
             <div
@@ -152,7 +153,7 @@ export default function Community() {
               className="bento-card p-6 md:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4"
             >
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center text-accent shrink-0">
+                <div className="w-12 h-12 rounded-xl bg-[var(--color-accent-soft)] border border-[rgba(59,130,246,0.3)] flex items-center justify-center text-accent shrink-0">
                   <svg
                     width="24"
                     height="24"
@@ -160,34 +161,35 @@ export default function Community() {
                     fill="none"
                     stroke="currentColor"
                     strokeWidth="1.5"
+                    aria-hidden="true"
                   >
                     <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" />
                   </svg>
                 </div>
                 <div>
                   <div className="flex flex-wrap items-center gap-2">
-                    <p className="font-semibold text-lg">{item.organization}</p>
+                    <p className="editorial-heading text-lg">
+                      {item.organization}
+                    </p>
                     {item.upcoming && (
-                      <span className="text-[10px] uppercase tracking-[0.15em] font-bold bg-accent/15 text-accent border border-accent/30 px-2 py-0.5 rounded-full">
-                        Upcoming!
-                      </span>
+                      <span className="award-badge">Upcoming!</span>
                     )}
                   </div>
-                  <p className="text-muted">{item.activity}</p>
+                  <p className="text-foreground leading-[1.75]">
+                    {item.activity}
+                  </p>
                   {item.location && (
-                    <p className="text-xs text-muted/70 mt-1 font-mono">
+                    <p className="text-xs text-[var(--color-hint)] mt-1 font-mono">
                       {item.location}
                     </p>
                   )}
                 </div>
               </div>
-              <div className="flex items-center gap-4 text-sm text-muted md:text-right shrink-0">
+              <div className="flex items-center gap-4 text-sm text-[var(--color-muted)] md:text-right shrink-0">
                 {item.hours && (
-                  <span className="bg-accent/10 text-accent px-3 py-1 rounded-full font-medium">
-                    {item.hours} hrs
-                  </span>
+                  <span className="tag-pill">{item.hours} hrs</span>
                 )}
-                <span>{item.date}</span>
+                <span className="font-mono">{item.date}</span>
               </div>
             </div>
           ))}
@@ -219,6 +221,7 @@ export default function Community() {
             fill="none"
             stroke="currentColor"
             strokeWidth="2"
+            aria-hidden="true"
           >
             <path d="M7 17l9.2-9.2M17 17V7H7" />
           </svg>

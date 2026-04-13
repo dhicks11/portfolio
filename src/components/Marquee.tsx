@@ -3,43 +3,46 @@
 import { motion } from "framer-motion";
 
 interface MarqueeProps {
-  text: string;
+  items?: string[];
+  text?: string;
   className?: string;
 }
 
-export default function Marquee({ text, className = "" }: MarqueeProps) {
-  const items = Array(4).fill(text);
+export default function Marquee({ items, text, className = "" }: MarqueeProps) {
+  // Support either `items` (preferred) or legacy `text` prop
+  const tickerItems = items ?? (text ? [text] : []);
 
   return (
     <motion.div
-      className={`overflow-hidden py-8 border-y border-card-border ${className}`}
+      className={`w-full py-6 md:py-8 bg-[var(--color-surface)] border-y border-[var(--color-border)] overflow-hidden ${className}`}
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
     >
-      <div className="animate-marquee flex whitespace-nowrap">
-        {items.map((item, i) => (
-          <span
-            key={i}
-            className="text-6xl md:text-8xl lg:text-9xl font-bold uppercase tracking-tight mx-8 text-foreground/[0.04]"
-            style={{ WebkitTextStroke: "1px rgba(59, 130, 246, 0.2)" }}
-          >
-            {item}
-            <span className="text-accent mx-8">*</span>
-          </span>
-        ))}
-        {items.map((item, i) => (
-          <span
-            key={`dup-${i}`}
-            className="text-6xl md:text-8xl lg:text-9xl font-bold uppercase tracking-tight mx-8 text-foreground/[0.04]"
-            style={{ WebkitTextStroke: "1px rgba(59, 130, 246, 0.2)" }}
-          >
-            {item}
-            <span className="text-accent mx-8">*</span>
-          </span>
+      <div
+        className="animate-marquee flex whitespace-nowrap"
+        aria-hidden="true"
+      >
+        {/* Render twice so the seamless loop works */}
+        {[0, 1].map((iteration) => (
+          <div key={iteration} className="flex shrink-0">
+            {tickerItems.map((item, i) => (
+              <span
+                key={`${iteration}-${i}`}
+                className="flex items-center text-2xl md:text-3xl font-bold uppercase tracking-tight mx-6 md:mx-10 text-[var(--color-muted)]"
+              >
+                {item}
+                <span className="text-[var(--color-accent)] mx-6 md:mx-10 text-3xl md:text-4xl">
+                  ✦
+                </span>
+              </span>
+            ))}
+          </div>
         ))}
       </div>
+      {/* Screen-reader accessible version */}
+      <p className="sr-only">{tickerItems.join(", ")}</p>
     </motion.div>
   );
 }

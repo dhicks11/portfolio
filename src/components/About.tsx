@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 import SectionWrapper from "./SectionWrapper";
 import { personalInfo } from "@/data/resume";
@@ -8,41 +7,28 @@ import { personalInfo } from "@/data/resume";
 export default function About() {
   return (
     <SectionWrapper id="about">
-      <div className="grid lg:grid-cols-2 gap-16 items-start">
+      <div className="grid lg:grid-cols-[1fr_1.2fr] gap-12 lg:gap-20 items-start">
         <div>
-          <span className="section-label">About</span>
-          <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-8 leading-tight">
+          <div className="section-header">
+            <span className="section-number">02</span>
+            <span className="section-word">About</span>
+          </div>
+          <h2 className="editorial-heading text-4xl md:text-5xl lg:text-6xl mt-6 mb-8 leading-[1.1]">
             Crafting digital
             <br />
             experiences with
             <br />
-            <span className="text-accent">purpose</span>
+            <span className="text-accent font-serif italic">purpose</span>
           </h2>
-          <motion.div
-            className="relative w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-2 border-card-border hover:border-accent transition-colors duration-500 group"
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <div
-              className="absolute inset-0 opacity-0 group-hover:opacity-30 transition-opacity duration-500 pointer-events-none z-10"
-              style={{ background: "radial-gradient(circle at center, var(--color-accent), transparent 70%)" }}
-            />
-            <Image
-              src="/profile.jpg"
-              alt={`${personalInfo.name} — ${personalInfo.title}`}
-              fill
-              sizes="(max-width: 768px) 192px, 224px"
-              className="object-cover"
-              priority
-            />
-          </motion.div>
+          <p className="text-[var(--color-muted)] text-base leading-[1.75] max-w-md">
+            A Computer Science student, founder, and AI consultant building at
+            the intersection of technology and community.
+          </p>
         </div>
 
-        <div>
+        <div className="lg:pt-6">
           <motion.p
-            className="text-muted text-lg leading-relaxed mb-6"
+            className="text-foreground text-lg leading-[1.85] mb-6"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -51,7 +37,7 @@ export default function About() {
             {personalInfo.bio}
           </motion.p>
           <motion.p
-            className="text-muted text-lg leading-relaxed mb-8"
+            className="text-foreground text-lg leading-[1.85] mb-10"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -62,22 +48,23 @@ export default function About() {
             experience through internships and AI engineering work.
           </motion.p>
           <motion.div
-            className="flex flex-wrap gap-3"
+            className="flex flex-wrap gap-2"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
-            {["Full-Stack Dev", "AI/ML", "Product Builder", "Hackathon Winner"].map(
-              (tag) => (
-                <span
-                  key={tag}
-                  className="px-4 py-2 text-sm rounded-full border border-card-border text-muted hover:border-accent hover:text-accent transition-colors duration-300"
-                >
-                  {tag}
-                </span>
-              )
-            )}
+            {[
+              "Full-Stack Dev",
+              "AI/ML",
+              "Founder",
+              "Consultant",
+              "Hackathon Winner",
+            ].map((tag) => (
+              <span key={tag} className="tag-pill">
+                {tag}
+              </span>
+            ))}
           </motion.div>
         </div>
       </div>
