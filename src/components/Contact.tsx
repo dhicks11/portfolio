@@ -66,21 +66,24 @@ export default function Contact() {
     <SectionWrapper id="contact">
       <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
         <div>
-          <span className="section-label">Contact</span>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mt-4 leading-tight">
+          <div className="section-header">
+            <span className="section-number">08</span>
+            <span className="section-word">Contact</span>
+          </div>
+          <h2 className="editorial-heading text-4xl md:text-5xl lg:text-6xl mt-4 leading-[1.1]">
             Let&apos;s build something
             <br />
-            <span className="text-accent">together</span>
+            <span className="text-accent font-serif italic">together</span>
           </h2>
         </div>
-        <p className="text-muted max-w-md text-lg">
+        <p className="text-[var(--color-muted)] max-w-md text-base leading-[1.75]">
           I&apos;m always open to new opportunities, collaborations, and
           conversations. Send a message or book a time to chat.
         </p>
       </div>
 
       {/* Tab switcher */}
-      <div className="flex gap-2 mb-8">
+      <div className="flex flex-wrap gap-2 mb-8" role="tablist">
         {[
           { key: "message" as const, label: "Send Message", icon: "M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" },
           { key: "schedule" as const, label: "Schedule Meeting", icon: "M3 4h18a2 2 0 012 2v14a2 2 0 01-2 2H3a2 2 0 01-2-2V6a2 2 0 012-2zM16 2v4M8 2v4M1 10h22" },
@@ -88,13 +91,15 @@ export default function Contact() {
           <button
             key={tab.key}
             onClick={() => setActiveTab(tab.key)}
-            className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium transition-all ${
+            role="tab"
+            aria-selected={activeTab === tab.key}
+            className={`flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-medium transition-all min-h-[44px] ${
               activeTab === tab.key
-                ? "bg-accent text-background"
-                : "border border-card-border text-muted hover:text-foreground hover:border-muted"
+                ? "bg-[var(--color-accent)] text-[var(--color-background)]"
+                : "border border-[var(--color-border)] text-foreground hover:border-accent"
             }`}
           >
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
               <path d={tab.icon} />
             </svg>
             {tab.label}
@@ -117,9 +122,9 @@ export default function Contact() {
             <div>
               <label
                 htmlFor="name"
-                className="block text-xs uppercase tracking-widest text-muted mb-2 font-medium"
+                className="block text-sm text-foreground mb-2 font-medium"
               >
-                Name
+                Name <span className="text-accent">*</span>
               </label>
               <input
                 type="text"
@@ -130,15 +135,15 @@ export default function Contact() {
                 onChange={handleChange}
                 placeholder="Your name"
                 aria-describedby="contact-status"
-                className="w-full bg-background border border-card-border rounded-lg px-4 py-3 text-foreground placeholder:text-muted/50 focus:outline-none focus:border-accent transition-colors"
+                className="w-full bg-[var(--color-background)] border border-[var(--color-border)] rounded-lg px-4 py-3 text-foreground placeholder:text-[var(--color-hint)] focus:outline-none focus:border-accent transition-colors"
               />
             </div>
             <div>
               <label
                 htmlFor="email"
-                className="block text-xs uppercase tracking-widest text-muted mb-2 font-medium"
+                className="block text-sm text-foreground mb-2 font-medium"
               >
-                Email
+                Email <span className="text-accent">*</span>
               </label>
               <input
                 type="email"
@@ -149,7 +154,7 @@ export default function Contact() {
                 onChange={handleChange}
                 placeholder="you@example.com"
                 aria-describedby="contact-status"
-                className="w-full bg-background border border-card-border rounded-lg px-4 py-3 text-foreground placeholder:text-muted/50 focus:outline-none focus:border-accent transition-colors"
+                className="w-full bg-[var(--color-background)] border border-[var(--color-border)] rounded-lg px-4 py-3 text-foreground placeholder:text-[var(--color-hint)] focus:outline-none focus:border-accent transition-colors"
               />
             </div>
           </div>
@@ -157,9 +162,9 @@ export default function Contact() {
           <div>
             <label
               htmlFor="subject"
-              className="block text-xs uppercase tracking-widest text-muted mb-2 font-medium"
+              className="block text-sm text-foreground mb-2 font-medium"
             >
-              Subject
+              Subject <span className="text-accent">*</span>
             </label>
             <select
               id="subject"
@@ -168,7 +173,7 @@ export default function Contact() {
               value={form.subject}
               onChange={handleChange}
               aria-describedby="contact-status"
-              className="w-full bg-background border border-card-border rounded-lg px-4 py-3 text-foreground focus:outline-none focus:border-accent transition-colors appearance-none"
+              className="w-full bg-[var(--color-background)] border border-[var(--color-border)] rounded-lg px-4 py-3 text-foreground focus:outline-none focus:border-accent transition-colors appearance-none"
             >
               {subjects.map((s) => (
                 <option key={s.value} value={s.value} disabled={!s.value}>
@@ -181,9 +186,9 @@ export default function Contact() {
           <div>
             <label
               htmlFor="message"
-              className="block text-xs uppercase tracking-widest text-muted mb-2 font-medium"
+              className="block text-sm text-foreground mb-2 font-medium"
             >
-              Message
+              Message <span className="text-accent">*</span>
             </label>
             <textarea
               id="message"
@@ -194,7 +199,7 @@ export default function Contact() {
               onChange={handleChange}
               placeholder="Tell me about your project, opportunity, or question..."
               aria-describedby="contact-status"
-              className="w-full bg-background border border-card-border rounded-lg px-4 py-3 text-foreground placeholder:text-muted/50 focus:outline-none focus:border-accent transition-colors resize-none"
+              className="w-full bg-[var(--color-background)] border border-[var(--color-border)] rounded-lg px-4 py-3 text-foreground placeholder:text-[var(--color-hint)] focus:outline-none focus:border-accent transition-colors resize-none"
             />
           </div>
 
@@ -259,24 +264,25 @@ export default function Contact() {
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           <div className="bento-card p-8">
-            <h3 className="text-lg font-semibold mb-4">Direct Email</h3>
+            <h3 className="editorial-heading text-lg mb-4">Direct Email</h3>
             <a
               href={`mailto:${personalInfo.email}`}
               className="text-accent hover:underline break-all"
+              aria-label={`Email ${personalInfo.email}`}
             >
               {personalInfo.email}
             </a>
           </div>
 
           <div className="bento-card p-8">
-            <h3 className="text-lg font-semibold mb-4">Connect</h3>
+            <h3 className="editorial-heading text-lg mb-4">Connect</h3>
             <div className="flex gap-3">
               <a
                 href={personalInfo.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-11 h-11 rounded-full border border-card-border flex items-center justify-center text-muted hover:text-accent hover:border-accent transition-all duration-300"
-                aria-label="GitHub"
+                className="w-11 h-11 rounded-full border border-[var(--color-border)] flex items-center justify-center text-[var(--color-muted)] hover:text-accent hover:border-accent transition-all duration-200"
+                aria-label="Visit GitHub profile"
               >
                 <svg
                   className="w-5 h-5"
@@ -294,8 +300,8 @@ export default function Contact() {
                 href={personalInfo.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-11 h-11 rounded-full border border-card-border flex items-center justify-center text-muted hover:text-accent hover:border-accent transition-all duration-300"
-                aria-label="LinkedIn"
+                className="w-11 h-11 rounded-full border border-[var(--color-border)] flex items-center justify-center text-[var(--color-muted)] hover:text-accent hover:border-accent transition-all duration-200"
+                aria-label="Visit LinkedIn profile"
               >
                 <svg
                   className="w-5 h-5"
@@ -309,17 +315,17 @@ export default function Contact() {
           </div>
 
           <div className="bento-card p-8">
-            <h3 className="text-lg font-semibold mb-3">Based in</h3>
+            <h3 className="editorial-heading text-lg mb-3">Based in</h3>
             <div className="space-y-2 text-sm">
               <div className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-accent" />
+                <span className="w-1.5 h-1.5 rounded-full bg-accent" aria-hidden="true" />
                 <span className="text-foreground">Greensboro, NC</span>
-                <span className="text-muted">— school year</span>
+                <span className="text-[var(--color-muted)]">— school year</span>
               </div>
               <div className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-accent/50" />
+                <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-accent-soft)]" aria-hidden="true" />
                 <span className="text-foreground">Cary & Henrico, NC</span>
-                <span className="text-muted">— summer</span>
+                <span className="text-[var(--color-muted)]">— summer</span>
               </div>
             </div>
           </div>

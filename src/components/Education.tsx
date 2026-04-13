@@ -7,11 +7,14 @@ import { education, activities, certificate } from "@/data/resume";
 export default function Education() {
   return (
     <SectionWrapper id="education">
-      <span className="section-label">Education</span>
-      <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-16 leading-tight">
+      <div className="section-header">
+        <span className="section-number">06</span>
+        <span className="section-word">Education</span>
+      </div>
+      <h2 className="editorial-heading text-4xl md:text-5xl lg:text-6xl mt-4 mb-16 leading-[1.1]">
         Academic
         <br />
-        <span className="text-accent">background</span>
+        <span className="text-accent font-serif italic">background</span>
       </h2>
 
       {/* Certificate highlight */}
@@ -24,7 +27,7 @@ export default function Education() {
       >
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
           <div className="flex items-start gap-5">
-            <div className="w-14 h-14 rounded-xl bg-accent/15 border border-accent/30 flex items-center justify-center shrink-0">
+            <div className="w-14 h-14 rounded-xl bg-[var(--color-accent-soft)] border border-[rgba(59,130,246,0.3)] flex items-center justify-center shrink-0">
               <svg
                 width="24"
                 height="24"
@@ -33,6 +36,7 @@ export default function Education() {
                 stroke="currentColor"
                 strokeWidth="1.5"
                 className="text-accent"
+                aria-hidden="true"
               >
                 <path d="M12 2L2 7l10 5 10-5-10-5z" />
                 <path d="M2 17l10 5 10-5" />
@@ -41,20 +45,18 @@ export default function Education() {
             </div>
             <div>
               <div className="flex items-center gap-3 mb-1">
-                <span className="px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider rounded-full bg-accent/20 text-accent border border-accent/30">
-                  Certified
-                </span>
-                <span className="text-xs text-muted font-mono">
+                <span className="award-badge">Certified</span>
+                <span className="text-xs text-[var(--color-muted)] font-mono">
                   {certificate.date}
                 </span>
               </div>
-              <h3 className="text-xl md:text-2xl font-bold text-foreground mt-2">
+              <h3 className="editorial-heading text-xl md:text-2xl text-foreground mt-2">
                 {certificate.name}
               </h3>
-              <p className="text-sm text-accent/80 font-medium mt-1">
+              <p className="text-sm text-[var(--color-accent-text)] font-medium mt-1">
                 {certificate.issuer}
               </p>
-              <p className="text-muted text-sm mt-3 max-w-xl leading-relaxed">
+              <p className="text-foreground text-sm mt-3 max-w-xl leading-[1.75]">
                 {certificate.description}
               </p>
             </div>
@@ -73,22 +75,22 @@ export default function Education() {
             viewport={{ once: true }}
             transition={{ delay: i * 0.1, duration: 0.5 }}
           >
-            <h3 className="text-xl font-bold mb-2">{school.school}</h3>
-            <p className="text-accent text-sm font-medium mb-4">
+            <h3 className="editorial-heading text-xl mb-2">{school.school}</h3>
+            <p className="text-[var(--color-accent-text)] text-sm font-medium mb-4">
               {school.degree}
             </p>
-            <div className="flex justify-between text-sm text-muted">
+            <div className="flex justify-between text-sm text-[var(--color-muted)] font-mono">
               <span>{school.dates}</span>
               <span>{school.location}</span>
             </div>
             {school.highlight && (
-              <p className="text-muted text-sm mt-4 leading-relaxed">
+              <p className="text-foreground text-sm mt-4 leading-[1.75]">
                 {school.highlight}
               </p>
             )}
             {school.gpa && (
-              <div className="mt-4 pt-4 border-t border-card-border">
-                <span className="text-sm text-muted">GPA: </span>
+              <div className="mt-4 pt-4 border-t border-[var(--color-border)]">
+                <span className="text-sm text-[var(--color-muted)]">GPA: </span>
                 <span className="text-accent font-bold">{school.gpa}</span>
               </div>
             )}
@@ -102,15 +104,12 @@ export default function Education() {
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
       >
-        <h3 className="text-lg font-bold mb-6">
+        <h3 className="editorial-heading text-lg mb-6">
           Competitions & Activities
         </h3>
-        <div className="flex flex-wrap gap-3">
+        <div className="flex flex-wrap gap-2">
           {activities.map((activity) => (
-            <span
-              key={activity}
-              className="px-4 py-2.5 text-sm rounded-full border border-card-border text-muted hover:text-accent hover:border-accent/40 transition-all duration-300"
-            >
+            <span key={activity} className="tag-pill">
               {activity}
             </span>
           ))}

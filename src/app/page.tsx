@@ -11,6 +11,21 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import SideNav from "@/components/SideNav";
 
+const tickerItems = [
+  "AI Engineer",
+  "Founder",
+  "Builder",
+  "Hackathon Winner",
+  "LLM Engineer",
+  "Basketball Head",
+  "Product Thinker",
+  "CS Student",
+  "Full-Stack Dev",
+  "Community Builder",
+  "AI Consultant",
+  "Problem Solver",
+];
+
 export default function Home() {
   return (
     <>
@@ -18,10 +33,9 @@ export default function Home() {
       <SideNav />
       <main id="main-content">
         <Hero />
-        <Marquee text="Software Engineer · Consultant" />
+        <Marquee items={tickerItems} />
         <About />
         <Skills />
-        <Marquee text="Featured Work" />
         <Projects />
         <Experience />
         <Education />

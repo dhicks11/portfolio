@@ -62,23 +62,24 @@ export default function SideNav() {
           <button
             key={section.href}
             onClick={() => handleClick(section.href)}
-            className="group flex items-center gap-3 cursor-pointer"
+            className="group flex items-center gap-3 cursor-pointer p-2 rounded"
             aria-label={`Navigate to ${section.label}`}
+            aria-current={isActive ? "location" : undefined}
           >
             <span
-              className={`text-[10px] uppercase tracking-widest transition-all duration-300 ${
+              className={`text-[10px] uppercase tracking-widest transition-all duration-200 ${
                 isActive
                   ? "opacity-100 text-accent translate-x-0"
-                  : "opacity-0 text-muted translate-x-2 group-hover:opacity-100 group-hover:translate-x-0"
+                  : "opacity-0 text-[var(--color-muted)] translate-x-2 group-hover:opacity-100 group-hover:translate-x-0"
               }`}
             >
               {section.label}
             </span>
             <span
-              className={`block rounded-full transition-all duration-300 ${
+              className={`block rounded-full transition-all duration-200 ${
                 isActive
                   ? "w-3 h-3 bg-accent"
-                  : "w-2 h-2 bg-muted/40 group-hover:bg-accent/60"
+                  : "w-2 h-2 bg-[var(--color-hint)] group-hover:bg-accent"
               }`}
             />
           </button>

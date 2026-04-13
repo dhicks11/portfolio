@@ -12,22 +12,26 @@ export default function Skills() {
     <SectionWrapper id="skills">
       <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
         <div>
-          <span className="section-label">Expertise</span>
-          <h2 className="text-4xl md:text-5xl font-bold mt-4 leading-tight">
+          <div className="section-header">
+            <span className="section-number">03</span>
+            <span className="section-word">Expertise</span>
+          </div>
+          <h2 className="editorial-heading text-4xl md:text-5xl lg:text-6xl mt-4 leading-[1.1]">
             Technical
             <br />
-            <span className="text-accent">toolkit</span>
+            <span className="text-accent font-serif italic">toolkit</span>
           </h2>
         </div>
       </div>
 
-      <div className="border-t border-card-border">
+      <div className="border-t border-[var(--color-border)]">
         {skills.map((group, i) => {
           const isOpen = openIndex === i;
+          const numberLabel = `0${i + 1}`;
           return (
             <motion.div
               key={group.category}
-              className="border-b border-card-border"
+              className="border-b border-[var(--color-border)]"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
@@ -35,15 +39,19 @@ export default function Skills() {
             >
               <button
                 onClick={() => setOpenIndex(isOpen ? null : i)}
-                className="w-full flex items-center justify-between py-6 md:py-8 group cursor-pointer text-left"
+                className="w-full flex items-center justify-between py-6 md:py-8 group cursor-pointer text-left min-h-[44px]"
+                aria-expanded={isOpen}
+                aria-controls={`skill-panel-${i}`}
               >
                 <div className="flex items-center gap-6">
-                  <span className="text-xs font-mono text-muted/50 w-6">
-                    0{i + 1}
+                  <span className="font-mono text-xs text-accent w-8">
+                    {numberLabel}
                   </span>
                   <h3
-                    className={`text-xl md:text-2xl font-bold transition-colors duration-300 ${
-                      isOpen ? "text-accent" : "text-foreground group-hover:text-accent"
+                    className={`editorial-heading text-xl md:text-2xl transition-colors duration-200 ${
+                      isOpen
+                        ? "text-accent"
+                        : "text-foreground group-hover:text-accent"
                     }`}
                   >
                     {group.category}
@@ -52,7 +60,8 @@ export default function Skills() {
                 <motion.div
                   animate={{ rotate: isOpen ? 45 : 0 }}
                   transition={{ duration: 0.3 }}
-                  className="w-8 h-8 rounded-full border border-card-border flex items-center justify-center shrink-0"
+                  className="w-10 h-10 rounded-full border border-[var(--color-border)] flex items-center justify-center shrink-0"
+                  aria-hidden="true"
                 >
                   <svg
                     width="14"
@@ -61,8 +70,8 @@ export default function Skills() {
                     fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
-                    className={`transition-colors duration-300 ${
-                      isOpen ? "text-accent" : "text-muted"
+                    className={`transition-colors duration-200 ${
+                      isOpen ? "text-accent" : "text-[var(--color-muted)]"
                     }`}
                   >
                     <path d="M12 5v14M5 12h14" />
@@ -73,20 +82,21 @@ export default function Skills() {
               <AnimatePresence>
                 {isOpen && (
                   <motion.div
+                    id={`skill-panel-${i}`}
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: "auto", opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.4, ease: "easeInOut" }}
                     className="overflow-hidden"
                   >
-                    <div className="pl-12 pb-8 flex flex-wrap gap-3">
+                    <div className="pl-14 pb-8 flex flex-wrap gap-2">
                       {group.items.map((skill, si) => (
                         <motion.span
                           key={skill}
-                          className="px-4 py-2 text-sm rounded-full border border-card-border text-muted hover:text-accent hover:border-accent/40 transition-all duration-300"
+                          className="tag-pill"
                           initial={{ opacity: 0, y: 10 }}
                           animate={{ opacity: 1, y: 0 }}
-                          transition={{ delay: si * 0.05, duration: 0.3 }}
+                          transition={{ delay: si * 0.04, duration: 0.3 }}
                         >
                           {skill}
                         </motion.span>
