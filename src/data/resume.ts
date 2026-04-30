@@ -49,6 +49,28 @@ export const skills = [
 
 export const experience = [
   {
+    company: "NC A&T College of Engineering",
+    role: "College of Engineering Ambassador",
+    location: "Greensboro, NC",
+    dates: "Aug. 2026 – May 2027",
+    bullets: [
+      "Selected through a highly competitive process to represent the College of Engineering to faculty, staff, corporate partners, alumni, parents, and prospective students",
+      "Serve as a student recruiter and liaison, promoting NC A&T's engineering and computer science programs at key university events",
+      "Act as the face of current Aggie engineering students, increasing awareness of STEM disciplines and supporting College of Engineering initiatives",
+    ],
+  },
+  {
+    company: "NC A&T State University",
+    role: "Resident Advisor",
+    location: "Greensboro, NC",
+    dates: "Aug. 2026 – May 2027",
+    bullets: [
+      "Selected to serve as an RA for the 2026–2027 academic year, fostering a safe and inclusive residential community",
+      "Mentor and support a floor of residents through academic, social, and personal transitions during their college experience",
+      "Plan and execute community-building programs, enforce university housing policies, and serve as a first responder for resident concerns",
+    ],
+  },
+  {
     company: "JMP Statistical Discovery (SAS Institute)",
     role: "Software Engineer Intern",
     location: "Cary, NC",
@@ -218,6 +240,7 @@ export const education = [
 ];
 
 export const activities = [
+  "College of Engineering Ambassador (2026–2027)",
   "UNCF STEM Innovation Summit Scholar (2026) — 1 of 50 HBCU Students Nationwide",
   "SECU Scholar",
   "College of Engineering Scholar",
