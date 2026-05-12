@@ -4,7 +4,7 @@ export const personalInfo = {
   email: "hicksdigital.dev@gmail.com",
   github: "https://github.com/dhicks11",
   linkedin: "https://linkedin.com/in/daylenhicks",
-  bio: "I'm a Computer Science student at North Carolina A&T State University with a passion for building full-stack applications and working with AI systems. From winning hackathons to founding two companies — a B2B sports platform and an AI consulting firm — I build products at the intersection of technology and community.",
+  bio: "I'm a Computer Science student with a minor in Supply Chain Management at North Carolina A&T State University, passionate about building full-stack applications and working with AI systems. From winning hackathons to founding two companies — a B2B sports platform and an AI consulting firm — I build products at the intersection of technology and community.",
   resumeUrl: "/Daylen_Hicks_Resume.pdf",
 };
 
@@ -71,7 +71,7 @@ export const experience = [
     ],
   },
   {
-    company: "JMP Statistical Discovery (SAS Institute)",
+    company: "SAS Institute (JMP Statistical Discovery)",
     role: "Software Engineer Intern",
     location: "Cary, NC",
     dates: "Jun. 2026 – Aug. 2026",
