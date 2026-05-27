@@ -168,6 +168,18 @@ export const projects: Project[] = [
     image: "/projects/aggieaid.png",
   },
   {
+    name: "I Got Next",
+    event: "B2B Sports Platform",
+    date: "Jan. 2026 – Present",
+    tech: ["Next.js", "TypeScript", "React", "Firebase", "Stripe", "Google Maps API"],
+    bullets: [
+      "Full-stack pickup basketball platform with 500+ active players and 120 courts across 3 cities",
+      "B2B Stripe pipeline targeting YMCAs and parks & rec with 3 facility tiers ($199–$699/mo) and a $5.99/mo Pro player tier",
+    ],
+    liveUrl: "https://igotnextapp.vercel.app",
+    image: "/projects/igotnext.png",
+  },
+  {
     name: "SurgiControl Robot Arm Dashboard",
     event: "J&J Hackathon",
     date: "2026",
