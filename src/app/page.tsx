@@ -26,6 +26,10 @@ const tickerItems = [
   "Problem Solver",
 ];
 
+function Divider() {
+  return <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24"><hr className="border-[var(--color-border)]" /></div>;
+}
+
 export default function Home() {
   return (
     <>
@@ -35,11 +39,17 @@ export default function Home() {
         <Hero />
         <Marquee items={tickerItems} />
         <About />
+        <Divider />
         <Skills />
-        <Projects />
+        <div className="bg-[var(--color-surface)]">
+          <Projects />
+        </div>
         <Experience />
-        <Education />
+        <div className="bg-[var(--color-surface)]">
+          <Education />
+        </div>
         <Community />
+        <Divider />
         <Contact />
       </main>
       <Footer />

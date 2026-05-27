@@ -73,6 +73,13 @@ export default function Navbar() {
               </button>
             );
           })}
+          <span className="w-px h-5 bg-[var(--color-border)]" aria-hidden="true" />
+          <a href="/services" className="text-sm text-[var(--color-muted)] hover:text-foreground min-h-[44px] inline-flex items-center">
+            Hicks Digital
+          </a>
+          <a href="/links" className="text-sm text-[var(--color-muted)] hover:text-foreground min-h-[44px] inline-flex items-center">
+            Links
+          </a>
           <a
             href={personalInfo.resumeUrl}
             target="_blank"
