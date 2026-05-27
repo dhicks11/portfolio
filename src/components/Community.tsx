@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import SectionWrapper from "./SectionWrapper";
 
@@ -10,6 +11,7 @@ interface VolunteerEntry {
   location?: string;
   hours?: number;
   upcoming?: boolean;
+  image?: string;
 }
 
 const volunteerWork: VolunteerEntry[] = [
@@ -19,6 +21,7 @@ const volunteerWork: VolunteerEntry[] = [
       "Delivered an AI literacy workshop to 30+ young men in Halifax County — covering practical AI tools, career paths in tech, and hands-on demos.",
     location: "Roanoke Rapids, NC",
     date: "May 2026",
+    image: "/community/boys2men-workshop.jpg",
   },
   {
     organization: "Northampton County Schools — AI Workshop",
@@ -149,46 +152,59 @@ export default function Community() {
           {volunteerWork.map((item) => (
             <div
               key={`${item.organization}-${item.date}`}
-              className="bento-card p-6 md:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4"
+              className="bento-card overflow-hidden"
             >
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-[var(--color-accent-soft)] border border-[rgba(59,130,246,0.3)] flex items-center justify-center text-accent shrink-0">
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    aria-hidden="true"
-                  >
-                    <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" />
-                  </svg>
+              {item.image && (
+                <div className="relative w-full h-48 md:h-64">
+                  <Image
+                    src={item.image}
+                    alt={`${item.organization} — group photo`}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 80vw"
+                    className="object-cover object-center"
+                  />
                 </div>
-                <div>
-                  <div className="flex flex-wrap items-center gap-2">
-                    <p className="editorial-heading text-lg">
-                      {item.organization}
+              )}
+              <div className="p-6 md:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-[var(--color-accent-soft)] border border-[rgba(59,130,246,0.3)] flex items-center justify-center text-accent shrink-0">
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      aria-hidden="true"
+                    >
+                      <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <div className="flex flex-wrap items-center gap-2">
+                      <p className="editorial-heading text-lg">
+                        {item.organization}
+                      </p>
+                      {item.upcoming && (
+                        <span className="award-badge">Upcoming!</span>
+                      )}
+                    </div>
+                    <p className="text-foreground leading-[1.75]">
+                      {item.activity}
                     </p>
-                    {item.upcoming && (
-                      <span className="award-badge">Upcoming!</span>
+                    {item.location && (
+                      <p className="text-xs text-[var(--color-hint)] mt-1 font-mono">
+                        {item.location}
+                      </p>
                     )}
                   </div>
-                  <p className="text-foreground leading-[1.75]">
-                    {item.activity}
-                  </p>
-                  {item.location && (
-                    <p className="text-xs text-[var(--color-hint)] mt-1 font-mono">
-                      {item.location}
-                    </p>
-                  )}
                 </div>
-              </div>
-              <div className="flex items-center gap-4 text-sm text-[var(--color-muted)] md:text-right shrink-0">
-                {item.hours && (
-                  <span className="tag-pill">{item.hours} hrs</span>
-                )}
-                <span className="font-mono">{item.date}</span>
+                <div className="flex items-center gap-4 text-sm text-[var(--color-muted)] md:text-right shrink-0">
+                  {item.hours && (
+                    <span className="tag-pill">{item.hours} hrs</span>
+                  )}
+                  <span className="font-mono">{item.date}</span>
+                </div>
               </div>
             </div>
           ))}
