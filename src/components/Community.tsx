@@ -16,10 +16,9 @@ const volunteerWork: VolunteerEntry[] = [
   {
     organization: "Boys 2 Men AI Workshop",
     activity:
-      "Leading an AI literacy workshop for young men in Halifax County — covering practical AI tools, career paths in tech, and hands-on demos.",
+      "Delivered an AI literacy workshop to 30+ young men in Halifax County — covering practical AI tools, career paths in tech, and hands-on demos.",
     location: "Roanoke Rapids, NC",
-    date: "May 16, 2026",
-    upcoming: true,
+    date: "May 2026",
   },
   {
     organization: "Northampton County Schools — AI Workshop",
