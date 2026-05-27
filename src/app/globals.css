@@ -3,10 +3,10 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --color-background: #FFFFFF;
+  --color-background: #FAFBFC;
   --color-foreground: #111111;
-  --color-surface: #F7F8FC;
-  --color-surface-2: #EEF0F6;
+  --color-surface: #F1F5F9;
+  --color-surface-2: #E8EDF4;
   --color-card: #FFFFFF;
   --color-card-border: #E5E7EB;
   --color-border: #E5E7EB;
