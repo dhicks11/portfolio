@@ -74,8 +74,9 @@ export default function Navbar() {
             );
           })}
           <span className="w-px h-5 bg-[var(--color-border)]" aria-hidden="true" />
-          <a href="/services" className="text-sm text-[var(--color-muted)] hover:text-foreground min-h-[44px] inline-flex items-center">
+          <a href="/services" className="text-sm font-semibold text-accent hover:text-accent-dark min-h-[44px] inline-flex items-center gap-1.5 border border-accent/20 bg-accent/5 px-3 rounded-full transition-colors">
             Hicks Digital
+            <span className="text-[10px]">&rarr;</span>
           </a>
           <a href="/links" className="text-sm text-[var(--color-muted)] hover:text-foreground min-h-[44px] inline-flex items-center">
             Links
@@ -124,7 +125,7 @@ export default function Navbar() {
                 </button>
               ))}
               <a href={personalInfo.resumeUrl} target="_blank" rel="noopener noreferrer" className="btn-pill btn-primary text-center mt-2">Resume</a>
-              <a href="/services" className="text-base text-[var(--color-muted)] hover:text-foreground py-3 min-h-[44px]">Services</a>
+              <a href="/services" className="text-base font-semibold text-accent py-3 min-h-[44px] flex items-center gap-2">Hicks Digital <span className="text-xs">&rarr;</span></a>
             </div>
           </motion.div>
         )}

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import FallbackImage from "@/components/FallbackImage";
 
 export const metadata: Metadata = {
   title: "Hicks Digital — Web Development, SEO & AI Automation for Small Businesses",
@@ -211,6 +212,24 @@ const stats = [
   { value: "100%", label: "Satisfaction" },
 ];
 
+const showcaseItems = [
+  {
+    title: "I Got Next",
+    description: "Basketball pickup game app — mobile-first design with real-time matchmaking",
+    image: "/projects/igotnext.png",
+  },
+  {
+    title: "Aggie Aid",
+    description: "AI-powered campus assistant helping students navigate university resources",
+    image: "/projects/aggieaid.png",
+  },
+  {
+    title: "AI Literacy Workshop",
+    description: "Hands-on AI training sessions for students and community organizations",
+    image: "/services/workshop.jpg",
+  },
+];
+
 export default function ServicesPage() {
   return (
     <>
@@ -258,39 +277,55 @@ export default function ServicesPage() {
             />
           </div>
 
-          <div className="relative z-10">
-            <div className="flex items-center gap-4 mb-8">
-              <span className="w-8 h-px bg-accent" />
-              <span className="text-xs font-semibold tracking-[0.2em] uppercase text-accent">
-                Hicks Digital
-              </span>
+          <div className="relative z-10 grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <div className="flex items-center gap-4 mb-8">
+                <span className="w-8 h-px bg-accent" />
+                <span className="text-xs font-semibold tracking-[0.2em] uppercase text-accent">
+                  Hicks Digital
+                </span>
+              </div>
+              <h1 className="text-5xl md:text-6xl lg:text-[5rem] font-bold leading-[1.05] tracking-tight max-w-[16ch]">
+                We build what{" "}
+                <span className="text-accent">grows</span> your business.
+              </h1>
+              <p className="mt-8 text-muted text-lg max-w-[55ch] leading-relaxed">
+                Web development, local SEO, AI automation, and career services for
+                small businesses and professionals across North Carolina. Built by
+                someone from the community, for the community.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 mt-10">
+                <a
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSdZbdNsUgJ_oM60jHLssIhaLX-0yU4QXkAeXkwrxy0qPPr0gQ/viewform"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-pill btn-primary text-center"
+                >
+                  Get Your Free Audit
+                </a>
+                <a
+                  href="https://calendly.com/daylenhicks10"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-pill btn-outline text-center"
+                >
+                  Book a Call
+                </a>
+              </div>
             </div>
-            <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] font-bold leading-[1.05] tracking-tight max-w-[16ch]">
-              We build what{" "}
-              <span className="text-accent">grows</span> your business.
-            </h1>
-            <p className="mt-8 text-muted text-lg max-w-[55ch] leading-relaxed">
-              Web development, local SEO, AI automation, and career services for
-              small businesses and professionals across North Carolina. Built by
-              someone from the community, for the community.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 mt-10">
-              <a
-                href="https://docs.google.com/forms/d/e/1FAIpQLSdZbdNsUgJ_oM60jHLssIhaLX-0yU4QXkAeXkwrxy0qPPr0gQ/viewform"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-pill btn-primary text-center"
-              >
-                Get Your Free Audit
-              </a>
-              <a
-                href="https://calendly.com/daylenhicks10"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-pill btn-outline text-center"
-              >
-                Book a Call
-              </a>
+            <div className="relative hidden md:block">
+              <div className="aspect-[4/3] rounded-2xl overflow-hidden border border-card-border shadow-lg">
+                <FallbackImage
+                  src="/services/hero.jpg"
+                  alt="Hicks Digital — web development and AI solutions"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="absolute -bottom-4 -left-4 bg-white border border-card-border rounded-xl p-4 shadow-md">
+                <p className="text-xs text-muted">Trusted by</p>
+                <p className="text-2xl font-bold text-accent">10+</p>
+                <p className="text-xs text-muted">local businesses</p>
+              </div>
             </div>
           </div>
         </section>
@@ -472,8 +507,8 @@ export default function ServicesPage() {
                   {featuredService.buttonLabel || "Get Started"} &rarr;
                 </a>
               </div>
-              <div className="p-8 md:p-10 md:border-l border-t md:border-t-0 border-card-border">
-                <ul className="space-y-2">
+              <div className="p-8 md:p-10 md:border-l border-t md:border-t-0 border-card-border flex flex-col">
+                <ul className="space-y-2 flex-1">
                   {featuredService.includes.map((item) => (
                     <li
                       key={item}
@@ -484,6 +519,14 @@ export default function ServicesPage() {
                     </li>
                   ))}
                 </ul>
+                <div className="mt-6 rounded-lg overflow-hidden aspect-[16/9] bg-surface">
+                  <FallbackImage
+                    src="/services/automation-preview.jpg"
+                    alt="AI automation dashboard preview"
+                    className="w-full h-full object-cover"
+                    fallbackClass="bg-surface"
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -518,8 +561,45 @@ export default function ServicesPage() {
           </div>
         </section>
 
+        {/* Work Showcase */}
+        <section className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 py-20">
+          <div className="flex items-center gap-4 mb-4">
+            <span className="w-8 h-px bg-accent" />
+            <span className="text-xs font-semibold tracking-[0.2em] uppercase text-accent">
+              Our Work
+            </span>
+          </div>
+          <h2 className="text-3xl md:text-4xl font-bold mb-3">
+            Built with <span className="text-accent">purpose.</span>
+          </h2>
+          <p className="text-muted text-sm mb-12 max-w-[50ch] leading-relaxed">
+            A few projects and sessions we&apos;re proud of. Real solutions for real people.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {showcaseItems.map((item) => (
+              <div key={item.title} className="group border border-card-border rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
+                <div className="aspect-[16/10] bg-surface overflow-hidden">
+                  <FallbackImage
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    fallbackClass="bg-surface"
+                  />
+                </div>
+                <div className="p-5">
+                  <h3 className="font-bold text-sm mb-1">{item.title}</h3>
+                  <p className="text-xs text-muted leading-relaxed">{item.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Divider */}
+        <div className="h-px bg-gradient-to-r from-transparent via-card-border to-transparent mx-6 md:mx-12 lg:mx-24" />
+
         {/* CTA */}
-        <section className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 pb-20">
+        <section className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 pb-20 pt-20">
           <div className="border border-card-border p-8 md:p-12 flex flex-col md:flex-row justify-between items-start md:items-center gap-8 relative overflow-hidden">
             <div className="absolute top-0 right-0 w-80 h-80 bg-accent/5 rounded-full blur-[100px] pointer-events-none" />
             <div className="relative z-10">
