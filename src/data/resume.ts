@@ -17,31 +17,30 @@ export const highlights = [
 export const skills = [
   {
     category: "Languages",
-    items: ["Python", "Java", "JavaScript", "TypeScript", "SQL", "HTML/CSS"],
+    items: ["Python", "Java", "JavaScript", "TypeScript", "SQL", "HTML/CSS", "Perl", "XML"],
   },
   {
     category: "Frameworks",
-    items: ["React", "Next.js", "Node.js", "FastAPI", "Streamlit"],
+    items: ["React", "Next.js", "Node.js", "FastAPI"],
   },
   {
     category: "Developer Tools",
-    items: ["Git", "GitHub", "Docker", "PowerShell", "Scrum"],
+    items: ["Git", "GitHub", "Jenkins", "Perforce (P4V)", "VS Code", "Vercel", "Supabase", "Docker", "Scrum", "Airtable"],
   },
   {
     category: "Libraries & Platforms",
-    items: ["Firebase", "NumPy", "Pandas", "Plotly", "Tableau"],
+    items: ["Firebase", "Streamlit", "NumPy", "Pandas", "Plotly", "Tableau", "Stripe", "AI Tools (Claude, Gemini, ChatGPT)"],
   },
   {
     category: "Cloud & Deployment",
-    items: ["Vercel", "Supabase", "Google Cloud", "AWS", "Railway", "Netlify"],
+    items: ["AWS (EC2, Amazon Bedrock)", "Firebase", "Vercel", "Google Cloud Platform", "Railway"],
   },
   {
     category: "AI & System Design",
     items: [
       "Responsible AI",
-      "Human-in-the-Loop",
-      "LLM Evaluation",
-      "RLHF",
+      "Human-in-the-Loop Systems",
+      "LLM Evaluation & RLHF",
       "Prompt Engineering",
     ],
   },
@@ -49,56 +48,15 @@ export const skills = [
 
 export const experience = [
   {
-    company: "NC A&T College of Engineering",
-    role: "College of Engineering Ambassador",
-    location: "Greensboro, NC",
-    dates: "Aug. 2026 – May 2027",
-    bullets: [
-      "Selected through a highly competitive process to represent the College of Engineering to faculty, staff, corporate partners, alumni, parents, and prospective students",
-      "Serve as a student recruiter and liaison, promoting NC A&T's engineering and computer science programs at key university events",
-      "Act as the face of current Aggie engineering students, increasing awareness of STEM disciplines and supporting College of Engineering initiatives",
-    ],
-  },
-  {
-    company: "NC A&T State University",
-    role: "Resident Advisor",
-    location: "Greensboro, NC",
-    dates: "Aug. 2026 – May 2027",
-    bullets: [
-      "Selected to serve as an RA for the 2026–2027 academic year, fostering a safe and inclusive residential community",
-      "Mentor and support a floor of residents through academic, social, and personal transitions during their college experience",
-      "Plan and execute community-building programs, enforce university housing policies, and serve as a first responder for resident concerns",
-    ],
-  },
-  {
-    company: "SAS Institute (JMP Statistical Discovery)",
-    role: "Software Engineer Intern",
+    company: "JMP Statistical Discovery (SAS Institute)",
+    role: "R&D DevOps Documentation Intern",
     location: "Cary, NC",
-    dates: "Jun. 2026 – Aug. 2026",
+    dates: "May 2026 – Aug. 2026",
+    tech: "Python, Perl, JavaScript, XML",
     bullets: [
-      "Incoming intern contributing to documentation tooling and scripting (Python, Perl, JavaScript, XML) for statistical analysis and data visualization software at a SAS business unit",
-    ],
-  },
-  {
-    company: "Handshake",
-    role: "LLM / Generative AI Engineer",
-    location: "Remote",
-    dates: "Feb. 2026 – Present",
-    bullets: [
-      "Benchmarked output quality across 3 LLMs (Claude, Gemini, ChatGPT) using structured evaluation criteria, identifying performance gaps and selecting optimal models for production use cases",
-      "Performed RLHF-style feedback by rating and ranking hundreds of model responses; cleaned and curated training datasets to reduce noise and improve pipeline accuracy",
-    ],
-  },
-  {
-    company: "Hicks Digital",
-    role: "Founder & AI Consultant",
-    location: "Remote / Roanoke Rapids, NC",
-    dates: "Mar. 2026 – Present",
-    tech: "Python, Claude API, Next.js, n8n, Web Development",
-    bullets: [
-      "Launched an AI consulting and web development firm serving local businesses and nonprofits",
-      "Secured paid brand partnerships and delivered AI workshops for Boys 2 Men (May 2026) and Northampton County Schools (July 2026)",
-      "Executed 25+ cold outreach campaigns and built client pipelines across Halifax County",
+      "Engineered a Python automation script to migrate 1,574 XML menu paths across 52 documentation files with zero failures, handling encoded characters, multiline elements, and whitespace edge cases as part of a FrameMaker-to-oXygen migration initiative",
+      "Designed scalable project folder architecture separating BA and DOE dataset environments, resolving Windows/OneDrive file-lock conflicts and ensuring safe output isolation",
+      "Implemented structured logging capturing file counts and conversion summary metrics to support validation and cross-team QA review",
     ],
   },
   {
@@ -108,23 +66,49 @@ export const experience = [
     dates: "Jan. 2026 – Present",
     tech: "Next.js, TypeScript, React, Firebase, Stripe, Google Maps API, Airtable",
     bullets: [
-      "Built a real-time basketball court finder with GPS check-ins, serving 2.4K+ players across 150+ courts with an 89% return rate",
-      "Engineered Stripe subscription pipeline with 3 pricing tiers ($199–$699/mo) for facility partners, plus a Pro player tier with gated features",
-      "Integrated Google Maps API for live court discovery, Firebase for auth and real-time data, and Airtable for facility lead capture",
-      "Shipped 18 routes including player map, facility dashboard, admin panel, public profiles, and B2B partner pages",
+      "Scaled a full-stack pickup basketball platform to 500+ active players and 120 courts across 3 cities; shipped 18 routes including player map, facility dashboard, admin panel, and public profiles",
+      "Engineered B2B Stripe pipeline targeting YMCAs and parks & rec departments with 3 facility pricing tiers ($199–$699/mo) and a $5.99/mo player Pro tier; integrated Airtable for facility lead capture and CRM",
     ],
     liveUrl: "https://igotnextapp.vercel.app",
   },
   {
+    company: "Hicks Digital",
+    role: "Founder | Web Development, AI Consulting & Workshops",
+    location: "Remote / Greensboro, NC",
+    dates: "Jan. 2026 – Present",
+    bullets: [
+      "Delivered AI literacy workshop to 30+ students (Boys 2 Men, Roanoke Rapids, May 2026); drafted GoHighLevel automation proposal for GROW nonprofit serving Halifax County",
+      "Executed 25+ cold outreach campaigns across 2 counties; secured paid brand partnerships and AI consulting engagements with local businesses",
+    ],
+    liveUrl: "https://daylenhicks.com/services",
+  },
+  {
+    company: "North Carolina A&T State University — Aggie Suites F",
+    role: "Resident Assistant",
+    location: "Greensboro, NC",
+    dates: "Jul. 2026 – Present",
+    bullets: [
+      "Incoming Resident Assistant responsible for well-being, academic success, and community development of residents in Aggie Suites F",
+      "Planned programming includes an AI & Career Readiness Workshop Series and monthly community-building events to support resident engagement and retention",
+    ],
+  },
+  {
+    company: "Handshake",
+    role: "LLM / Generative AI Engineer",
+    location: "Remote",
+    dates: "Feb. 2026 – Present",
+    bullets: [
+      "Benchmark output quality across 3 LLMs (Claude, Gemini, ChatGPT) using structured evaluation criteria, identifying performance gaps and selecting optimal models for production use cases",
+      "Perform RLHF-style feedback by rating and ranking hundreds of model responses; clean and curate training datasets to reduce noise and improve pipeline accuracy",
+    ],
+  },
+  {
     company: "Northampton County Schools",
-    role: "Founder & FRC Team Captain — RoboJags",
+    role: "Tech Leader & FRC Team Captain",
     location: "Gaston, NC",
     dates: "Aug. 2024 – May 2025",
     bullets: [
-      "Chartered the school's inaugural FIRST Robotics Competition team (RoboJags), recruiting and captaining 10+ members through a full competition season",
-      "Won two Rookie All-Star awards, advanced to the state championship, and qualified for the FRC World Championship in Houston, TX",
-      "Secured a NASA robotics grant and an NC A&T sponsorship to fund team operations, equipment, and travel",
-      "Developed a peer-mentoring program adopted by 25+ students that increased coursework proficiency by 40%",
+      "Chartered the school's inaugural FIRST Robotics Competition team (RoboJags), leading 10+ members to two Rookie All-Star awards, a state championship, and the FRC World Championship in Houston, TX; secured a NASA robotics grant and NC A&T sponsorship",
     ],
     articleUrl: "https://www.roanoke-chowannewsherald.com/news/northamptons-robojags-team-competes-in-world-championship-203047",
   },
@@ -157,12 +141,20 @@ export const projects: Project[] = [
       "Railway",
     ],
     bullets: [
-      "Built an AI-powered pitch practice platform as deployment & infrastructure lead; architected a Next.js/Vercel frontend and FastAPI/Railway backend serving real-time AI feedback",
-      "Integrated OpenAI Whisper for live transcription and GPT-4o to auto-generate investor-ready pitch decks in under 60 seconds",
-      "Wired Supabase (PostgreSQL + pgvector + Auth) supporting 2 user roles and shareable pitch deck export",
-      "Secured a follow-up meeting with senior executives post-hackathon to explore commercialization and partnership opportunities",
+      "Built an AI-powered pitch practice platform as deployment & infrastructure lead; architected a Next.js/Vercel frontend and FastAPI/Railway backend serving real-time AI feedback for the Lenovo \"Ideation to Impact\" challenge",
+      "Integrated OpenAI Whisper for live transcription and GPT-4o to auto-generate pitch decks in under 60 seconds; used Groq for low-latency coaching scored on a 1–10 scale",
+      "Wired Supabase (PostgreSQL + pgvector + Auth) supporting 2 user roles (Creator/Reviewer) and shareable pitch deck export",
     ],
     liveUrl: "https://pitchpadapp.vercel.app/",
+  },
+  {
+    name: "Forte",
+    event: "FidHacks @ Fidelity",
+    date: "May 2026",
+    tech: ["Next.js 15", "Gemini 2.0 Flash", "Framer Motion", "Zustand"],
+    bullets: [
+      "Built a browser-based financial literacy platform with 5 interactive games (salary negotiation vs. live AI, job offer math, budgeting, freelance taxes, 30-year portfolio sim); shipped zero-login product with Gemini 2.0 Flash + server-side scoring in under 24 hours",
+    ],
   },
   {
     name: "Aggie Aid",
@@ -187,31 +179,6 @@ export const projects: Project[] = [
     ],
     demoUrl: "https://youtu.be/YxTLcg7js5w",
   },
-  {
-    name: "I Got Next",
-    event: "Personal Project",
-    date: "Jan. 2026 – Present",
-    tech: ["Next.js", "TypeScript", "React", "Firebase", "Stripe", "Google Maps API", "Airtable"],
-    bullets: [
-      "Real-time basketball court finder with GPS check-ins — 2.4K+ players, 150+ courts, 89% return rate",
-      "Stripe subscription pipeline with 3 B2B pricing tiers ($199–$699/mo) and a Pro player tier",
-      "Google Maps live court discovery, Firebase auth & real-time data, Airtable facility lead capture",
-      "18 routes: player map, facility dashboard, admin panel, public profiles, and B2B partner pages",
-    ],
-    liveUrl: "https://igotnextapp.vercel.app",
-    image: "/projects/igotnext.png",
-  },
-  {
-    name: "Lincoln Financial AI Assistant",
-    event: "codeLinc10 Hackathon",
-    date: "Oct. 2025",
-    tech: ["AWS", "Amazon Bedrock", "Prompt Engineering"],
-    bullets: [
-      "Led product strategy and pitch for an AI-powered financial assistant on Amazon Bedrock",
-      "Shaped a questionnaire-driven recommendation engine for personalized retirement/insurance plans and presented to Lincoln Financial stakeholders",
-    ],
-    demoUrl: "https://youtube.com/shorts/jMv8xxquJP0?si=ljupji8MhAChGCKN",
-  },
 ];
 
 export const certificate = {
@@ -227,12 +194,12 @@ export const education = [
     school: "North Carolina A&T State University",
     degree: "B.S. Computer Science, Minor in Supply Chain Management",
     gpa: "3.6",
-    dates: "Aug. 2025 – May 2028",
+    dates: "Aug. 2025 – Present",
     location: "Greensboro, NC",
   },
   {
     school: "Halifax Community College",
-    degree: "Associate in Arts & Associate in Science",
+    degree: "A.A. & A.S. (Concurrent with High School Diploma)",
     dates: "Aug. 2021 – May 2025",
     location: "Weldon, NC",
     highlight: "Earned both A.A. and A.S. degrees concurrently while completing high school — dual enrollment across the full four years.",
@@ -240,17 +207,15 @@ export const education = [
 ];
 
 export const activities = [
-  "College of Engineering Ambassador (2026–2027)",
-  "UNCF STEM Innovation Summit Scholar (2026) — 1 of 50 HBCU Students Nationwide",
-  "SECU Scholar",
-  "College of Engineering Scholar",
-  "Aggie Merit Scholar",
+  "UNCF STEM Scholar (2026) — Top 50 HBCU Nationwide",
+  "Truist Ascent Immersion (TMCF x Truist, Oct. 2026)",
+  "HBCU Innovation Challenge (TMCF/CSAA/Guidewire, Jun. 2026)",
+  "UNCF AI Certificate",
+  "ACM Programs Chair",
   "Hack NCAT 1st Place",
-  "FRC World Championship Qualifier (Houston 2025)",
-  "NSBE",
-  "ACM",
-  "codeLinc10",
-  "CodeHouse JS Bootcamp",
+  "FRC World Championship",
+  "FidHacks @ Fidelity",
+  "GDG",
 ];
 
 export const navLinks = [
