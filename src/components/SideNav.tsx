@@ -13,40 +13,25 @@ export default function SideNav() {
   useEffect(() => {
     const handleScroll = () => {
       setVisible(window.scrollY > 400);
-
       const offsets = sections.map((s) => {
         const id = s.href.replace("#", "");
-        const el =
-          id === "hero"
-            ? document.querySelector("section")
-            : document.getElementById(id);
+        const el = id === "hero" ? document.querySelector("section") : document.getElementById(id);
         if (!el) return { href: s.href, top: Infinity };
         return { href: s.href, top: el.getBoundingClientRect().top };
       });
-
       const current = offsets.reduce((closest, section) => {
-        if (
-          section.top <= 200 &&
-          section.top > (closest?.top ?? -Infinity)
-        ) {
-          return section;
-        }
+        if (section.top <= 200 && section.top > (closest?.top ?? -Infinity)) return section;
         return closest;
       }, offsets[0]);
-
       if (current) setActive(current.href);
     };
-
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const handleClick = (href: string) => {
-    if (href === "#hero") {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    } else {
-      document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
-    }
+    if (href === "#hero") window.scrollTo({ top: 0, behavior: "smooth" });
+    else document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -68,18 +53,14 @@ export default function SideNav() {
           >
             <span
               className={`text-[10px] uppercase tracking-widest transition-all duration-200 ${
-                isActive
-                  ? "opacity-100 text-accent translate-x-0"
-                  : "opacity-0 text-[var(--color-muted)] translate-x-2 group-hover:opacity-100 group-hover:translate-x-0"
+                isActive ? "opacity-100 text-accent translate-x-0" : "opacity-0 text-[var(--color-muted)] translate-x-2 group-hover:opacity-100 group-hover:translate-x-0"
               }`}
             >
               {section.label}
             </span>
             <span
               className={`block rounded-full transition-all duration-200 ${
-                isActive
-                  ? "w-3 h-3 bg-accent"
-                  : "w-2 h-2 bg-[var(--color-hint)] group-hover:bg-accent"
+                isActive ? "w-3 h-3 bg-accent" : "w-2 h-2 bg-[var(--color-hint)] group-hover:bg-accent"
               }`}
             />
           </button>

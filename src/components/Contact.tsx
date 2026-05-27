@@ -95,17 +95,17 @@ export default function Contact() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <div>
                 <label htmlFor="name" className="block text-sm text-[var(--color-muted)] mb-1.5">Name</label>
-                <input type="text" id="name" name="name" required value={form.name} onChange={handleChange} placeholder="Your name" className="w-full bg-[var(--color-background)] border border-[var(--color-border)] rounded-lg px-4 py-3 text-foreground placeholder:text-[var(--color-hint)] focus:outline-none focus:border-accent" />
+                <input type="text" id="name" name="name" required value={form.name} onChange={handleChange} placeholder="Your name" className="w-full bg-white border border-[var(--color-border)] rounded-lg px-4 py-3 text-foreground placeholder:text-[var(--color-hint)] focus:outline-none focus:border-accent" />
               </div>
               <div>
                 <label htmlFor="email" className="block text-sm text-[var(--color-muted)] mb-1.5">Email</label>
-                <input type="email" id="email" name="email" required value={form.email} onChange={handleChange} placeholder="you@example.com" className="w-full bg-[var(--color-background)] border border-[var(--color-border)] rounded-lg px-4 py-3 text-foreground placeholder:text-[var(--color-hint)] focus:outline-none focus:border-accent" />
+                <input type="email" id="email" name="email" required value={form.email} onChange={handleChange} placeholder="you@example.com" className="w-full bg-white border border-[var(--color-border)] rounded-lg px-4 py-3 text-foreground placeholder:text-[var(--color-hint)] focus:outline-none focus:border-accent" />
               </div>
             </div>
 
             <div>
               <label htmlFor="subject" className="block text-sm text-[var(--color-muted)] mb-1.5">Subject</label>
-              <select id="subject" name="subject" required value={form.subject} onChange={handleChange} className="w-full bg-[var(--color-background)] border border-[var(--color-border)] rounded-lg px-4 py-3 text-foreground focus:outline-none focus:border-accent appearance-none">
+              <select id="subject" name="subject" required value={form.subject} onChange={handleChange} className="w-full bg-white border border-[var(--color-border)] rounded-lg px-4 py-3 text-foreground focus:outline-none focus:border-accent appearance-none">
                 {subjects.map((s) => (
                   <option key={s.value} value={s.value} disabled={!s.value}>{s.label}</option>
                 ))}
@@ -114,7 +114,7 @@ export default function Contact() {
 
             <div>
               <label htmlFor="message" className="block text-sm text-[var(--color-muted)] mb-1.5">Message</label>
-              <textarea id="message" name="message" required rows={5} value={form.message} onChange={handleChange} placeholder="Tell me about your project, opportunity, or question..." className="w-full bg-[var(--color-background)] border border-[var(--color-border)] rounded-lg px-4 py-3 text-foreground placeholder:text-[var(--color-hint)] focus:outline-none focus:border-accent resize-none" />
+              <textarea id="message" name="message" required rows={5} value={form.message} onChange={handleChange} placeholder="Tell me about your project, opportunity, or question..." className="w-full bg-white border border-[var(--color-border)] rounded-lg px-4 py-3 text-foreground placeholder:text-[var(--color-hint)] focus:outline-none focus:border-accent resize-none" />
             </div>
 
             <div className="flex items-center gap-4">
@@ -159,7 +159,7 @@ export default function Contact() {
       ) : (
         <div className="bento-card overflow-hidden rounded-xl" style={{ minHeight: 700 }}>
           <iframe
-            src={`${CALENDLY_URL}?hide_gdpr_banner=1&background_color=0a0f1a&text_color=e8ecf4&primary_color=3B82F6`}
+            src={`${CALENDLY_URL}?hide_gdpr_banner=1&background_color=ffffff&text_color=111111&primary_color=2563EB`}
             width="100%"
             height="700"
             frameBorder="0"
