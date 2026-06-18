@@ -45,7 +45,6 @@ export default function Footer() {
               <a href={personalInfo.github} target="_blank" rel="noopener noreferrer" className="text-sm text-white/50 hover:text-white transition-colors min-h-[44px] inline-flex items-center" aria-label="GitHub">GitHub</a>
               <a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer" className="text-sm text-white/50 hover:text-white transition-colors min-h-[44px] inline-flex items-center" aria-label="LinkedIn">LinkedIn</a>
               <a href="https://calendly.com/daylenhicks10" target="_blank" rel="noopener noreferrer" className="text-sm text-white/50 hover:text-white transition-colors min-h-[44px] inline-flex items-center" aria-label="Calendly">Schedule a Meeting</a>
-              <a href="https://tiktok.com/@trustyahwehh" target="_blank" rel="noopener noreferrer" className="text-sm text-white/50 hover:text-white transition-colors min-h-[44px] inline-flex items-center" aria-label="TikTok">TikTok</a>
               <a href="https://www.instagram.com/hicksdigital_/" target="_blank" rel="noopener noreferrer" className="text-sm text-white/50 hover:text-white transition-colors min-h-[44px] inline-flex items-center" aria-label="Instagram">Instagram</a>
             </div>
           </div>
