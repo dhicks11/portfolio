@@ -26,8 +26,8 @@ export default function Projects() {
             key={project.name}
             className={`bento-card group relative overflow-hidden ${i === 0 ? "md:col-span-2" : ""}`}
           >
-            {project.image && (
-              <div className="relative w-full h-48 md:h-56 border-b border-[var(--color-border)]">
+            <div className="relative w-full h-48 md:h-56 border-b border-[var(--color-border)] overflow-hidden">
+              {project.image ? (
                 <Image
                   src={project.image}
                   alt={`${project.name} screenshot`}
@@ -35,8 +35,17 @@ export default function Projects() {
                   sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover object-top"
                 />
-              </div>
-            )}
+              ) : (
+                <div
+                  className="w-full h-full flex items-center justify-center"
+                  style={{ background: "linear-gradient(135deg, #EBF4FF 0%, #DBEAFE 40%, #BFDBFE 100%)" }}
+                >
+                  <span className="text-4xl font-bold text-accent/20 tracking-tight select-none">
+                    {project.name}
+                  </span>
+                </div>
+              )}
+            </div>
 
             <div className="p-6 md:p-8">
               <div className="flex items-center gap-3 flex-wrap mb-3">

@@ -11,7 +11,7 @@ export const personalInfo = {
 export const highlights = [
   { value: "1st", label: "Place Hackathon", glow: true },
   { value: "3.6", label: "GPA at NC A&T" },
-  { value: "3", label: "Companies Founded" },
+  { value: "2", label: "Companies Founded" },
 ];
 
 export const skills = [
@@ -49,7 +49,7 @@ export const skills = [
 export const experience = [
   {
     company: "JMP Statistical Discovery (SAS Institute)",
-    role: "R&D DevOps Documentation Intern",
+    role: "R&D DevOps Technical Writer",
     location: "Cary, NC",
     dates: "May 2026 – Aug. 2026",
     tech: "Python, Perl, JavaScript, XML",
@@ -88,7 +88,7 @@ export const experience = [
     location: "Greensboro, NC",
     dates: "Jul. 2026 – Present",
     bullets: [
-      "Incoming Resident Assistant responsible for well-being, academic success, and community development of residents in Aggie Suites F",
+      "Responsible for the well-being, academic success, and community development of residents in Aggie Suites F",
       "Planned programming includes an AI & Career Readiness Workshop Series and monthly community-building events to support resident engagement and retention",
     ],
   },
@@ -224,7 +224,6 @@ export const activities = [
   "HBCU Innovation Challenge (TMCF/CSAA/Guidewire, Jun. 2026)",
   "UNCF AI Certificate",
   "ACM Programs Chair",
-  "Hack NCAT 1st Place",
   "FRC World Championship",
   "FidHacks @ Fidelity",
   "GDG",
