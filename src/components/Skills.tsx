@@ -19,7 +19,7 @@ export default function Skills() {
           <h2 className="editorial-heading text-4xl md:text-5xl lg:text-6xl mt-4 leading-[1.1]">
             Technical
             <br />
-            <span className="text-accent font-serif italic">toolkit</span>
+            <span className="text-accent">toolkit</span>
           </h2>
         </div>
       </div>

@@ -18,7 +18,7 @@ export default function About() {
             <br />
             experiences with
             <br />
-            <span className="text-accent font-serif italic">purpose</span>
+            <span className="text-accent">purpose</span>
           </h2>
           <p className="text-[var(--color-muted)] text-base leading-[1.75] max-w-md">
             A Computer Science student, founder, and AI consultant building at

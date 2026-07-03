@@ -108,7 +108,7 @@ export default function Community() {
           <h2 className="editorial-heading text-4xl md:text-5xl lg:text-6xl mt-4 leading-[1.1]">
             Building a
             <br />
-            <span className="text-accent font-serif italic">Bridge Home</span>
+            <span className="text-accent">Bridge Home</span>
           </h2>
         </div>
         <p className="text-[var(--color-muted)] max-w-md text-base leading-[1.75]">
@@ -128,7 +128,7 @@ export default function Community() {
             viewport={{ once: true }}
             transition={{ delay: i * 0.1, duration: 0.6, ease: "easeOut" }}
           >
-            <div className="w-14 h-14 rounded-xl bg-[var(--color-accent-soft)] border border-[rgba(59,130,246,0.3)] flex items-center justify-center text-accent mb-6">
+            <div className="w-14 h-14 rounded-xl bg-[var(--color-accent-soft)] border border-[rgba(41,151,255,0.3)] flex items-center justify-center text-accent mb-6">
               {service.icon}
             </div>
             <h3 className="editorial-heading text-xl mb-3">{service.title}</h3>
@@ -167,7 +167,7 @@ export default function Community() {
               )}
               <div className="p-6 md:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-[var(--color-accent-soft)] border border-[rgba(59,130,246,0.3)] flex items-center justify-center text-accent shrink-0">
+                  <div className="w-12 h-12 rounded-xl bg-[var(--color-accent-soft)] border border-[rgba(41,151,255,0.3)] flex items-center justify-center text-accent shrink-0">
                     <svg
                       width="24"
                       height="24"

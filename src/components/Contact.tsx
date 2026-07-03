@@ -73,7 +73,7 @@ export default function Contact() {
           <h2 className="editorial-heading text-4xl md:text-5xl lg:text-6xl mt-4 leading-[1.1]">
             Let&apos;s build something
             <br />
-            <span className="text-accent font-serif italic">together</span>
+            <span className="text-accent">together</span>
           </h2>
         </div>
         <p className="text-[var(--color-muted)] max-w-md text-base leading-[1.75]">

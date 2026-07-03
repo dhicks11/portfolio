@@ -85,7 +85,7 @@ export default function Hero() {
                 <AnimatePresence mode="wait">
                   <motion.span
                     key={swapWords[currentWord]}
-                    className="inline-block text-accent font-serif italic leading-[1.25] pr-[0.08em]"
+                    className="inline-block text-accent leading-[1.25] pr-[0.08em]"
                     initial={{ y: "100%", opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     exit={{ y: "-100%", opacity: 0 }}
@@ -198,7 +198,7 @@ export default function Hero() {
                   />
                 ) : (
                   <div className="absolute inset-0 flex items-center justify-center bg-[var(--color-surface)] border border-[var(--color-border)]">
-                    <span className="font-serif text-[8rem] lg:text-[10rem] font-light text-[var(--color-accent)] opacity-30">
+                    <span className="text-[8rem] lg:text-[10rem] font-semibold tracking-tight text-[var(--color-accent)] opacity-30">
                       DH
                     </span>
                   </div>

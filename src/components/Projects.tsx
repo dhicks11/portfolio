@@ -17,7 +17,7 @@ export default function Projects() {
           <h2 className="editorial-heading text-4xl md:text-5xl lg:text-6xl mt-4 leading-[1.1]">
             Featured
             <br />
-            <span className="text-accent font-serif italic">Projects</span>
+            <span className="text-accent">Projects</span>
           </h2>
         </div>
         <p className="text-[var(--color-muted)] max-w-md text-base leading-[1.75]">

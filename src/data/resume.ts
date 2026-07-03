@@ -18,7 +18,7 @@ export const highlights = [
 export const skills = [
   {
     category: "Languages",
-    items: ["Python", "Java", "JavaScript", "TypeScript", "SQL", "HTML/CSS", "Perl", "XML"],
+    items: ["Python", "Java", "JavaScript", "TypeScript", "SQL", "HTML/CSS", "Perl", "XML/DITA"],
   },
   {
     category: "Frameworks",
@@ -26,7 +26,7 @@ export const skills = [
   },
   {
     category: "Developer Tools",
-    items: ["Git", "GitHub", "Jenkins", "Perforce (P4V)", "VS Code", "Vercel", "Supabase", "Docker", "Scrum", "Airtable"],
+    items: ["Git", "GitHub", "Jenkins", "Perforce (P4V)", "Jira", "Confluence", "Oxygen XML", "VS Code", "Vercel", "Supabase", "Docker", "Airtable"],
   },
   {
     category: "Libraries & Platforms",
@@ -61,14 +61,14 @@ export const experience = [
   },
   {
     company: "JMP Statistical Discovery (SAS Institute)",
-    role: "R&D DevOps Documentation Intern",
+    role: "Technical Writing Intern, R&D DevOps",
     location: "Cary, NC",
     dates: "May 2026 – Aug. 2026",
-    tech: "Python, Perl, JavaScript, XML",
+    tech: "Python, Perl, XML/DITA, Oxygen XML, Perforce",
     bullets: [
-      "Engineered a Python automation script that reduced an estimated 2 to 3 months of manual technical writing effort to seconds, migrating 1,574 XML menu paths across 52 documentation files with zero failures, handling encoded characters, multiline elements, and whitespace edge cases as part of a FrameMaker-to-oXygen migration initiative",
-      "Designed scalable project folder architecture separating BA and DOE dataset environments, resolving Windows/OneDrive file-lock conflicts and ensuring safe output isolation",
-      "Implemented structured logging capturing file counts and conversion summary metrics to support validation and cross-team QA review",
+      "Engineered a Python automation script that reduced an estimated 2 to 3 months of manual technical writing effort to seconds, migrating 1,574 XML menu paths across 52 documentation files with zero failures as part of a FrameMaker-to-oXygen XML/DITA migration; featured in the JMP R&D Development Update",
+      "Built an XML/DITA element counter scanning 1,878+ files at a 99.7% parse rate; identified 550 DITA elements eligible for Oxygen UI cleanup, delivering a concrete migration roadmap",
+      "Designed scalable folder architecture separating BA and DOE environments with Perforce safe defaults, dry-run audit logging, and structured output isolation for cross-team QA review",
     ],
   },
   {
@@ -173,6 +173,18 @@ export const projects: Project[] = [
     liveUrl: "https://pitchpadapp.vercel.app/",
   },
   {
+    name: "I Got Next",
+    event: "Founder & Lead Developer",
+    date: "Jan. 2026 – Present",
+    tech: ["Next.js", "TypeScript", "React", "Firebase", "Stripe", "Google Maps API", "Airtable"],
+    bullets: [
+      "Full-stack pickup basketball platform scaled to 500+ active players and 120 courts across 3 cities — 18 routes including a live player map, facility dashboard, admin panel, and public profiles",
+      "B2B Stripe pipeline for YMCAs and parks & rec departments with 3 facility pricing tiers ($199–$699/mo) and a $5.99/mo player Pro tier; Airtable-powered facility lead capture and CRM",
+    ],
+    liveUrl: "https://igotnextapp.vercel.app",
+    image: "/projects/igotnext.png",
+  },
+  {
     name: "Forte",
     event: "FidHacks @ Fidelity",
     date: "May 2026",
@@ -234,8 +246,8 @@ export const education = [
 export const activities = [
   "HBCU Innovation Challenge (TMCF/CSAA/Guidewire, Jun. 2026) — 1st Place, $10K",
   "TMCF Leadership Institute 2026 — Coaching Academy",
-  "UNCF STEM Scholar (2026) — Top 50 HBCU Nationwide",
-  "Truist Ascent Immersion (TMCF x Truist, Oct. 2026)",
+  "UNCF STEM Innovation Summit — Top 50 HBCU Scholar Nationwide (Mar. 2026)",
+  "Truist Ascent Immersion (TMCF x Truist) — 1 of 120 Selected Nationwide (Jun. – Oct. 2026)",
   "UNCF AI Certificate",
   "ACM Programs Chair",
   "Hack NCAT 1st Place",

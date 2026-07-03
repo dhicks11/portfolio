@@ -101,6 +101,7 @@ export function validateBookingDate(raw: string): { valid: boolean; value: strin
 
 let ratelimitContact: Ratelimit | null = null;
 let ratelimitBooking: Ratelimit | null = null;
+let ratelimitAssistant: Ratelimit | null = null;
 
 if (process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN) {
   const redis = new Redis({
@@ -118,6 +119,12 @@ if (process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN) 
     redis,
     limiter: Ratelimit.slidingWindow(3, "60 s"),
     prefix: "rl:booking",
+  });
+
+  ratelimitAssistant = new Ratelimit({
+    redis,
+    limiter: Ratelimit.slidingWindow(10, "60 s"),
+    prefix: "rl:assistant",
   });
 }
 
@@ -137,18 +144,24 @@ function memoryRateLimit(key: string, max: number, windowMs: number): boolean {
   return true;
 }
 
+const RATE_LIMITS = {
+  contact: { limiter: () => ratelimitContact, max: 5 },
+  booking: { limiter: () => ratelimitBooking, max: 3 },
+  assistant: { limiter: () => ratelimitAssistant, max: 10 },
+} as const;
+
 export async function checkRateLimit(
-  type: "contact" | "booking",
+  type: keyof typeof RATE_LIMITS,
   identifier: string
 ): Promise<{ allowed: boolean }> {
   // Use Upstash if configured
-  const limiter = type === "contact" ? ratelimitContact : ratelimitBooking;
+  const config = RATE_LIMITS[type];
+  const limiter = config.limiter();
   if (limiter) {
     const result = await limiter.limit(identifier);
     return { allowed: result.success };
   }
 
   // In-memory fallback
-  const max = type === "contact" ? 5 : 3;
-  return { allowed: memoryRateLimit(`${type}:${identifier}`, max, 60_000) };
+  return { allowed: memoryRateLimit(`${type}:${identifier}`, config.max, 60_000) };
 }

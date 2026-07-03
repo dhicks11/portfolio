@@ -10,6 +10,7 @@ import Community from "@/components/Community";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import SideNav from "@/components/SideNav";
+import AssistantWidget from "@/components/AssistantWidget";
 
 const tickerItems = [
   "AI Engineer",
@@ -44,6 +45,7 @@ export default function Home() {
         <Contact />
       </main>
       <Footer />
+      <AssistantWidget />
     </>
   );
 }

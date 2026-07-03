@@ -16,7 +16,7 @@ export default function OGImage() {
           flexDirection: "column",
           justifyContent: "center",
           padding: "80px 100px",
-          backgroundColor: "#0c0c0c",
+          backgroundColor: "#060607",
           fontFamily: "system-ui, sans-serif",
         }}
       >
@@ -32,7 +32,7 @@ export default function OGImage() {
             style={{
               width: "24px",
               height: "2px",
-              backgroundColor: "#3B82F6",
+              backgroundColor: "#2997FF",
             }}
           />
           <span
@@ -41,7 +41,7 @@ export default function OGImage() {
               fontWeight: 600,
               letterSpacing: "0.15em",
               textTransform: "uppercase" as const,
-              color: "#3B82F6",
+              color: "#2997FF",
             }}
           >
             Portfolio
@@ -64,7 +64,7 @@ export default function OGImage() {
           style={{
             fontSize: "36px",
             fontWeight: 500,
-            color: "#3B82F6",
+            color: "#2997FF",
             margin: "16px 0 0 0",
           }}
         >
@@ -94,7 +94,7 @@ export default function OGImage() {
         >
           {[
             { value: "1st", label: "Place Hackathon" },
-            { value: "3.6", label: "GPA at NC A&T" },
+            { value: "$10K", label: "TMCF Challenge Prize" },
             { value: "500+", label: "Users Shipped" },
           ].map((stat) => (
             <div
