@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import SectionWrapper from "./SectionWrapper";
 
@@ -102,7 +103,7 @@ export default function Community() {
       <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
         <div>
           <div className="section-header">
-            <span className="section-number">07</span>
+            <span className="section-number">04</span>
             <span className="section-word">Give Back</span>
           </div>
           <h2 className="editorial-heading text-4xl md:text-5xl lg:text-6xl mt-4 leading-[1.1]">
@@ -128,7 +129,7 @@ export default function Community() {
             viewport={{ once: true }}
             transition={{ delay: i * 0.1, duration: 0.6, ease: "easeOut" }}
           >
-            <div className="w-14 h-14 rounded-xl bg-[var(--color-accent-soft)] border border-[rgba(41,151,255,0.3)] flex items-center justify-center text-accent mb-6">
+            <div className="w-14 h-14 rounded-xl bg-[var(--color-accent-soft)] border border-[rgba(204,242,68,0.3)] flex items-center justify-center text-accent mb-6">
               {service.icon}
             </div>
             <h3 className="editorial-heading text-xl mb-3">{service.title}</h3>
@@ -167,7 +168,7 @@ export default function Community() {
               )}
               <div className="p-6 md:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-[var(--color-accent-soft)] border border-[rgba(41,151,255,0.3)] flex items-center justify-center text-accent shrink-0">
+                  <div className="w-12 h-12 rounded-xl bg-[var(--color-accent-soft)] border border-[rgba(204,242,68,0.3)] flex items-center justify-center text-accent shrink-0">
                     <svg
                       width="24"
                       height="24"
@@ -218,16 +219,7 @@ export default function Community() {
         viewport={{ once: true }}
         transition={{ delay: 0.4, duration: 0.5 }}
       >
-        <a
-          href="#contact"
-          onClick={(e) => {
-            e.preventDefault();
-            document
-              .querySelector("#contact")
-              ?.scrollIntoView({ behavior: "smooth" });
-          }}
-          className="btn-pill btn-outline"
-        >
+        <Link href="/contact" className="btn-pill btn-outline">
           Book a Consultation
           <svg
             width="14"
@@ -240,7 +232,7 @@ export default function Community() {
           >
             <path d="M7 17l9.2-9.2M17 17V7H7" />
           </svg>
-        </a>
+        </Link>
       </motion.div>
     </SectionWrapper>
   );

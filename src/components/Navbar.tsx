@@ -1,47 +1,21 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { navLinks, personalInfo } from "@/data/resume";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [activeSection, setActiveSection] = useState("");
+  const pathname = usePathname();
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-
-      const offsets = navLinks.map((link) => {
-        const id = link.href.replace("#", "");
-        const el = document.getElementById(id);
-        if (!el) return { href: link.href, top: Infinity };
-        return { href: link.href, top: el.getBoundingClientRect().top };
-      });
-
-      const current = offsets.reduce((closest, section) => {
-        if (
-          section.top <= 200 &&
-          section.top > (closest?.top ?? -Infinity)
-        ) {
-          return section;
-        }
-        return closest;
-      }, offsets[0]);
-
-      setActiveSection(current?.href ?? "");
-    };
-
+    const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const handleClick = (href: string) => {
-    setIsOpen(false);
-    const el = document.querySelector(href);
-    el?.scrollIntoView({ behavior: "smooth" });
-  };
 
   return (
     <nav
@@ -49,42 +23,38 @@ export default function Navbar() {
         scrolled ? "border-b border-[var(--color-border)]" : ""
       }`}
       style={{
-        background: "rgba(5, 8, 16, 0.85)",
+        background: "rgba(10, 10, 9, 0.85)",
         backdropFilter: "blur(12px)",
         WebkitBackdropFilter: "blur(12px)",
       }}
       aria-label="Main navigation"
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 flex items-center justify-between h-20">
-        <a
-          href="#"
+        <Link
+          href="/"
           className="text-xl font-semibold text-foreground tracking-tight"
-          onClick={(e) => {
-            e.preventDefault();
-            window.scrollTo({ top: 0, behavior: "smooth" });
-          }}
           aria-label="Home"
         >
           {personalInfo.name.split(" ")[0]}
           <span className="text-accent">.</span>
-        </a>
+        </Link>
 
         {/* Desktop links */}
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => {
-            const isActive = activeSection === link.href;
+            const isActive = pathname === link.href;
             return (
-              <button
+              <Link
                 key={link.href}
-                onClick={() => handleClick(link.href)}
-                className="text-sm text-foreground relative py-2 min-h-[44px]"
+                href={link.href}
+                className="text-sm text-foreground relative py-2 min-h-[44px] inline-flex items-center"
                 aria-current={isActive ? "page" : undefined}
               >
                 {link.label}
                 {isActive && (
                   <motion.span
                     layoutId="nav-underline"
-                    className="absolute left-0 right-0 -bottom-0.5 h-[2px] bg-[var(--color-accent)]"
+                    className="absolute left-0 right-0 bottom-1.5 h-[2px] bg-[var(--color-accent)]"
                     transition={{
                       type: "spring",
                       stiffness: 300,
@@ -92,7 +62,7 @@ export default function Navbar() {
                     }}
                   />
                 )}
-              </button>
+              </Link>
             );
           })}
           <a
@@ -103,15 +73,15 @@ export default function Navbar() {
           >
             Resume
           </a>
-          <a href="/services" className="btn-pill btn-ghost text-xs">
+          <Link href="/services" className="btn-pill btn-ghost text-xs">
             Services
-          </a>
-          <a
+          </Link>
+          <Link
             href="/links"
             className="text-sm text-[var(--color-muted)] hover:text-accent transition-colors duration-200 min-h-[44px] inline-flex items-center"
           >
             Quick Links
-          </a>
+          </Link>
         </div>
 
         {/* Mobile hamburger */}
@@ -147,7 +117,7 @@ export default function Navbar() {
           <motion.div
             className="md:hidden border-b border-[var(--color-border)]"
             style={{
-              background: "rgba(5, 8, 16, 0.95)",
+              background: "rgba(10, 10, 9, 0.95)",
               backdropFilter: "blur(12px)",
               WebkitBackdropFilter: "blur(12px)",
             }}
@@ -158,22 +128,26 @@ export default function Navbar() {
           >
             <div className="px-6 py-6 flex flex-col gap-5">
               {navLinks.map((link, i) => {
-                const isActive = activeSection === link.href;
+                const isActive = pathname === link.href;
                 return (
-                  <motion.button
+                  <motion.div
                     key={link.href}
-                    onClick={() => handleClick(link.href)}
-                    className={`text-left text-lg transition-colors min-h-[44px] ${
-                      isActive
-                        ? "text-accent"
-                        : "text-foreground hover:text-accent"
-                    }`}
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: i * 0.05 }}
                   >
-                    {link.label}
-                  </motion.button>
+                    <Link
+                      href={link.href}
+                      className={`block text-lg transition-colors min-h-[44px] leading-[44px] ${
+                        isActive
+                          ? "text-accent"
+                          : "text-foreground hover:text-accent"
+                      }`}
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {link.label}
+                    </Link>
+                  </motion.div>
                 );
               })}
               <a
@@ -184,15 +158,20 @@ export default function Navbar() {
               >
                 Resume
               </a>
-              <a href="/services" className="btn-pill btn-ghost text-center">
+              <Link
+                href="/services"
+                className="btn-pill btn-ghost text-center"
+                onClick={() => setIsOpen(false)}
+              >
                 Services
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/links"
                 className="text-lg text-[var(--color-muted)] hover:text-accent transition-colors min-h-[44px] inline-flex items-center"
+                onClick={() => setIsOpen(false)}
               >
                 Quick Links
-              </a>
+              </Link>
             </div>
           </motion.div>
         )}

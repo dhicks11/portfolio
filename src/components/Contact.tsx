@@ -67,7 +67,7 @@ export default function Contact() {
       <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
         <div>
           <div className="section-header">
-            <span className="section-number">08</span>
+            <span className="section-number">01</span>
             <span className="section-word">Contact</span>
           </div>
           <h2 className="editorial-heading text-4xl md:text-5xl lg:text-6xl mt-4 leading-[1.1]">

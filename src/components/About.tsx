@@ -10,7 +10,7 @@ export default function About() {
       <div className="grid lg:grid-cols-[1fr_1.2fr] gap-12 lg:gap-20 items-start">
         <div>
           <div className="section-header">
-            <span className="section-number">02</span>
+            <span className="section-number">01</span>
             <span className="section-word">About</span>
           </div>
           <h2 className="editorial-heading text-4xl md:text-5xl lg:text-6xl mt-6 mb-8 leading-[1.1]">

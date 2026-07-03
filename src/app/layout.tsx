@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import AssistantWidget from "@/components/AssistantWidget";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -38,7 +39,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0c0c0c",
+  themeColor: "#0A0A09",
   width: "device-width",
   initialScale: 1,
 };
@@ -90,7 +91,7 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap"
           rel="stylesheet"
         />
         <script
@@ -106,6 +107,7 @@ export default function RootLayout({
           Skip to content
         </a>
         {children}
+        <AssistantWidget />
       </body>
     </html>
   );

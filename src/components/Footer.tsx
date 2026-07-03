@@ -1,30 +1,22 @@
 "use client";
 
+import Link from "next/link";
 import { personalInfo, navLinks } from "@/data/resume";
 
 export default function Footer() {
-  const handleClick = (href: string) => {
-    const el = document.querySelector(href);
-    el?.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
     <footer className="border-t border-[var(--color-border)]">
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 py-16">
         <div className="grid md:grid-cols-3 gap-12 mb-16">
           <div>
-            <a
-              href="#"
+            <Link
+              href="/"
               className="editorial-heading text-2xl text-foreground tracking-tight"
-              onClick={(e) => {
-                e.preventDefault();
-                window.scrollTo({ top: 0, behavior: "smooth" });
-              }}
-              aria-label="Back to top"
+              aria-label="Home"
             >
               {personalInfo.name.split(" ")[0]}
               <span className="text-accent">.</span>
-            </a>
+            </Link>
             <p className="text-[var(--color-muted)] mt-4 text-sm leading-[1.75] max-w-xs">
               Software Engineer & AI Developer building full-stack applications
               and AI-powered solutions.
@@ -40,20 +32,20 @@ export default function Footer() {
               aria-label="Footer navigation"
             >
               {navLinks.map((link) => (
-                <button
+                <Link
                   key={link.href}
-                  onClick={() => handleClick(link.href)}
-                  className="text-left text-sm text-[var(--color-muted)] hover:text-accent transition-colors duration-200 min-h-[44px] w-fit"
+                  href={link.href}
+                  className="text-left text-sm text-[var(--color-muted)] hover:text-accent transition-colors duration-200 min-h-[44px] inline-flex items-center w-fit"
                 >
                   {link.label}
-                </button>
+                </Link>
               ))}
-              <a
+              <Link
                 href="/services"
                 className="text-sm text-[var(--color-muted)] hover:text-accent transition-colors duration-200 min-h-[44px] inline-flex items-center"
               >
                 Services
-              </a>
+              </Link>
             </nav>
           </div>
 

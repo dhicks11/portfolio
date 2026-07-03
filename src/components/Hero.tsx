@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { personalInfo, highlights } from "@/data/resume";
 
@@ -132,16 +133,9 @@ export default function Hero() {
                   <path d="M7 17l9.2-9.2M17 17V7H7" />
                 </svg>
               </a>
-              <button
-                onClick={() =>
-                  document
-                    .querySelector("#contact")
-                    ?.scrollIntoView({ behavior: "smooth" })
-                }
-                className="btn-pill btn-outline"
-              >
+              <Link href="/contact" className="btn-pill btn-outline">
                 Get in Touch
-              </button>
+              </Link>
               <a
                 href="https://calendly.com/daylenhicks10"
                 target="_blank"
