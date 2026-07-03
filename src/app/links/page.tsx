@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { personalInfo } from "@/data/resume";
 
 export const metadata: Metadata = {
@@ -107,17 +108,17 @@ export default function LinksPage() {
       {/* Nav */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-xl border-b border-card-border">
         <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 flex items-center justify-between h-20">
-          <a
+          <Link
             href="/"
             className="text-xl font-bold text-foreground tracking-tight"
           >
             {personalInfo.name.split(" ")[0]}
             <span className="text-accent">.</span>
-          </a>
+          </Link>
           <div className="flex items-center gap-6">
-            <a href="/" className="text-sm text-muted hover:text-accent transition-colors">
+            <Link href="/" className="text-sm text-muted hover:text-accent transition-colors">
               Home
-            </a>
+            </Link>
             <a href="/services" className="text-sm text-muted hover:text-accent transition-colors">
               Services
             </a>
@@ -228,12 +229,12 @@ export default function LinksPage() {
               >
                 Get Free Audit
               </a>
-              <a
+              <Link
                 href="/"
                 className="btn-pill btn-outline text-center text-sm"
               >
                 View Portfolio
-              </a>
+              </Link>
             </div>
           </div>
         </section>

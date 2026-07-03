@@ -4,13 +4,13 @@ export const personalInfo = {
   email: "hicksdigital.dev@gmail.com",
   github: "https://github.com/dhicks11",
   linkedin: "https://linkedin.com/in/daylenhicks",
-  bio: "I'm a Computer Science student with a minor in Supply Chain Management at North Carolina A&T State University, passionate about building full-stack applications and working with AI systems. From winning hackathons to founding two companies — a B2B sports platform and an AI consulting firm — I build products at the intersection of technology and community.",
+  bio: "I'm a Computer Science student with a minor in Supply Chain Management at North Carolina A&T State University, passionate about building full-stack applications and working with AI systems. From winning hackathons and founding two companies — a B2B sports platform and an AI consulting firm — to pitching an insurtech venture to CSAA and Guidewire executives as a TMCF HBCU Innovation Challenge fellow, I build products at the intersection of technology and community.",
   resumeUrl: "/Daylen_Hicks_Resume.pdf",
 };
 
 export const highlights = [
   { value: "1st", label: "Place Hackathon", glow: true },
-  { value: "3.6", label: "GPA at NC A&T" },
+  { value: "1 of 12", label: "TMCF Innovation Fellows Nationwide" },
   { value: "3", label: "Companies Founded" },
 ];
 
@@ -47,6 +47,17 @@ export const skills = [
 ];
 
 export const experience = [
+  {
+    company: "Thurgood Marshall College Fund × CSAA Insurance Group × Guidewire",
+    role: "HBCU Innovation Challenge Fellow",
+    location: "Walnut Creek, CA",
+    dates: "Jun. 2026 – Jul. 2026",
+    bullets: [
+      "Selected as 1 of 12 HBCU students nationwide for TMCF's invite-only HBCU Innovation Challenge — an immersive insurtech venture sprint hosted on-site with CSAA Insurance Group and Guidewire in the Bay Area",
+      "Co-founded and pitched Scholar Shield, an insurance product concept built for college students, to CSAA and Guidewire executives — carrying it from customer discovery through a Business Model Canvas and 10-section business plan (BP10) to a judged final pitch",
+      "Completed an executive-led curriculum spanning Insurance 101, design thinking, business model design, and pitch craft alongside top scholars from HBCUs across the country",
+    ],
+  },
   {
     company: "JMP Statistical Discovery (SAS Institute)",
     role: "R&D DevOps Documentation Intern",
@@ -123,9 +134,22 @@ interface Project {
   liveUrl?: string;
   demoUrl?: string;
   image?: string;
+  gallery?: string[];
 }
 
 export const projects: Project[] = [
+  {
+    name: "Scholar Shield",
+    event: "TMCF × CSAA × Guidewire Innovation Challenge",
+    date: "Jun. – Jul. 2026",
+    tech: ["InsurTech", "Business Model Canvas", "Design Thinking", "Market Research", "Executive Pitch"],
+    bullets: [
+      "Insurance venture concept built for college students — co-founded during the Thurgood Marshall College Fund's HBCU Innovation Challenge, where I was selected as 1 of 12 students nationwide",
+      "Developed the full venture package on-site at CSAA Insurance Group in Walnut Creek, CA: customer discovery, a Business Model Canvas, a 10-section business plan (BP10), and a pitch deck delivered to CSAA and Guidewire executives",
+    ],
+    // Drop TMCF photos into public/projects/tmcf/ and list them here, e.g.:
+    // gallery: ["/projects/tmcf/pitch.jpg", "/projects/tmcf/team.jpg"],
+  },
   {
     name: "PitchPad",
     event: "1st Place, Hack NCAT",
@@ -207,9 +231,10 @@ export const education = [
 ];
 
 export const activities = [
+  "TMCF × CSAA × Guidewire HBCU Innovation Challenge — 1 of 12 Selected Nationwide (Jun. 2026)",
+  "TMCF Leadership Institute 2026 — Coaching Academy",
   "UNCF STEM Scholar (2026) — Top 50 HBCU Nationwide",
   "Truist Ascent Immersion (TMCF x Truist, Oct. 2026)",
-  "HBCU Innovation Challenge (TMCF/CSAA/Guidewire, Jun. 2026)",
   "UNCF AI Certificate",
   "ACM Programs Chair",
   "Hack NCAT 1st Place",

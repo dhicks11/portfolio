@@ -60,6 +60,11 @@ export default function RootLayout({
       "@type": "CollegeOrUniversity",
       name: "North Carolina A&T State University",
     },
+    award: [
+      "TMCF × CSAA × Guidewire HBCU Innovation Challenge Fellow — 1 of 12 selected nationwide (2026)",
+      "1st Place, Hack NCAT (2026)",
+      "UNCF STEM Scholar (2026)",
+    ],
     knowsAbout: [
       "Python", "Java", "JavaScript", "TypeScript",
       "React", "Next.js", "Node.js", "FastAPI",

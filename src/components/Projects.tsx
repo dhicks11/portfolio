@@ -83,6 +83,32 @@ export default function Projects() {
                 </div>
               )}
 
+              {/* Photo gallery if available */}
+              {project.gallery && project.gallery.length > 0 && (
+                <div
+                  className={`grid gap-3 mb-6 ${
+                    project.gallery.length === 1
+                      ? "grid-cols-1"
+                      : "grid-cols-2 md:grid-cols-3"
+                  }`}
+                >
+                  {project.gallery.map((src, gi) => (
+                    <div
+                      key={src}
+                      className="relative rounded-lg overflow-hidden border border-[var(--color-border)] h-40 md:h-52"
+                    >
+                      <Image
+                        src={src}
+                        alt={`${project.name} — photo ${gi + 1}`}
+                        fill
+                        sizes="(max-width: 768px) 50vw, 33vw"
+                        className="object-cover object-center"
+                      />
+                    </div>
+                  ))}
+                </div>
+              )}
+
               <div className="text-foreground leading-[1.75] mb-6 max-w-2xl space-y-2.5">
                 {project.bullets.map((bullet, j) => (
                   <p key={j}>{bullet}</p>
