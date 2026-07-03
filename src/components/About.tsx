@@ -60,7 +60,7 @@ export default function About() {
               "Founder",
               "Consultant",
               "Hackathon Winner",
-              "TMCF Innovation Fellow",
+              "TMCF Challenge Winner",
             ].map((tag) => (
               <span key={tag} className="tag-pill">
                 {tag}

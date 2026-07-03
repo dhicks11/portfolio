@@ -16,7 +16,7 @@ const tickerItems = [
   "Founder",
   "Builder",
   "Hackathon Winner",
-  "TMCF Innovation Fellow",
+  "TMCF Challenge Winner",
   "LLM Engineer",
   "Basketball Head",
   "Product Thinker",

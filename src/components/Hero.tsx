@@ -218,7 +218,7 @@ export default function Hero() {
 
         {/* Stats — each in its own card */}
         <motion.div
-          className="grid grid-cols-3 gap-3 md:gap-5 mt-20 max-w-2xl"
+          className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-5 mt-20 max-w-3xl"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.7 }}

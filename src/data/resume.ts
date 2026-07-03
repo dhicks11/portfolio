@@ -4,14 +4,15 @@ export const personalInfo = {
   email: "hicksdigital.dev@gmail.com",
   github: "https://github.com/dhicks11",
   linkedin: "https://linkedin.com/in/daylenhicks",
-  bio: "I'm a Computer Science student with a minor in Supply Chain Management at North Carolina A&T State University, passionate about building full-stack applications and working with AI systems. From winning hackathons and founding two companies — a B2B sports platform and an AI consulting firm — to pitching an insurtech venture to CSAA and Guidewire executives as a TMCF HBCU Innovation Challenge fellow, I build products at the intersection of technology and community.",
+  bio: "I'm a Computer Science student with a minor in Supply Chain Management at North Carolina A&T State University, passionate about building full-stack applications and working with AI systems. From winning hackathons and founding two companies — a B2B sports platform and an AI consulting firm — to winning 1st place and a $10K prize at the TMCF HBCU Innovation Challenge with a pitch to CSAA and Guidewire executives, I build products at the intersection of technology and community.",
   resumeUrl: "/Daylen_Hicks_Resume.pdf",
 };
 
 export const highlights = [
-  { value: "1st", label: "Place Hackathon", glow: true },
-  { value: "1 of 12", label: "TMCF Innovation Fellows Nationwide" },
+  { value: "2x", label: "Competition Wins", glow: true },
+  { value: "$10K", label: "TMCF Challenge Prize" },
   { value: "3", label: "Companies Founded" },
+  { value: "3.6", label: "GPA at NC A&T" },
 ];
 
 export const skills = [
@@ -53,9 +54,9 @@ export const experience = [
     location: "Walnut Creek, CA",
     dates: "Jun. 2026 – Jul. 2026",
     bullets: [
-      "Selected as 1 of 12 HBCU students nationwide for TMCF's invite-only HBCU Innovation Challenge — an immersive insurtech venture sprint hosted on-site with CSAA Insurance Group and Guidewire in the Bay Area",
-      "Co-founded and pitched Scholar Shield, an insurance product concept built for college students, to CSAA and Guidewire executives — carrying it from customer discovery through a Business Model Canvas and 10-section business plan (BP10) to a judged final pitch",
-      "Completed an executive-led curriculum spanning Insurance 101, design thinking, business model design, and pitch craft alongside top scholars from HBCUs across the country",
+      "Won 1st place and a $10K prize among competing HBCU teams nationwide, pitching Scholar Shield — a scholarship protection insurance product — to CSAA Insurance Group and Guidewire executives as part of Team dreamZ",
+      "Selected as 1 of 12 HBCU students nationwide for TMCF's invite-only Innovation Challenge — an immersive insurtech venture sprint hosted on-site with CSAA and Guidewire in the Bay Area",
+      "Iterated the pitch through multiple rounds of live coach and executive feedback, carrying it from customer discovery through a Business Model Canvas and 10-section business plan (BP10) to the final judged pitch",
     ],
   },
   {
@@ -65,7 +66,7 @@ export const experience = [
     dates: "May 2026 – Aug. 2026",
     tech: "Python, Perl, JavaScript, XML",
     bullets: [
-      "Engineered a Python automation script to migrate 1,574 XML menu paths across 52 documentation files with zero failures, handling encoded characters, multiline elements, and whitespace edge cases as part of a FrameMaker-to-oXygen migration initiative",
+      "Engineered a Python automation script that reduced an estimated 2 to 3 months of manual technical writing effort to seconds, migrating 1,574 XML menu paths across 52 documentation files with zero failures, handling encoded characters, multiline elements, and whitespace edge cases as part of a FrameMaker-to-oXygen migration initiative",
       "Designed scalable project folder architecture separating BA and DOE dataset environments, resolving Windows/OneDrive file-lock conflicts and ensuring safe output isolation",
       "Implemented structured logging capturing file counts and conversion summary metrics to support validation and cross-team QA review",
     ],
@@ -140,12 +141,12 @@ interface Project {
 export const projects: Project[] = [
   {
     name: "Scholar Shield",
-    event: "TMCF × CSAA × Guidewire Innovation Challenge",
-    date: "Jun. – Jul. 2026",
-    tech: ["InsurTech", "Business Model Canvas", "Design Thinking", "Market Research", "Executive Pitch"],
+    event: "1st Place, TMCF × CSAA × Guidewire HBCU Innovation Challenge",
+    date: "Jun. 2026",
+    tech: ["Product Strategy", "Pitch Development", "Insurance", "Market Research"],
     bullets: [
-      "Insurance venture concept built for college students — co-founded during the Thurgood Marshall College Fund's HBCU Innovation Challenge, where I was selected as 1 of 12 students nationwide",
-      "Developed the full venture package on-site at CSAA Insurance Group in Walnut Creek, CA: customer discovery, a Business Model Canvas, a 10-section business plan (BP10), and a pitch deck delivered to CSAA and Guidewire executives",
+      "Pitched a scholarship protection insurance product to CSAA Insurance Group and Guidewire executives as part of Team dreamZ — winning 1st place and a $10K prize among competing HBCU teams nationwide",
+      "Iterated the pitch through multiple rounds of live coach and executive feedback, carrying it from customer discovery through a Business Model Canvas and 10-section business plan (BP10) to the final judged pitch",
     ],
     // Drop TMCF photos into public/projects/tmcf/ and list them here, e.g.:
     // gallery: ["/projects/tmcf/pitch.jpg", "/projects/tmcf/team.jpg"],
@@ -231,7 +232,7 @@ export const education = [
 ];
 
 export const activities = [
-  "TMCF × CSAA × Guidewire HBCU Innovation Challenge — 1 of 12 Selected Nationwide (Jun. 2026)",
+  "HBCU Innovation Challenge (TMCF/CSAA/Guidewire, Jun. 2026) — 1st Place, $10K",
   "TMCF Leadership Institute 2026 — Coaching Academy",
   "UNCF STEM Scholar (2026) — Top 50 HBCU Nationwide",
   "Truist Ascent Immersion (TMCF x Truist, Oct. 2026)",

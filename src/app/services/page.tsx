@@ -351,10 +351,10 @@ const proofPoints = [
       "Our founder built and scaled I Got Next — a full-stack sports platform serving 500+ active players and 120 facilities across 3 cities.",
   },
   {
-    value: "1 of 12",
-    title: "Selected nationwide",
+    value: "$10K",
+    title: "National pitch competition win",
     description:
-      "Chosen from HBCUs across the country for the TMCF × CSAA × Guidewire Innovation Challenge — and pitched a venture directly to insurance executives.",
+      "Our founder won 1st place and a $10K prize at the TMCF × CSAA × Guidewire HBCU Innovation Challenge, pitching a venture directly to insurance executives.",
   },
   {
     value: "30+",
