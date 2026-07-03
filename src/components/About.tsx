@@ -10,7 +10,7 @@ export default function About() {
       <div className="grid lg:grid-cols-[1fr_1.2fr] gap-12 lg:gap-20 items-start">
         <div>
           <div className="section-header">
-            <span className="section-number">02</span>
+            <span className="section-number">01</span>
             <span className="section-word">About</span>
           </div>
           <h2 className="editorial-heading text-4xl md:text-5xl lg:text-6xl mt-6 mb-8 leading-[1.1]">
@@ -18,7 +18,7 @@ export default function About() {
             <br />
             experiences with
             <br />
-            <span className="text-accent font-serif italic">purpose</span>
+            <span className="text-accent">purpose</span>
           </h2>
           <p className="text-[var(--color-muted)] text-base leading-[1.75] max-w-md">
             A Computer Science student, founder, and AI consultant building at
@@ -60,6 +60,7 @@ export default function About() {
               "Founder",
               "Consultant",
               "Hackathon Winner",
+              "TMCF Challenge Winner",
             ].map((tag) => (
               <span key={tag} className="tag-pill">
                 {tag}

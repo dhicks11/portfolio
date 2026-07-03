@@ -1,23 +1,30 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import SectionWrapper from "./SectionWrapper";
 import { projects } from "@/data/resume";
 
-export default function Projects() {
+interface ProjectsProps {
+  limit?: number;
+  showViewAll?: boolean;
+}
+
+export default function Projects({ limit, showViewAll = false }: ProjectsProps) {
+  const shown = limit ? projects.slice(0, limit) : projects;
   return (
     <SectionWrapper id="projects">
       <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
         <div>
           <div className="section-header">
-            <span className="section-number">04</span>
+            <span className="section-number">01</span>
             <span className="section-word">Work</span>
           </div>
           <h2 className="editorial-heading text-4xl md:text-5xl lg:text-6xl mt-4 leading-[1.1]">
             Featured
             <br />
-            <span className="text-accent font-serif italic">Projects</span>
+            <span className="text-accent">Projects</span>
           </h2>
         </div>
         <p className="text-[var(--color-muted)] max-w-md text-base leading-[1.75]">
@@ -28,7 +35,7 @@ export default function Projects() {
 
       {/* Bento Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-        {projects.map((project, i) => (
+        {shown.map((project, i) => (
           <motion.div
             key={project.name}
             className={`bento-card group relative overflow-hidden ${
@@ -80,6 +87,32 @@ export default function Projects() {
                     sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover object-top"
                   />
+                </div>
+              )}
+
+              {/* Photo gallery if available */}
+              {project.gallery && project.gallery.length > 0 && (
+                <div
+                  className={`grid gap-3 mb-6 ${
+                    project.gallery.length === 1
+                      ? "grid-cols-1"
+                      : "grid-cols-2 md:grid-cols-3"
+                  }`}
+                >
+                  {project.gallery.map((src, gi) => (
+                    <div
+                      key={src}
+                      className="relative rounded-lg overflow-hidden border border-[var(--color-border)] h-40 md:h-52"
+                    >
+                      <Image
+                        src={src}
+                        alt={`${project.name} — photo ${gi + 1}`}
+                        fill
+                        sizes="(max-width: 768px) 50vw, 33vw"
+                        className="object-cover object-center"
+                      />
+                    </div>
+                  ))}
                 </div>
               )}
 
@@ -150,6 +183,25 @@ export default function Projects() {
           </motion.div>
         ))}
       </div>
+
+      {showViewAll && (
+        <div className="mt-12 text-center">
+          <Link href="/projects" className="btn-pill btn-outline">
+            View All Projects
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              aria-hidden="true"
+            >
+              <path d="M7 17l9.2-9.2M17 17V7H7" />
+            </svg>
+          </Link>
+        </div>
+      )}
     </SectionWrapper>
   );
 }

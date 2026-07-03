@@ -1,15 +1,147 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Hicks Digital — Web Development, SEO & AI Automation for Small Businesses",
+  title: "Web Design, Local SEO & AI Automation in North Carolina | Hicks Digital",
   description:
-    "Hicks Digital helps small businesses grow with web development, local SEO, AI automation, and career services. Based in North Carolina. Free audit included.",
-  openGraph: {
-    title: "Hicks Digital — Grow Your Business Online",
-    description:
-      "Web development, local SEO, AI automation, and career services for small businesses across North Carolina.",
-    url: "https://daylenhicks.com/services",
+    "Hicks Digital builds websites that rank on Google, sets up local SEO, and automates client follow-up for small businesses in Greensboro, Halifax County & across NC. Resume & LinkedIn services from $10. Get a free audit — delivered in 24 hours.",
+  keywords: [
+    "web design Greensboro NC",
+    "local SEO North Carolina",
+    "small business website design",
+    "Google Business Profile setup",
+    "AI automation for small business",
+    "resume writing service",
+    "LinkedIn profile optimization",
+    "web developer Halifax County NC",
+  ],
+  alternates: {
+    canonical: "https://daylenhicks.com/services",
   },
+  openGraph: {
+    title: "Hicks Digital — Web Design, Local SEO & AI Automation in NC",
+    description:
+      "Websites that rank, local SEO that gets you found, and AI automation that keeps clients coming back. Serving Greensboro, Halifax County & all of North Carolina. Free audit in 24 hours.",
+    url: "https://daylenhicks.com/services",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Hicks Digital — Web Design, Local SEO & AI Automation in NC",
+    description:
+      "Websites that rank, local SEO that gets you found, and AI automation that keeps clients coming back. Free audit in 24 hours.",
+  },
+};
+
+const faqs = [
+  {
+    question: "How much does a small business website cost?",
+    answer:
+      "Custom Next.js websites start at $750 — no page builders, no templates. Every site is mobile-first, built to load fast, and ships with local SEO and structured data baked in. Book a free call and we'll scope an exact quote before you pay anything.",
+  },
+  {
+    question: "How fast will I get my project?",
+    answer:
+      "Most business projects are delivered within 5–7 days. Career services move even faster: resume rewrites and LinkedIn optimizations are delivered within 48 hours, and portfolio roasts within 72 hours.",
+  },
+  {
+    question: "What is local SEO and why does my business need it?",
+    answer:
+      'Local SEO is how customers find you when they search things like "barber near me" or "plumber in Greensboro." We claim and optimize your Google Business Profile, add structured data to your site, and keep your rankings growing — so you show up on Google Maps before your competitors do.',
+  },
+  {
+    question: "Do you only work with businesses in North Carolina?",
+    answer:
+      "We're based in North Carolina — Greensboro and Halifax County — and love working with local businesses, but every service is delivered remotely. Wherever you are, we can help.",
+  },
+  {
+    question: "How does the free audit work?",
+    answer:
+      "Fill out the audit form with your business name and website (if you have one). Within 24 hours you'll get a one-page breakdown of exactly what's holding your online presence back — no commitment and no sales pitch.",
+  },
+  {
+    question: "What if I'm not happy with the work?",
+    answer:
+      "Every project includes revision rounds, and we don't consider a job done until you're satisfied. Our refund policy is published right on this site — no fine print.",
+  },
+];
+
+const serviceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: "Hicks Digital",
+  url: "https://daylenhicks.com/services",
+  image: "https://daylenhicks.com/profile.jpg",
+  description:
+    "Web design, local SEO, AI automation, and career services for small businesses and professionals in Greensboro, Halifax County, and across North Carolina.",
+  email: "hicksdigital.dev@gmail.com",
+  priceRange: "$10 - $750+",
+  founder: {
+    "@type": "Person",
+    name: "Daylen Hicks",
+    url: "https://daylenhicks.com",
+  },
+  areaServed: [
+    { "@type": "City", name: "Greensboro" },
+    { "@type": "AdministrativeArea", name: "Halifax County" },
+    { "@type": "State", name: "North Carolina" },
+  ],
+  sameAs: [
+    "https://www.instagram.com/hicksdigital_/",
+    "https://daylenhicks.com",
+  ],
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Hicks Digital Services",
+    itemListElement: [
+      {
+        "@type": "Offer",
+        price: "10",
+        priceCurrency: "USD",
+        itemOffered: { "@type": "Service", name: "Resume Revamp" },
+      },
+      {
+        "@type": "Offer",
+        price: "20",
+        priceCurrency: "USD",
+        itemOffered: { "@type": "Service", name: "LinkedIn Profile Optimization" },
+      },
+      {
+        "@type": "Offer",
+        price: "100",
+        priceCurrency: "USD",
+        itemOffered: { "@type": "Service", name: "Google Business Profile Setup" },
+      },
+      {
+        "@type": "Offer",
+        price: "150",
+        priceCurrency: "USD",
+        itemOffered: { "@type": "Service", name: "Monthly SEO Retainer" },
+      },
+      {
+        "@type": "Offer",
+        price: "300",
+        priceCurrency: "USD",
+        itemOffered: { "@type": "Service", name: "AI Appointment & Follow-Up Automation" },
+      },
+      {
+        "@type": "Offer",
+        price: "750",
+        priceCurrency: "USD",
+        itemOffered: { "@type": "Service", name: "Website Design & Development" },
+      },
+    ],
+  },
+};
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: { "@type": "Answer", text: faq.answer },
+  })),
 };
 
 const quickWins = [
@@ -207,13 +339,48 @@ const processSteps = [
 const stats = [
   { value: "48hr", label: "Avg. Delivery" },
   { value: "8+", label: "Services" },
-  { value: "$5", label: "Starting At" },
-  { value: "100%", label: "Satisfaction" },
+  { value: "$10", label: "Starting At" },
+  { value: "24hr", label: "Free Audit Turnaround" },
+];
+
+const proofPoints = [
+  {
+    value: "500+",
+    title: "Users on platforms we've built",
+    description:
+      "Our founder built and scaled I Got Next — a full-stack sports platform serving 500+ active players and 120 facilities across 3 cities.",
+  },
+  {
+    value: "$10K",
+    title: "National pitch competition win",
+    description:
+      "Our founder won 1st place and a $10K prize at the TMCF × CSAA × Guidewire HBCU Innovation Challenge, pitching a venture directly to insurance executives.",
+  },
+  {
+    value: "30+",
+    title: "Students trained in AI",
+    description:
+      "We deliver hands-on AI literacy workshops for schools and community organizations across North Carolina.",
+  },
+  {
+    value: "R&D",
+    title: "Real engineering background",
+    description:
+      "Built by a software engineer with R&D experience at JMP (SAS Institute) — not a template reseller. Your site is engineered, not assembled.",
+  },
 ];
 
 export default function ServicesPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       {/* Nav */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-xl border-b border-card-border">
         <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 flex items-center justify-between h-20">
@@ -224,9 +391,9 @@ export default function ServicesPage() {
             Hicks<span className="text-accent">Digital</span>
           </a>
           <div className="hidden md:flex items-center gap-8">
-            <a href="/" className="text-sm text-muted hover:text-accent transition-colors">
+            <Link href="/" className="text-sm text-muted hover:text-accent transition-colors">
               Portfolio
-            </a>
+            </Link>
             <a href="#career" className="text-sm text-muted hover:text-accent transition-colors">
               Career Services
             </a>
@@ -235,6 +402,9 @@ export default function ServicesPage() {
             </a>
             <a href="#process" className="text-sm text-muted hover:text-accent transition-colors">
               Process
+            </a>
+            <a href="#faq" className="text-sm text-muted hover:text-accent transition-colors">
+              FAQ
             </a>
             <a
               href="https://docs.google.com/forms/d/e/1FAIpQLSdZbdNsUgJ_oM60jHLssIhaLX-0yU4QXkAeXkwrxy0qPPr0gQ/viewform"
@@ -265,14 +435,15 @@ export default function ServicesPage() {
                 Hicks Digital
               </span>
             </div>
-            <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] font-bold leading-[1.05] tracking-tight max-w-[16ch]">
-              We build what{" "}
+            <h1 className="text-5xl md:text-7xl lg:text-[5rem] font-bold leading-[1.05] tracking-tight max-w-[18ch]">
+              Web design, SEO &amp; AI automation that{" "}
               <span className="text-accent">grows</span> your business.
             </h1>
-            <p className="mt-8 text-muted text-lg max-w-[55ch] leading-relaxed">
-              Web development, local SEO, AI automation, and career services for
-              small businesses and professionals across North Carolina. Built by
-              someone from the community, for the community.
+            <p className="mt-8 text-muted text-lg max-w-[58ch] leading-relaxed">
+              We build websites that rank on Google, get you found on Google
+              Maps, and automate your client follow-up — for small businesses
+              and professionals in Greensboro, Halifax County, and across North
+              Carolina. Built by someone from the community, for the community.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mt-10">
               <a
@@ -309,6 +480,43 @@ export default function ServicesPage() {
             ))}
           </div>
         </section>
+
+        {/* Why Hicks Digital — proof */}
+        <section id="why" className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 py-20">
+          <div className="flex items-center gap-4 mb-4">
+            <span className="w-8 h-px bg-accent" />
+            <span className="text-xs font-semibold tracking-[0.2em] uppercase text-accent">
+              Why Hicks Digital
+            </span>
+          </div>
+          <h2 className="text-3xl md:text-4xl font-bold mb-3 max-w-[24ch]">
+            Hire an <span className="text-accent">engineer</span>, not an agency.
+          </h2>
+          <p className="text-muted text-sm mb-12 max-w-[55ch] leading-relaxed">
+            No account managers, no outsourcing, no bloated retainers. You work
+            directly with the engineer building your product — and the receipts
+            are public.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border border-card-border">
+            {proofPoints.map((point, i) => (
+              <div
+                key={point.title}
+                className={`p-8 hover:bg-surface transition-colors ${
+                  i < proofPoints.length - 1 ? "border-b lg:border-b-0 lg:border-r border-card-border" : ""
+                }`}
+              >
+                <p className="text-3xl font-bold text-accent mb-3">{point.value}</p>
+                <h3 className="font-bold text-sm mb-3">{point.title}</h3>
+                <p className="text-xs text-muted leading-relaxed">
+                  {point.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Divider */}
+        <div className="h-px bg-gradient-to-r from-transparent via-card-border to-transparent mx-6 md:mx-12 lg:mx-24" />
 
         {/* Career Services — Quick Wins */}
         <section id="career" className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 py-20">
@@ -518,6 +726,33 @@ export default function ServicesPage() {
           </div>
         </section>
 
+        {/* Divider */}
+        <div className="h-px bg-gradient-to-r from-transparent via-card-border to-transparent mx-6 md:mx-12 lg:mx-24" />
+
+        {/* FAQ */}
+        <section id="faq" className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 py-20">
+          <div className="flex items-center gap-4 mb-4">
+            <span className="w-8 h-px bg-accent" />
+            <span className="text-xs font-semibold tracking-[0.2em] uppercase text-accent">
+              FAQ
+            </span>
+          </div>
+          <h2 className="text-3xl md:text-4xl font-bold mb-12 max-w-[22ch]">
+            Questions, <span className="text-accent">answered.</span>
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 border-t border-l border-card-border">
+            {faqs.map((faq) => (
+              <div
+                key={faq.question}
+                className="p-8 md:p-10 border-b border-r border-card-border hover:bg-surface transition-colors"
+              >
+                <h3 className="font-bold text-base mb-3">{faq.question}</h3>
+                <p className="text-sm text-muted leading-relaxed">{faq.answer}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
         {/* CTA */}
         <section className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 pb-20">
           <div className="border border-card-border p-8 md:p-12 flex flex-col md:flex-row justify-between items-start md:items-center gap-8 relative overflow-hidden">
@@ -539,9 +774,9 @@ export default function ServicesPage() {
               >
                 Get Free Audit
               </a>
-              <a href="/" className="btn-pill btn-outline text-center">
+              <Link href="/" className="btn-pill btn-outline text-center">
                 View Portfolio
-              </a>
+              </Link>
             </div>
           </div>
         </section>
@@ -550,7 +785,9 @@ export default function ServicesPage() {
         <footer className="border-t border-card-border">
           <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 py-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-muted">
             <p>
-              &copy; {new Date().getFullYear()} Hicks Digital. All rights reserved.
+              &copy; {new Date().getFullYear()} Hicks Digital. Serving
+              Greensboro, Halifax County &amp; all of North Carolina — remote
+              friendly.
             </p>
             <div className="flex gap-6">
               <a href="/terms" className="hover:text-accent transition-colors">

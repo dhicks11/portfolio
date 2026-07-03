@@ -13,13 +13,13 @@ export default function Skills() {
       <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
         <div>
           <div className="section-header">
-            <span className="section-number">03</span>
+            <span className="section-number">02</span>
             <span className="section-word">Expertise</span>
           </div>
           <h2 className="editorial-heading text-4xl md:text-5xl lg:text-6xl mt-4 leading-[1.1]">
             Technical
             <br />
-            <span className="text-accent font-serif italic">toolkit</span>
+            <span className="text-accent">toolkit</span>
           </h2>
         </div>
       </div>

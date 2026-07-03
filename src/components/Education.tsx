@@ -8,13 +8,13 @@ export default function Education() {
   return (
     <SectionWrapper id="education">
       <div className="section-header">
-        <span className="section-number">06</span>
+        <span className="section-number">03</span>
         <span className="section-word">Education</span>
       </div>
       <h2 className="editorial-heading text-4xl md:text-5xl lg:text-6xl mt-4 mb-16 leading-[1.1]">
         Academic
         <br />
-        <span className="text-accent font-serif italic">background</span>
+        <span className="text-accent">background</span>
       </h2>
 
       {/* Certificate highlight */}
@@ -27,7 +27,7 @@ export default function Education() {
       >
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
           <div className="flex items-start gap-5">
-            <div className="w-14 h-14 rounded-xl bg-[var(--color-accent-soft)] border border-[rgba(59,130,246,0.3)] flex items-center justify-center shrink-0">
+            <div className="w-14 h-14 rounded-xl bg-[var(--color-accent-soft)] border border-[rgba(204,242,68,0.3)] flex items-center justify-center shrink-0">
               <svg
                 width="24"
                 height="24"

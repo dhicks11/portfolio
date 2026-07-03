@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { personalInfo, highlights } from "@/data/resume";
 
@@ -43,10 +44,23 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
-              className="section-header mb-6"
+              className="section-header mb-4"
             >
               <span className="section-number">01</span>
               <span className="section-word">Portfolio</span>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.05, ease: "easeOut" }}
+              className="inline-flex items-center gap-2.5 mb-6 rounded-full border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-1.5 text-xs font-mono text-[var(--color-muted)]"
+            >
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-60" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-green-400" />
+              </span>
+              Now: R&amp;D intern @ JMP (SAS) &middot; Building I Got Next
             </motion.div>
 
             <motion.h1
@@ -72,7 +86,7 @@ export default function Hero() {
                 <AnimatePresence mode="wait">
                   <motion.span
                     key={swapWords[currentWord]}
-                    className="inline-block text-accent font-serif italic leading-[1.25] pr-[0.08em]"
+                    className="inline-block text-accent leading-[1.25] pr-[0.08em]"
                     initial={{ y: "100%", opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     exit={{ y: "-100%", opacity: 0 }}
@@ -119,16 +133,9 @@ export default function Hero() {
                   <path d="M7 17l9.2-9.2M17 17V7H7" />
                 </svg>
               </a>
-              <button
-                onClick={() =>
-                  document
-                    .querySelector("#contact")
-                    ?.scrollIntoView({ behavior: "smooth" })
-                }
-                className="btn-pill btn-outline"
-              >
+              <Link href="/contact" className="btn-pill btn-outline">
                 Get in Touch
-              </button>
+              </Link>
               <a
                 href="https://calendly.com/daylenhicks10"
                 target="_blank"
@@ -180,12 +187,12 @@ export default function Hero() {
                     fill
                     sizes="(max-width: 640px) 240px, (max-width: 1024px) 300px, 400px"
                     className="object-cover object-top"
-                    priority
+                    preload
                     onError={() => setImageError(true)}
                   />
                 ) : (
                   <div className="absolute inset-0 flex items-center justify-center bg-[var(--color-surface)] border border-[var(--color-border)]">
-                    <span className="font-serif text-[8rem] lg:text-[10rem] font-light text-[var(--color-accent)] opacity-30">
+                    <span className="text-[8rem] lg:text-[10rem] font-semibold tracking-tight text-[var(--color-accent)] opacity-30">
                       DH
                     </span>
                   </div>
@@ -205,7 +212,7 @@ export default function Hero() {
 
         {/* Stats — each in its own card */}
         <motion.div
-          className="grid grid-cols-3 gap-3 md:gap-5 mt-20 max-w-2xl"
+          className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-5 mt-20 max-w-3xl"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.7 }}

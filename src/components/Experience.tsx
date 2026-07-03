@@ -16,14 +16,14 @@ export default function Experience() {
             transition={{ duration: 0.7 }}
           >
             <div className="section-header">
-              <span className="section-number">05</span>
+              <span className="section-number">01</span>
               <span className="section-word">Experience</span>
             </div>
             <h2 className="editorial-heading text-4xl md:text-5xl lg:text-6xl mt-4 leading-[1.1]">
               Where
               <br />
               I&apos;ve{" "}
-              <span className="text-accent font-serif italic">worked</span>
+              <span className="text-accent">worked</span>
             </h2>
             <p className="text-[var(--color-muted)] mt-6 max-w-sm leading-[1.75]">
               From AI engineering at scale to founding products from scratch.
@@ -58,8 +58,8 @@ export default function Experience() {
                 <span className="text-[var(--color-hint)] hidden md:inline">
                   —
                 </span>
-                {/* Company in serif italic */}
-                <span className="font-serif text-lg md:text-xl text-[var(--color-muted)] italic">
+                {/* Company */}
+                <span className="text-lg md:text-xl text-[var(--color-muted)] font-medium">
                   {job.company}
                 </span>
               </div>

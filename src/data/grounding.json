@@ -1,0 +1,140 @@
+{
+  "basics": {
+    "name": "Daylen Hicks",
+    "role_focus": "Solutions Architect / Technical Program Manager track, bridging business and technology; currently a CS + Supply Chain Management student",
+    "location": "Greensboro, NC (originally from rural eastern NC)",
+    "links": {
+      "portfolio": "daylenhicks.com",
+      "linkedin": "linkedin.com/in/daylenhicks",
+      "github": "github.com/dhicks11",
+      "email": "daylenhicks10@gmail.com"
+    }
+  },
+  "education": [
+    {
+      "school": "North Carolina Agricultural and Technical State University",
+      "degree": "B.S. Computer Science, Minor in Supply Chain Management",
+      "dates": "Aug. 2025 – Present (graduating May 2028)",
+      "location": "Greensboro, NC",
+      "gpa": "3.6"
+    },
+    {
+      "school": "Halifax Community College",
+      "degree": "A.A. & A.S., completed concurrently with high school diploma",
+      "dates": "Aug. 2021 – May 2025",
+      "location": "Weldon, NC",
+      "gpa": ""
+    }
+  ],
+  "experience": [
+    {
+      "company": "JMP Statistical Discovery (SAS Institute)",
+      "role": "Technical Writing Intern, R&D DevOps",
+      "dates": "May 2026 – Aug. 2026",
+      "location": "Cary, NC",
+      "highlights": [
+        "Engineered a Python automation script that reduced an estimated 2 to 3 months of manual technical writing effort to seconds, migrating 1,574 XML menu paths across 52 documentation files with zero failures as part of a FrameMaker to oXygen XML/DITA migration; featured in the JMP R&D Development Update",
+        "Built an XML/DITA element counter scanning 1,878+ files at a 99.7% parse rate; identified 550 DITA elements eligible for Oxygen UI cleanup, delivering a concrete migration roadmap",
+        "Designed scalable folder architecture separating BA and DOE environments with Perforce safe defaults, dry run audit logging, and structured output isolation for cross team QA review"
+      ]
+    },
+    {
+      "company": "I Got Next",
+      "role": "Founder & Lead Developer",
+      "dates": "Jan. 2026 – Present",
+      "location": "Remote",
+      "highlights": [
+        "Scaled a full stack pickup basketball platform (Next.js, TypeScript, React, Firebase, Stripe, Google Maps API, Airtable) to 500+ active players and 120 courts across 3 cities; shipped 18 routes including player map, facility dashboard, admin panel, and public profiles",
+        "Engineered a B2B Stripe pipeline targeting YMCAs and parks and rec departments with 3 facility pricing tiers ($199 to $699/mo) and a $5.99/mo player Pro tier; integrated Airtable for facility lead capture and CRM"
+      ]
+    },
+    {
+      "company": "Hicks Digital",
+      "role": "Founder, Web Development, AI Consulting & Workshops",
+      "dates": "Jan. 2026 – Present",
+      "location": "Remote / Greensboro, NC",
+      "highlights": [
+        "Delivered an AI literacy workshop to 30+ students (Boys 2 Men, Roanoke Rapids, May 2026); drafted a GoHighLevel automation proposal for the GROW nonprofit serving Halifax County",
+        "Executed 25+ cold outreach campaigns across 2 counties; secured paid brand partnerships and AI consulting engagements with local businesses"
+      ]
+    },
+    {
+      "company": "North Carolina A&T State University — Aggie Suites F",
+      "role": "Resident Assistant",
+      "dates": "Jul. 2026 – Present",
+      "location": "Greensboro, NC",
+      "highlights": [
+        "Responsible for well being, academic success, and community development of residents in Aggie Suites F",
+        "Planned programming including an AI and Career Readiness Workshop Series and monthly community building events"
+      ]
+    },
+    {
+      "company": "Handshake",
+      "role": "LLM / Generative AI Engineer",
+      "dates": "Feb. 2026 – Present",
+      "location": "Remote",
+      "highlights": [
+        "Benchmarked output quality across 3 LLMs (Claude, Gemini, ChatGPT) using structured evaluation criteria to identify performance gaps and select optimal models for production",
+        "Performed RLHF style feedback rating and ranking hundreds of model responses; cleaned and curated training datasets to improve pipeline accuracy"
+      ]
+    },
+    {
+      "company": "Northampton County Schools",
+      "role": "Tech Leader & FRC Team Captain",
+      "dates": "Aug. 2024 – May 2025",
+      "location": "Gaston, NC",
+      "highlights": [
+        "Chartered the school's inaugural FIRST Robotics Competition team (RoboJags), leading 10+ members to two Rookie All Star awards, a state championship, and the FRC World Championship in Houston, TX; secured a NASA robotics grant and NC A&T sponsorship"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Scholar Shield",
+      "context": "1st Place, TMCF x CSAA x Guidewire HBCU Innovation Challenge (Walnut Creek, CA)",
+      "dates": "Jun. 2026",
+      "highlights": [
+        "Pitched Scholar Shield, a scholarship protection insurance product, to CSAA Insurance Group and Guidewire executives as part of Team dreamZ",
+        "Won 1st place and a $10K prize (split among 4 teammates) among competing HBCU teams nationwide",
+        "Iterated the pitch through multiple rounds of live coach and executive feedback"
+      ],
+      "link": ""
+    },
+    {
+      "name": "PitchPad",
+      "context": "1st Place, Hack NCAT; built for the Lenovo Ideation to Impact challenge",
+      "dates": "Mar. 2026",
+      "highlights": [
+        "AI powered pitch practice platform; deployment and infrastructure lead",
+        "Next.js/Vercel frontend, FastAPI/Railway backend, OpenAI Whisper + GPT-4o to auto generate pitch decks in under 60 seconds",
+        "Supabase (PostgreSQL + pgvector + Auth) with 2 user roles; Groq for low latency coaching on a 1 to 10 scale"
+      ],
+      "link": ""
+    },
+    {
+      "name": "Forte",
+      "context": "Built at FidHacks @ Fidelity",
+      "dates": "May 2026",
+      "highlights": [
+        "Browser based financial literacy platform, Next.js 15, Gemini 2.0 Flash, Framer Motion, Zustand",
+        "5 interactive games (salary negotiation vs. live AI, job offer math, budgeting, freelance taxes, 30 year portfolio sim); shipped zero login with server side scoring in under 24 hours"
+      ],
+      "link": ""
+    }
+  ],
+  "skills": {
+    "languages": ["Python", "Java", "JavaScript", "TypeScript", "SQL", "HTML/CSS", "Perl", "XML/DITA"],
+    "frameworks": ["React", "Next.js", "Node.js", "FastAPI"],
+    "tools": ["Git", "GitHub", "Jenkins", "Perforce (P4V)", "Jira", "Confluence", "VS Code", "Oxygen XML", "WinMerge", "Docker", "Airtable"],
+    "cloud": ["AWS (EC2, Amazon Bedrock)", "Firebase", "Vercel", "Google Cloud Platform", "Railway"],
+    "ai_focus": ["Responsible AI", "Human in the Loop Systems", "LLM Evaluation & RLHF", "Prompt Engineering"]
+  },
+  "competitions": [
+    { "name": "TMCF x CSAA x Guidewire HBCU Innovation Challenge", "result": "1st Place, $10K prize (Team dreamZ, Scholar Shield)", "date": "Jun. 2026" },
+    { "name": "Hack NCAT", "result": "1st Place (PitchPad)", "date": "Mar. 2026" },
+    { "name": "UNCF STEM Innovation Summit", "result": "Top 50 HBCU Scholar nationwide", "date": "Mar. 2026" },
+    { "name": "FidHacks @ Fidelity", "result": "Participant (Forte)", "date": "May 2026" },
+    { "name": "FRC World Championship", "result": "Team captain, qualified for World Championship in Houston, TX", "date": "2024–2025" },
+    { "name": "Truist Ascent Immersion (TMCF x Truist)", "result": "Selected, 1 of 120 nationwide", "date": "Jun. 2026 – Oct. 2026" }
+  ]
+}
