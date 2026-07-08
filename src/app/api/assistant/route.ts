@@ -39,6 +39,9 @@ function getClientIp(req: NextRequest): string {
 
 export async function POST(req: NextRequest) {
   if (!process.env.ANTHROPIC_API_KEY) {
+    console.warn(
+      "assistant: ANTHROPIC_API_KEY is not set — returning fallback message"
+    );
     return NextResponse.json({ answer: FALLBACK_MESSAGE, fallback: true });
   }
 
@@ -112,6 +115,7 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({ answer });
   } catch (err) {
+    console.error("assistant: Claude API call failed", err);
     captureError(err, { source: "assistant" });
     return NextResponse.json({ answer: FALLBACK_MESSAGE, fallback: true });
   }

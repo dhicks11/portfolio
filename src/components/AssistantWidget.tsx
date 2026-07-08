@@ -76,7 +76,7 @@ export default function AssistantWidget() {
       <button
         onClick={() => setOpen((v) => !v)}
         aria-label={open ? "Close AI assistant" : "Ask AI about Daylen"}
-        className="fixed bottom-5 right-5 z-[90] flex items-center gap-2 rounded-full bg-[var(--color-accent)] text-[var(--color-background)] px-5 h-12 text-sm font-semibold shadow-[0_8px_30px_rgba(204,242,68,0.35)] hover:bg-[var(--color-accent-dark)] transition-colors"
+        className="fixed bottom-5 right-5 z-[90] flex items-center gap-2 rounded-full bg-[var(--color-accent)] text-[var(--color-background)] px-5 h-12 text-sm font-semibold shadow-lg shadow-black/40 hover:bg-[var(--color-accent-dark)] transition-colors"
       >
         {open ? (
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">

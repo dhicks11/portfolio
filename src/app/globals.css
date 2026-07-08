@@ -3,24 +3,24 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  /* Core palette — warm black with volt accent */
-  --color-background: #0A0A09;
-  --color-foreground: #F7F7F2;
-  --color-surface: #141412;
-  --color-surface-2: #1B1B18;
-  --color-card: #141412;
-  --color-card-border: #2A2A25;
-  --color-border: #2A2A25;
+  /* Core palette — graphite with a restrained indigo accent */
+  --color-background: #0C0C0E;
+  --color-foreground: #F2F2F4;
+  --color-surface: #141416;
+  --color-surface-2: #1A1A1E;
+  --color-card: #141416;
+  --color-card-border: #26262B;
+  --color-border: #26262B;
 
   /* Text hierarchy */
-  --color-muted: #9C9C93;
-  --color-hint: #6F6F66;
+  --color-muted: #9C9CA4;
+  --color-hint: #6E6E76;
 
-  /* Single volt accent */
-  --color-accent: #CCF244;
-  --color-accent-dark: #B5E02E;
-  --color-accent-soft: #232B10;
-  --color-accent-text: #E0FF7A;
+  /* Single muted indigo accent */
+  --color-accent: #7C88E8;
+  --color-accent-dark: #5E6AD2;
+  --color-accent-soft: #1B1D33;
+  --color-accent-text: #A8B0F5;
 
   /* Fonts */
   --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -178,7 +178,7 @@ button, a, input, select, textarea {
 
 .noura-card:hover {
   border-color: var(--color-accent);
-  box-shadow: inset 0 0 0 1px var(--color-accent), 0 4px 24px rgba(204, 242, 68, 0.08);
+  box-shadow: inset 0 0 0 1px var(--color-accent), 0 4px 24px rgba(124, 136, 232, 0.08);
 }
 
 .bento-card {
@@ -190,7 +190,7 @@ button, a, input, select, textarea {
 
 .bento-card:hover {
   border-color: var(--color-accent);
-  box-shadow: inset 0 0 0 1px var(--color-accent), 0 4px 24px rgba(204, 242, 68, 0.08);
+  box-shadow: inset 0 0 0 1px var(--color-accent), 0 4px 24px rgba(124, 136, 232, 0.08);
 }
 
 /* ---------- Section header — number + label combined ---------- */
@@ -267,7 +267,7 @@ button, a, input, select, textarea {
 
 .stat-card:hover {
   border-color: var(--color-accent);
-  box-shadow: 0 4px 24px rgba(204, 242, 68, 0.08);
+  box-shadow: 0 4px 24px rgba(124, 136, 232, 0.08);
 }
 
 .stat-number {
@@ -302,8 +302,8 @@ button, a, input, select, textarea {
 
 /* ---------- Certificate highlight ---------- */
 .cert-highlight {
-  background: linear-gradient(135deg, rgba(204, 242, 68, 0.10), rgba(204, 242, 68, 0.03));
-  border: 1px solid rgba(204, 242, 68, 0.3);
+  background: linear-gradient(135deg, rgba(124, 136, 232, 0.10), rgba(124, 136, 232, 0.03));
+  border: 1px solid rgba(124, 136, 232, 0.3);
   border-radius: 1rem;
   position: relative;
   overflow: hidden;
@@ -332,7 +332,7 @@ button, a, input, select, textarea {
   text-transform: uppercase;
   background: var(--color-accent-soft);
   color: var(--color-accent-text);
-  border: 1px solid rgba(204, 242, 68, 0.3);
+  border: 1px solid rgba(124, 136, 232, 0.3);
   min-height: 36px;
   transition: all 0.2s ease;
 }
@@ -354,7 +354,7 @@ button, a, input, select, textarea {
   font-size: 0.6875rem;
   font-weight: 500;
   letter-spacing: 0.02em;
-  border: 1px solid rgba(204, 242, 68, 0.25);
+  border: 1px solid rgba(124, 136, 232, 0.25);
 }
 
 /* Award badge */
