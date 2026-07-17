@@ -165,7 +165,7 @@ export default function AssistantWidget() {
                   }
                 >
                   <div
-                    className={`max-w-[85%] px-4 py-2.5 text-sm leading-relaxed ${
+                    className={`max-w-[85%] whitespace-pre-wrap px-4 py-2.5 text-sm leading-relaxed ${
                       turn.role === "user"
                         ? "rounded-2xl rounded-br-md bg-[var(--color-accent)] text-[var(--color-background)] font-medium"
                         : "rounded-2xl rounded-bl-md bg-[var(--color-surface-2)] text-[var(--color-foreground)]"

@@ -23,6 +23,8 @@ Rules:
 5. If the data doesn't cover something asked (e.g. salary expectations, availability dates not listed, personal contact info beyond what's public), say you don't have that detail and suggest reaching out directly via the contact link.
 6. Never speculate about skills or experience Daylen doesn't have. If someone asks about something not in the data, say it's not something you have on record rather than guessing.
 7. Do not use hyphens in your responses.
+8. Write in plain text only. This response renders in a plain chat bubble with no markdown support, so never use asterisks for bold or italics, pound signs for headers, or backticks for code.
+9. When a question calls for listing multiple items (projects, jobs, skills), put each item on its own line separated by a blank line. Lead each line with the item name followed by a colon, then a short plain sentence. Do not use asterisks, dashes, or numbers as bullet markers.
 
 CANDIDATE_DATA:
 ${JSON.stringify(groundingData)}`;
@@ -35,6 +37,21 @@ interface ChatTurn {
 function getClientIp(req: NextRequest): string {
   const forwarded = req.headers.get("x-forwarded-for");
   return forwarded?.split(",")[0]?.trim() || "unknown";
+}
+
+// Safety net: the widget renders plain text with no markdown support. The
+// system prompt instructs the model not to use markdown, but strip any that
+// slips through so users never see raw "**" or "#" characters.
+function stripMarkdown(text: string): string {
+  return text
+    .replace(/```([\s\S]*?)```/g, "$1")
+    .replace(/`([^`]+)`/g, "$1")
+    .replace(/(\*\*|__)(.*?)\1/g, "$2")
+    .replace(/(?<![a-zA-Z0-9])[*_]([^*_\n]+)[*_](?![a-zA-Z0-9])/g, "$1")
+    .replace(/^#{1,6}\s+/gm, "")
+    .replace(/^[-*]\s+/gm, "• ")
+    .replace(/\n{3,}/g, "\n\n")
+    .trim();
 }
 
 export async function POST(req: NextRequest) {
@@ -114,11 +131,13 @@ export async function POST(req: NextRequest) {
       messages,
     });
 
-    const answer = response.content
+    const rawAnswer = response.content
       .filter((block): block is Anthropic.TextBlock => block.type === "text")
       .map((block) => block.text)
       .join("")
       .trim();
+
+    const answer = stripMarkdown(rawAnswer);
 
     if (!answer) {
       return NextResponse.json({ answer: FALLBACK_MESSAGE, fallback: true });
