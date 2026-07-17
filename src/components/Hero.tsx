@@ -56,11 +56,8 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.05, ease: "easeOut" }}
               className="inline-flex items-center gap-2.5 mb-6 rounded-full border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-1.5 text-xs font-mono text-[var(--color-muted)]"
             >
-              <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-60" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-green-400" />
-              </span>
-              Now: R&amp;D intern @ JMP (SAS) &middot; Building I Got Next
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400/90" />
+              Currently: R&amp;D Intern @ JMP (SAS) &middot; Building I Got Next
             </motion.div>
 
             <motion.h1

@@ -70,20 +70,31 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  // Sanitize history: recent turns only, alternating shape enforced client-side
+  // Build a valid message list. The Anthropic API requires the first message to
+  // be a "user" turn, so we never trust the client's history to be well formed:
+  // keep only valid turns, drop any leading assistant turns, then append the
+  // current question. (Consecutive same-role turns are allowed — the API merges
+  // them — so we don't need to force strict alternation.)
+  const cleanedHistory = history
+    .filter(
+      (t): t is ChatTurn =>
+        (t?.role === "user" || t?.role === "assistant") &&
+        typeof t?.content === "string" &&
+        t.content.trim().length > 0
+    )
+    .slice(-MAX_HISTORY_TURNS)
+    .map((t) => ({
+      role: t.role,
+      content: t.content.slice(0, MAX_QUESTION_LENGTH * 2),
+    }));
+
+  // Drop leading assistant turns so the sequence starts with a user turn.
+  while (cleanedHistory.length > 0 && cleanedHistory[0].role === "assistant") {
+    cleanedHistory.shift();
+  }
+
   const messages: Anthropic.MessageParam[] = [
-    ...history
-      .slice(-MAX_HISTORY_TURNS)
-      .filter(
-        (t): t is ChatTurn =>
-          (t?.role === "user" || t?.role === "assistant") &&
-          typeof t?.content === "string" &&
-          t.content.length > 0
-      )
-      .map((t) => ({
-        role: t.role,
-        content: t.content.slice(0, MAX_QUESTION_LENGTH * 2),
-      })),
+    ...cleanedHistory,
     { role: "user", content: question },
   ];
 

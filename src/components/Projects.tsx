@@ -141,7 +141,7 @@ export default function Projects({ limit, showViewAll = false }: ProjectsProps) 
                     className="live-link"
                     aria-label={`Visit ${project.name} live site`}
                   >
-                    <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400/90" />
                     Live Site
                     <svg
                       width="12"
