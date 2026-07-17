@@ -129,7 +129,7 @@ export default function Community() {
             viewport={{ once: true }}
             transition={{ delay: i * 0.1, duration: 0.6, ease: "easeOut" }}
           >
-            <div className="w-14 h-14 rounded-xl bg-[var(--color-accent-soft)] border border-[rgba(204,242,68,0.3)] flex items-center justify-center text-accent mb-6">
+            <div className="w-14 h-14 rounded-xl bg-[var(--color-accent-soft)] border border-[rgba(124,136,232,0.3)] flex items-center justify-center text-accent mb-6">
               {service.icon}
             </div>
             <h3 className="editorial-heading text-xl mb-3">{service.title}</h3>
@@ -168,7 +168,7 @@ export default function Community() {
               )}
               <div className="p-6 md:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-[var(--color-accent-soft)] border border-[rgba(204,242,68,0.3)] flex items-center justify-center text-accent shrink-0">
+                  <div className="w-12 h-12 rounded-xl bg-[var(--color-accent-soft)] border border-[rgba(124,136,232,0.3)] flex items-center justify-center text-accent shrink-0">
                     <svg
                       width="24"
                       height="24"

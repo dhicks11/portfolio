@@ -23,7 +23,7 @@ export default function Navbar() {
         scrolled ? "border-b border-[var(--color-border)]" : ""
       }`}
       style={{
-        background: "rgba(10, 10, 9, 0.85)",
+        background: "rgba(12, 12, 14, 0.85)",
         backdropFilter: "blur(12px)",
         WebkitBackdropFilter: "blur(12px)",
       }}
@@ -117,7 +117,7 @@ export default function Navbar() {
           <motion.div
             className="md:hidden border-b border-[var(--color-border)]"
             style={{
-              background: "rgba(10, 10, 9, 0.95)",
+              background: "rgba(12, 12, 14, 0.95)",
               backdropFilter: "blur(12px)",
               WebkitBackdropFilter: "blur(12px)",
             }}

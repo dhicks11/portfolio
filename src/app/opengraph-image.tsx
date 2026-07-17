@@ -16,7 +16,7 @@ export default function OGImage() {
           flexDirection: "column",
           justifyContent: "center",
           padding: "80px 100px",
-          backgroundColor: "#0A0A09",
+          backgroundColor: "#0C0C0E",
           fontFamily: "system-ui, sans-serif",
         }}
       >
@@ -32,7 +32,7 @@ export default function OGImage() {
             style={{
               width: "24px",
               height: "2px",
-              backgroundColor: "#CCF244",
+              backgroundColor: "#7C88E8",
             }}
           />
           <span
@@ -41,7 +41,7 @@ export default function OGImage() {
               fontWeight: 600,
               letterSpacing: "0.15em",
               textTransform: "uppercase" as const,
-              color: "#CCF244",
+              color: "#7C88E8",
             }}
           >
             Portfolio
@@ -64,7 +64,7 @@ export default function OGImage() {
           style={{
             fontSize: "36px",
             fontWeight: 500,
-            color: "#CCF244",
+            color: "#7C88E8",
             margin: "16px 0 0 0",
           }}
         >
