@@ -65,14 +65,6 @@ export default function Navbar() {
               </Link>
             );
           })}
-          <a
-            href={personalInfo.resumeUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-pill btn-outline text-xs"
-          >
-            Resume
-          </a>
           <Link href="/services" className="btn-pill btn-ghost text-xs">
             Services
           </Link>
@@ -150,14 +142,6 @@ export default function Navbar() {
                   </motion.div>
                 );
               })}
-              <a
-                href={personalInfo.resumeUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-pill btn-outline text-center mt-2"
-              >
-                Resume
-              </a>
               <Link
                 href="/services"
                 className="btn-pill btn-ghost text-center"

@@ -110,26 +110,6 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.5, ease: "easeOut" }}
             >
-              <a
-                href={personalInfo.resumeUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-pill btn-primary"
-                aria-label="Download resume (PDF)"
-              >
-                Download Resume
-                <svg
-                  width="14"
-                  height="14"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  aria-hidden="true"
-                >
-                  <path d="M7 17l9.2-9.2M17 17V7H7" />
-                </svg>
-              </a>
               <Link href="/contact" className="btn-pill btn-outline">
                 Get in Touch
               </Link>

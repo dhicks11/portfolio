@@ -5,7 +5,6 @@ export const personalInfo = {
   github: "https://github.com/dhicks11",
   linkedin: "https://linkedin.com/in/daylenhicks",
   bio: "I'm a Computer Science student with a minor in Supply Chain Management at North Carolina A&T State University, passionate about building full-stack applications and working with AI systems. From winning hackathons and founding two companies — a B2B sports platform and an AI consulting firm — to winning 1st place and a $10K prize at the TMCF HBCU Innovation Challenge with a pitch to CSAA and Guidewire executives, I build products at the intersection of technology and community.",
-  resumeUrl: "/Daylen_Hicks_Resume.pdf",
 };
 
 export const highlights = [
@@ -64,11 +63,13 @@ export const experience = [
     role: "Technical Writing Intern, R&D DevOps",
     location: "Cary, NC",
     dates: "May 2026 – Aug. 2026",
-    tech: "Python, Perl, XML/DITA, Oxygen XML, Perforce",
+    tech: "Python, JSL, Perl, XML/DITA, Oxygen XML, Perforce, Jira, Confluence",
     bullets: [
-      "Engineered a Python automation script that reduced an estimated 2 to 3 months of manual technical writing effort to seconds, migrating 1,574 XML menu paths across 52 documentation files with zero failures as part of a FrameMaker-to-oXygen XML/DITA migration; featured in the JMP R&D Development Update",
-      "Built an XML/DITA element counter scanning 1,878+ files at a 99.7% parse rate; identified 550 DITA elements eligible for Oxygen UI cleanup, delivering a concrete migration roadmap",
-      "Designed scalable folder architecture separating BA and DOE environments with Perforce safe defaults, dry-run audit logging, and structured output isolation for cross-team QA review",
+      "Engineered Python menucascade automation for the FrameMaker-to-oXygen XML/DITA migration: a documented production run converted 1,574 menu paths across 52 files with 0 failures, and a later full-corpus dry run covered 1,648 files with 1,288 conversions across 297 files; featured in the JMP R&D Development Update",
+      "Built XML/DITA analysis tooling that scanned 1,826 files (1,821 parsed, 5 parse errors), analyzed 64 unique elements and 271,066 element instances, and surfaced 550 unused-element review candidates; the XML Book Analyzer linted 21 books and surfaced 2,592 issues, and I caught and corrected a counting error to verify 1,747 top-level topics",
+      "JMP-12987: standardized date formats across 37 JMP sample data tables and 72 columns; final validation showed no remaining flagged tables and unchanged row and column structures",
+      "JMPDOC-3428: grew a screenshot task into a centralized comparison and review workflow for JMP 2027 accessibility and UI changes, with automated comparison statuses, side-by-side and difference review, retake tracking, and manual-review fallbacks",
+      "Used AI as an engineering accelerator (prototyping, edge cases, unfamiliar tech) while owning success criteria, testing against real documentation, and validation; subject-matter experts reviewed every tool before production use. Turned manual steps into dry-run workflows, linters, dashboards, and audit reports",
     ],
   },
   {
@@ -134,11 +135,52 @@ interface Project {
   bullets: string[];
   liveUrl?: string;
   demoUrl?: string;
+  githubUrl?: string;
   image?: string;
   gallery?: string[];
 }
 
 export const projects: Project[] = [
+  {
+    name: "TruBen — Benefits, Made Clear",
+    event: "Truist Ascent Immersion",
+    date: "Oct. 2026",
+    tech: ["React", "Vite", "Tailwind", "FastAPI", "Retrieval (RAG)", "Mock Workday API"],
+    bullets: [
+      "AI benefits guide for new hires that follows Discover, Understand, Decide: a short quiz shows which benefits apply, plain-language answers cite the source document, page, and passage, and three packages (Essential, Balanced, Comprehensive) lead to a personal enrollment checklist",
+      "Answers only from approved documents and hands off to HR when the answer is not there; built on synthetic data and a mocked Workday API, with an accessible list view alongside chat",
+    ],
+    image: "/projects/truben.png",
+  },
+  {
+    name: "JMP Documentation Automation Suite",
+    event: "JMP Statistical Discovery (SAS)",
+    date: "May – Aug. 2026",
+    tech: ["Python", "JSL", "XML/DITA", "Oxygen XML", "Perforce", "Dashboards"],
+    bullets: [
+      "Menucascade conversion (1,574 paths, 52 files, 0 failures), XML/DITA analyzer (1,826 files, 271,066 element instances), XML Book Analyzer linter (21 books), and a centralized screenshot comparison workflow for JMP 2027",
+      "Built dry-run, audit logging, and validation into each tool, then shared results through dashboards and structured audit reports for team review",
+    ],
+  },
+  {
+    name: "I Got Next Court Digital Twin",
+    event: "OpenUSD / NVIDIA Omniverse",
+    date: "2026",
+    tech: ["Python", "OpenUSD", "NVIDIA Omniverse", "Validation"],
+    bullets: [
+      "Turns a pickup court listing into an animated 3D scene and blocks export until a dry-run validation pass succeeds, so bad listing data never becomes a scene",
+    ],
+    githubUrl: "https://github.com/dhicks11/igotnext_court_twin",
+  },
+  {
+    name: "Warehouse Simulation with OpenUSD",
+    event: "NVIDIA Omniverse",
+    date: "2026",
+    tech: ["Python", "OpenUSD", "NVIDIA Omniverse"],
+    bullets: [
+      "Builds a 3D warehouse (10 shelves, 2 pallets) as code, animates a robot across 241 timeline samples, and refuses to export unless references and a collision sweep validate first",
+    ],
+  },
   {
     name: "Scholar Shield",
     event: "1st Place, TMCF × CSAA × Guidewire HBCU Innovation Challenge",

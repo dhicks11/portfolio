@@ -156,6 +156,28 @@ export default function Projects({ limit, showViewAll = false }: ProjectsProps) 
                     </svg>
                   </a>
                 )}
+                {project.githubUrl && (
+                  <a
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="live-link"
+                    aria-label={`View ${project.name} on GitHub`}
+                  >
+                    GitHub
+                    <svg
+                      width="12"
+                      height="12"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      aria-hidden="true"
+                    >
+                      <path d="M7 17l9.2-9.2M17 17V7H7" />
+                    </svg>
+                  </a>
+                )}
                 {project.demoUrl && (
                   <a
                     href={project.demoUrl}

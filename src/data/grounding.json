@@ -33,9 +33,11 @@
       "dates": "May 2026 – Aug. 2026",
       "location": "Cary, NC",
       "highlights": [
-        "Engineered a Python automation script that reduced an estimated 2 to 3 months of manual technical writing effort to seconds, migrating 1,574 XML menu paths across 52 documentation files with zero failures as part of a FrameMaker to oXygen XML/DITA migration; featured in the JMP R&D Development Update",
-        "Built an XML/DITA element counter scanning 1,878+ files at a 99.7% parse rate; identified 550 DITA elements eligible for Oxygen UI cleanup, delivering a concrete migration roadmap",
-        "Designed scalable folder architecture separating BA and DOE environments with Perforce safe defaults, dry run audit logging, and structured output isolation for cross team QA review"
+        "Engineered Python menucascade automation for the FrameMaker to oXygen XML/DITA migration: a documented production run converted 1,574 menu paths across 52 files with 0 failures, and a later full corpus dry run covered 1,648 files with 1,288 conversions across 297 files; featured in the JMP R&D Development Update",
+        "Built XML/DITA analysis tooling that scanned 1,826 files (1,821 parsed, 5 parse errors), analyzed 64 unique elements and 271,066 element instances, and surfaced 550 unused element review candidates; the XML Book Analyzer linted 21 books and surfaced 2,592 issues, and a counting error was caught and corrected to verify 1,747 top level topics",
+        "JMP-12987: standardized date formats across 37 JMP sample data tables and 72 columns; final validation showed no remaining flagged tables and unchanged row and column structures",
+        "JMPDOC-3428: grew a screenshot task into a centralized comparison and review workflow for JMP 2027 accessibility and UI changes, with automated comparison statuses, side by side and difference review, retake tracking, and manual review fallbacks",
+        "Used AI as an engineering accelerator while owning success criteria, testing against real documentation, and validation; subject matter experts reviewed every tool before production use"
       ]
     },
     {
@@ -90,6 +92,43 @@
   ],
   "projects": [
     {
+      "name": "TruBen (Benefits, Made Clear)",
+      "context": "Truist Ascent Immersion",
+      "dates": "Oct. 2026",
+      "highlights": [
+        "AI benefits guide for new hires following Discover, Understand, Decide: a short quiz, plain language answers that cite the source document, page, and passage, and three packages (Essential, Balanced, Comprehensive) leading to a personal enrollment checklist",
+        "Answers only from approved documents and hands off to HR when unsure; built on synthetic data and a mocked Workday API"
+      ],
+      "link": ""
+    },
+    {
+      "name": "JMP Documentation Automation Suite",
+      "context": "JMP Statistical Discovery (SAS)",
+      "dates": "May to Aug. 2026",
+      "highlights": [
+        "Menucascade conversion, XML/DITA analyzer, XML Book Analyzer linter, and a centralized screenshot comparison workflow, each with dry run, audit logging, and validation"
+      ],
+      "link": ""
+    },
+    {
+      "name": "I Got Next Court Digital Twin",
+      "context": "OpenUSD / NVIDIA Omniverse",
+      "dates": "2026",
+      "highlights": [
+        "Turns a pickup court listing into an animated 3D scene and blocks export until a dry run validation pass succeeds"
+      ],
+      "link": "https://github.com/dhicks11/igotnext_court_twin"
+    },
+    {
+      "name": "Warehouse Simulation with OpenUSD",
+      "context": "NVIDIA Omniverse",
+      "dates": "2026",
+      "highlights": [
+        "Builds a 3D warehouse as code, animates a robot across 241 timeline samples, and refuses to export unless references and a collision sweep validate first"
+      ],
+      "link": ""
+    },
+    {
       "name": "Scholar Shield",
       "context": "1st Place, TMCF x CSAA x Guidewire HBCU Innovation Challenge (Walnut Creek, CA)",
       "dates": "Jun. 2026",
@@ -123,18 +162,79 @@
     }
   ],
   "skills": {
-    "languages": ["Python", "Java", "JavaScript", "TypeScript", "SQL", "HTML/CSS", "Perl", "XML/DITA"],
-    "frameworks": ["React", "Next.js", "Node.js", "FastAPI"],
-    "tools": ["Git", "GitHub", "Jenkins", "Perforce (P4V)", "Jira", "Confluence", "VS Code", "Oxygen XML", "WinMerge", "Docker", "Airtable"],
-    "cloud": ["AWS (EC2, Amazon Bedrock)", "Firebase", "Vercel", "Google Cloud Platform", "Railway"],
-    "ai_focus": ["Responsible AI", "Human in the Loop Systems", "LLM Evaluation & RLHF", "Prompt Engineering"]
+    "languages": [
+      "Python",
+      "Java",
+      "JavaScript",
+      "TypeScript",
+      "SQL",
+      "HTML/CSS",
+      "Perl",
+      "XML/DITA"
+    ],
+    "frameworks": [
+      "React",
+      "Next.js",
+      "Node.js",
+      "FastAPI"
+    ],
+    "tools": [
+      "Git",
+      "GitHub",
+      "Jenkins",
+      "Perforce (P4V)",
+      "Jira",
+      "Confluence",
+      "VS Code",
+      "Oxygen XML",
+      "WinMerge",
+      "Docker",
+      "Airtable"
+    ],
+    "cloud": [
+      "AWS (EC2, Amazon Bedrock)",
+      "Firebase",
+      "Vercel",
+      "Google Cloud Platform",
+      "Railway"
+    ],
+    "ai_focus": [
+      "Responsible AI",
+      "Human in the Loop Systems",
+      "LLM Evaluation & RLHF",
+      "Prompt Engineering"
+    ]
   },
   "competitions": [
-    { "name": "TMCF x CSAA x Guidewire HBCU Innovation Challenge", "result": "1st Place, $10K prize (Team dreamZ, Scholar Shield)", "date": "Jun. 2026" },
-    { "name": "Hack NCAT", "result": "1st Place (PitchPad)", "date": "Mar. 2026" },
-    { "name": "UNCF STEM Innovation Summit", "result": "Top 50 HBCU Scholar nationwide", "date": "Mar. 2026" },
-    { "name": "FidHacks @ Fidelity", "result": "Participant (Forte)", "date": "May 2026" },
-    { "name": "FRC World Championship", "result": "Team captain, qualified for World Championship in Houston, TX", "date": "2024–2025" },
-    { "name": "Truist Ascent Immersion (TMCF x Truist)", "result": "Selected, 1 of 120 nationwide", "date": "Jun. 2026 – Oct. 2026" }
+    {
+      "name": "TMCF x CSAA x Guidewire HBCU Innovation Challenge",
+      "result": "1st Place, $10K prize (Team dreamZ, Scholar Shield)",
+      "date": "Jun. 2026"
+    },
+    {
+      "name": "Hack NCAT",
+      "result": "1st Place (PitchPad)",
+      "date": "Mar. 2026"
+    },
+    {
+      "name": "UNCF STEM Innovation Summit",
+      "result": "Top 50 HBCU Scholar nationwide",
+      "date": "Mar. 2026"
+    },
+    {
+      "name": "FidHacks @ Fidelity",
+      "result": "Participant (Forte)",
+      "date": "May 2026"
+    },
+    {
+      "name": "FRC World Championship",
+      "result": "Team captain, qualified for World Championship in Houston, TX",
+      "date": "2024–2025"
+    },
+    {
+      "name": "Truist Ascent Immersion (TMCF x Truist)",
+      "result": "Selected, 1 of 120 nationwide",
+      "date": "Jun. 2026 – Oct. 2026"
+    }
   ]
 }
