@@ -156,7 +156,7 @@ export const projects: Project[] = [
       "Added fail-closed role-based access control and a two-person false-positive workflow; wrote 66 engine tests across 7 merged PRs (~3,500 lines, 78 files)",
     ],
     githubUrl: "https://github.com/SWEthan098/HackNCAT-10.0",
-    videoEmbedUrl: "https://drive.google.com/file/d/1nrw_L16RRDPCNq53_RieYXPr12vjngUq/preview",
+    videoEmbedUrl: "https://www.youtube.com/embed/RPMzkU6-tSg",
   },
   {
     name: "TruBen — Benefits, Made Clear",
