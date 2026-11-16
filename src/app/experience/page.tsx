@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: "Experience — Daylen Hicks | Software Engineer & AI Developer",
   description:
-    "Work experience of Daylen Hicks — SAS Institute R&D, founder of I Got Next and Hicks Digital, LLM engineering at Handshake, and the TMCF Innovation Challenge.",
+    "Work experience of Daylen Hicks — technical writing intern at JMP/SAS Institute R&D, founder of I Got Next and Hicks Digital, LLM engineering at Handshake, and Resident Assistant at NC A&T.",
   alternates: { canonical: "https://daylenhicks.com/experience" },
 };
 

@@ -48,21 +48,10 @@ export const skills = [
 
 export const experience = [
   {
-    company: "Thurgood Marshall College Fund × CSAA Insurance Group × Guidewire",
-    role: "HBCU Innovation Challenge Fellow",
-    location: "Walnut Creek, CA",
-    dates: "Jun. 2026 – Jul. 2026",
-    bullets: [
-      "Won 1st place and a $10K prize among competing HBCU teams nationwide, pitching Scholar Shield — a scholarship protection insurance product — to CSAA Insurance Group and Guidewire executives as part of Team dreamZ",
-      "Selected as 1 of 12 HBCU students nationwide for TMCF's invite-only Innovation Challenge — an immersive insurtech venture sprint hosted on-site with CSAA and Guidewire in the Bay Area",
-      "Iterated the pitch through multiple rounds of live coach and executive feedback, carrying it from customer discovery through a Business Model Canvas and 10-section business plan (BP10) to the final judged pitch",
-    ],
-  },
-  {
     company: "JMP Statistical Discovery (SAS Institute)",
     role: "Technical Writing Intern, R&D DevOps",
     location: "Cary, NC",
-    dates: "May 2026 – Aug. 2026",
+    dates: "May 2026 – Present",
     tech: "Python, JSL, Perl, XML/DITA, Oxygen XML, Perforce, Jira, Confluence",
     bullets: [
       "Engineered Python menucascade automation for the FrameMaker-to-oXygen XML/DITA migration: a documented production run converted 1,574 menu paths across 52 files with 0 failures, and a later full-corpus dry run covered 1,648 files with 1,288 conversions across 297 files; featured in the JMP R&D Development Update",
