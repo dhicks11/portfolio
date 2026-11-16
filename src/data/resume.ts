@@ -8,7 +8,7 @@ export const personalInfo = {
 };
 
 export const highlights = [
-  { value: "2x", label: "Competition Wins", glow: true },
+  { value: "3x", label: "Competition Wins", glow: true },
   { value: "$10K", label: "TMCF Challenge Prize" },
   { value: "3", label: "Companies Founded" },
   { value: "3.6", label: "GPA at NC A&T" },
@@ -136,11 +136,28 @@ interface Project {
   liveUrl?: string;
   demoUrl?: string;
   githubUrl?: string;
+  videoEmbedUrl?: string;
   image?: string;
   gallery?: string[];
 }
 
 export const projects: Project[] = [
+  {
+    name: "Kairos",
+    event: "1st Place, HackNCAT 10.0 — Cisco Track",
+    date: "Nov. 2026",
+    tech: ["FastAPI", "Python 3.13", "Next.js", "React", "Supabase", "PostgreSQL", "Railway", "Groq"],
+    bullets: [
+      "Built the core backend of an AI-agent security platform in a 4-person, 3-day hackathon — won 1st place in Cisco's \"Securing the Future of Human-AI Coexistence\" track at HackNCAT 10.0 (Architect tier)",
+      "Designed a 9-table Postgres schema with row-level security and shipped 7 production migrations on Supabase, deployed via FastAPI on Railway",
+      "Built a rule-based correlation engine that links login, phishing, and AI-agent alerts into one incident with code-computed risk scores — so an AI that gets fooled can't talk its way down to a lower threat level",
+      "Implemented a tamper-evident audit log using a SHA-256 hash chain, with an API endpoint that finds the first altered record",
+      "Built a human-in-the-loop approval system — phone approvals that time out, a two-person rule, conflict-of-interest checks, and reversible containment (lock, freeze, kill switch)",
+      "Added fail-closed role-based access control and a two-person false-positive workflow; wrote 66 engine tests across 7 merged PRs (~3,500 lines, 78 files)",
+    ],
+    githubUrl: "https://github.com/SWEthan098/HackNCAT-10.0",
+    videoEmbedUrl: "https://drive.google.com/file/d/1nrw_L16RRDPCNq53_RieYXPr12vjngUq/preview",
+  },
   {
     name: "TruBen — Benefits, Made Clear",
     event: "Truist Ascent Immersion",
@@ -286,6 +303,7 @@ export const education = [
 ];
 
 export const activities = [
+  "HackNCAT 10.0 (Nov. 2026) — 1st Place, Cisco Track (Kairos)",
   "HBCU Innovation Challenge (TMCF/CSAA/Guidewire, Jun. 2026) — 1st Place, $10K",
   "TMCF Leadership Institute 2026 — Coaching Academy",
   "UNCF STEM Innovation Summit — Top 50 HBCU Scholar Nationwide (Mar. 2026)",

@@ -77,6 +77,19 @@ export default function Projects({ limit, showViewAll = false }: ProjectsProps) 
                 {project.name}
               </h3>
 
+              {/* Demo video embed if available */}
+              {project.videoEmbedUrl && (
+                <div className="relative mb-6 rounded-lg overflow-hidden border border-[var(--color-border)] aspect-video">
+                  <iframe
+                    src={project.videoEmbedUrl}
+                    title={`${project.name} — demo video`}
+                    allow="autoplay"
+                    allowFullScreen
+                    className="absolute inset-0 h-full w-full"
+                  />
+                </div>
+              )}
+
               {/* Project image if available */}
               {project.image && (
                 <div className="relative mb-6 rounded-lg overflow-hidden border border-[var(--color-border)] h-48 md:h-64">

@@ -62,6 +62,7 @@ export default function RootLayout({
       name: "North Carolina A&T State University",
     },
     award: [
+      "1st Place, HackNCAT 10.0 — Cisco Track (2026)",
       "1st Place & $10K Prize, TMCF × CSAA × Guidewire HBCU Innovation Challenge (2026)",
       "1st Place, Hack NCAT (2026)",
       "UNCF STEM Scholar (2026)",

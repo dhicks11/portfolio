@@ -92,6 +92,18 @@
   ],
   "projects": [
     {
+      "name": "Kairos",
+      "context": "1st Place, HackNCAT 10.0, Cisco track (Securing the Future of Human-AI Coexistence), Architect tier, 4 person team",
+      "dates": "Nov. 2026",
+      "highlights": [
+        "AI agent security platform: detects prompt injection and social engineering attacks against AI assistants with email/file/action access, correlates related alerts into one incident, and keeps a human in the loop for any disruptive action",
+        "Daylen owned the core backend: a 9 table Postgres schema with row level security on Supabase, a rule based correlation and risk scoring engine (code computed, not AI judged), a tamper evident SHA-256 hash chain audit log, and a human approval system with phone approvals, timeouts, a two person rule, and reversible containment",
+        "Stack: FastAPI on Railway, Next.js/React/TypeScript on Vercel, Supabase Postgres, Groq and Anthropic LLMs for the read only AI analyst",
+        "7 merged PRs, about 3500 lines across 78 files, 66 engine tests"
+      ],
+      "link": "https://github.com/SWEthan098/HackNCAT-10.0"
+    },
+    {
       "name": "TruBen (Benefits, Made Clear)",
       "context": "Truist Ascent Immersion",
       "dates": "Oct. 2026",
@@ -206,6 +218,11 @@
     ]
   },
   "competitions": [
+    {
+      "name": "HackNCAT 10.0",
+      "result": "1st Place, Cisco track, Architect tier (Kairos)",
+      "date": "Nov. 2026"
+    },
     {
       "name": "TMCF x CSAA x Guidewire HBCU Innovation Challenge",
       "result": "1st Place, $10K prize (Team dreamZ, Scholar Shield)",
