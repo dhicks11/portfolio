@@ -79,6 +79,7 @@ export const experience = [
     location: "Remote / Greensboro, NC",
     dates: "Jan. 2026 – Present",
     bullets: [
+      "Designed and shipped a 5-page marketing site for R. Hicks Landscaping LLC (Hampton Roads, VA) — service pages, online booking, a photo gallery, and click-to-call/email contact — giving a local landscaping business a professional web presence and lead funnel",
       "Delivered AI literacy workshop to 30+ students (Boys 2 Men, Roanoke Rapids, May 2026); drafted GoHighLevel automation proposal for GROW nonprofit serving Halifax County",
       "Executed 25+ cold outreach campaigns across 2 counties; secured paid brand partnerships and AI consulting engagements with local businesses",
     ],
